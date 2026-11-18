@@ -1,588 +1,742 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" width="2336" height="1311" viewBox="0 0 2336 1311" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" width="2247" height="1521" viewBox="0 0 2247 1521" role="img" aria-labelledby="title description">
 <title id="title">Monarch Butterfly Paper · Full Research Network</title>
-<desc id="description">86 nodes and 120 directed relationships. Dashed lines indicate grade C evidence.</desc>
-<defs>
-<linearGradient id="paper" x2="0" y2="1"><stop stop-color="#eaf2fd"/><stop offset=".22" stop-color="#f6f8fc"/><stop offset="1" stop-color="#f4f6fa"/></linearGradient>
-<linearGradient id="heads" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef3fa"/></linearGradient>
-<marker id="arrow" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L7 3.5L0 7Z" fill="#8295ad"/></marker>
-
-</defs>
-<rect width="2336" height="1311" fill="url(#paper)"/>
+<desc id="description">Top-down layout. Researchers, organizations and projects, then papers and events. 86 nodes and 120 directed relationships. Dashed lines indicate grade C evidence.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L7 3.5L0 7Z" fill="#748aa4"/></marker></defs>
+<style>.relation:hover{stroke:#1766bb;stroke-width:2.6;opacity:1}.node:hover .node-card{stroke:#7ea6d2;stroke-width:1.5}</style>
+<rect width="2247" height="1521" fill="#f2f6fb"/>
 <g fill="#17283d" font-family="Arial, Microsoft YaHei, PingFang SC, sans-serif">
-<text x="40" y="55" font-size="30" font-weight="700">Monarch Butterfly Paper · Full Research Network</text>
-<text x="40" y="81" font-size="14" fill="#536881">1995–2005 · 86 nodes / 120 relationships</text>
-
-<path d="M 1971 76 h 22" fill="none" stroke="#8295ad" stroke-width="1.7" stroke-dasharray="5 4"/>
-<text x="2003" y="81" font-size="12" fill="#536881">Dashed: grade C · Arrows: relationship direction</text>
-<g transform="translate(28 126)">
-<rect x="0" y="-34" width="2280" height="1191" rx="15" fill="#ffffff" stroke="#d7e3f0"/>
-<rect x="760" y="0" width="760" height="1156" fill="#f4f8fd"/>
-<rect x=".5" y="-34" width="2279" height="34" rx="14" fill="url(#heads)"/>
-<path d="M 0 0 H 2280 M 760 -34 V 1157 M 1520 -34 V 1157" fill="none" stroke="#d7e3f0"/>
-<circle cx="43" cy="-17" r="5" fill="#233449"/>
-<text x="58" y="-12" font-size="15" font-weight="700">Researchers</text>
-<text x="730" y="-12" text-anchor="end" font-size="13" fill="#536881">29</text>
-<path d="M 803 -22 l 5 5 -5 5 -5 -5 Z" fill="#55657D"/>
-<text x="818" y="-12" font-size="15" font-weight="700">Organizations &amp; Projects</text>
-<text x="1490" y="-12" text-anchor="end" font-size="13" fill="#536881">35</text>
-<rect x="1558" y="-22" width="10" height="10" rx="2" fill="#1266BF"/>
-<text x="1578" y="-12" font-size="15" font-weight="700">Papers &amp; Events</text>
-<text x="2250" y="-12" text-anchor="end" font-size="13" fill="#536881">22</text>
-<g fill="none" stroke="#a5b5c8" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
-<path data-edge-id="R001" data-source="P_LOSEY" data-target="W_LOSEY1999" d="M 710 55 C 747 55, 747 55, 747 45 L 747 16 Q 747 9, 754 9 L 1510 9 Q 1517 9, 1517 16 L 1517 46 C 1517 56, 1517 56, 1554 56" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Author of → Transgenic pollen harms monarch larvae</title></path>
-<path data-edge-id="R002" data-source="P_RAYOR" data-target="W_LOSEY1999" d="M 710 120.5 C 749 120.5, 749 120.5, 749 110.5 L 749 25 Q 749 18, 756 18 L 1508 18 Q 1515 18, 1515 25 L 1515 51 C 1515 61, 1515 61, 1554 61" opacity=".62" marker-end="url(#arrow)"><title>Linda S. Rayor · Author of → Transgenic pollen harms monarch larvae</title></path>
-<path data-edge-id="R003" data-source="P_CARTER" data-target="W_LOSEY1999" d="M 710 151.5 C 751 151.5, 751 151.5, 751 141.5 L 751 34 Q 751 27, 758 27 L 1506 27 Q 1513 27, 1513 34 L 1513 56 C 1513 66, 1513 66, 1554 66" opacity=".62" marker-end="url(#arrow)"><title>Maureen E. Carter · Author of → Transgenic pollen harms monarch larvae</title></path>
-<path data-edge-id="R004" data-source="P_LOSEY" data-target="O_CORNELL" d="M 710 59.714285714285715 C 752 59.714285714285715, 752 185, 794 185" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Affiliated with → Cornell University</title></path>
-<path data-edge-id="R005" data-source="P_RAYOR" data-target="O_CORNELL" d="M 710 130.5 C 752 130.5, 752 190, 794 190" opacity=".62" marker-end="url(#arrow)"><title>Linda S. Rayor · Affiliated with → Cornell University</title></path>
-<path data-edge-id="R006" data-source="P_CARTER" data-target="O_CORNELL" d="M 710 156.5 C 752 156.5, 752 195, 794 195" opacity=".62" marker-end="url(#arrow)"><title>Maureen E. Carter · Affiliated with → Cornell University</title></path>
-<path data-edge-id="R007" data-source="P_RAYOR" data-target="P_BROWER" d="M 710 125.5 C 734 125.5, 734 125.5, 734 108.75 S 734 92, 710 92" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Linda S. Rayor · Contacted → Lincoln Brower</title></path>
-<path data-edge-id="R008" data-source="P_LOSEY" data-target="P_BROWER" d="M 710 56.57142857142857 C 734 56.57142857142857, 734 56.57142857142857, 734 71.78571428571428 S 734 87, 710 87" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Discussed → Lincoln Brower</title></path>
-<path data-edge-id="R009" data-source="P_RAYOR" data-target="O_KANSAS" d="M 710 135.5 C 752 135.5, 752 655, 794 655" opacity=".62" marker-end="url(#arrow)"><title>Linda S. Rayor · Earned degree from → University of Kansas</title></path>
-<path data-edge-id="R010" data-source="P_LOSEY" data-target="O_MARYLAND" d="M 710 72.28571428571429 C 752 72.28571428571429, 752 624, 794 624" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Earned degree from → University of Maryland</title></path>
-<path data-edge-id="R011" data-source="P_LOSEY" data-target="P_DENNO" d="M 710 61.285714285714285 C 734 61.285714285714285, 734 61.285714285714285, 734 186.39285714285714 S 734 311.5, 710 311.5" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Co-authored with → Robert F. Denno</title></path>
-<path data-edge-id="R012" data-source="P_LOSEY" data-target="W_STANLEYHORN2001" d="M 710 58.142857142857146 C 753 58.142857142857146, 753 58.142857142857146, 753 48.142857142857146 L 753 43 Q 753 36, 760 36 L 1504 36 Q 1511 36, 1511 43 L 1511 76 C 1511 86, 1511 86, 1554 86" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R013" data-source="P_LOSEY" data-target="A_W_REFUGE2001" d="M 710 66 C 755 66, 755 66, 755 56 L 755 52 Q 755 45, 762 45 L 1502 45 Q 1509 45, 1509 52 L 1509 485.5 C 1509 495.5, 1509 495.5, 1554 495.5" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Author of → Evaluation of Noncorn Host Plants as a Refuge</title></path>
-<path data-edge-id="R014" data-source="P_CARTER" data-target="A_W_REFUGE2001" d="M 710 161.5 C 747.2857142857143 161.5, 747.2857142857143 161.5, 747.2857142857143 151.5 L 747.2857142857143 16.285714285714285 Q 747.2857142857143 9.285714285714286, 754.2857142857143 9.285714285714286 L 1509.7142857142858 9.285714285714286 Q 1516.7142857142858 9.285714285714286, 1516.7142857142858 16.285714285714285 L 1516.7142857142858 490.5 C 1516.7142857142858 500.5, 1516.7142857142858 500.5, 1554 500.5" opacity=".62" marker-end="url(#arrow)"><title>Maureen E. Carter · Author of → Evaluation of Noncorn Host Plants as a Refuge</title></path>
-<path data-edge-id="R015" data-source="P_LOSEY" data-target="A_W_STEM2002" d="M 710 67.57142857142857 C 749.2857142857143 67.57142857142857, 749.2857142857143 67.57142857142857, 749.2857142857143 57.57142857142857 L 749.2857142857143 25.285714285714285 Q 749.2857142857143 18.285714285714285, 756.2857142857143 18.285714285714285 L 1507.7142857142858 18.285714285714285 Q 1514.7142857142858 18.285714285714285, 1514.7142857142858 25.285714285714285 L 1514.7142857142858 516.5 C 1514.7142857142858 526.5, 1514.7142857142858 526.5, 1554 526.5" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Author of → The effect of stem diameter on European corn borer</title></path>
-<path data-edge-id="R016" data-source="P_CARTER" data-target="A_W_STEM2002" d="M 710 166.5 C 751.2857142857143 166.5, 751.2857142857143 166.5, 751.2857142857143 156.5 L 751.2857142857143 34.285714285714285 Q 751.2857142857143 27.285714285714285, 758.2857142857143 27.285714285714285 L 1505.7142857142858 27.285714285714285 Q 1512.7142857142858 27.285714285714285, 1512.7142857142858 34.285714285714285 L 1512.7142857142858 521.5 C 1512.7142857142858 531.5, 1512.7142857142858 531.5, 1554 531.5" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Maureen E. Carter · Author of → The effect of stem diameter on European corn borer</title></path>
-<path data-edge-id="R017" data-source="P_LOSEY" data-target="B_W_DENNO1998" d="M 710 69.14285714285714 C 753.2857142857143 69.14285714285714, 753.2857142857143 69.14285714285714, 753.2857142857143 59.14285714285714 L 753.2857142857143 43.285714285714285 Q 753.2857142857143 36.285714285714285, 760.2857142857143 36.285714285714285 L 1503.7142857142858 36.285714285714285 Q 1510.7142857142858 36.285714285714285, 1510.7142857142858 43.285714285714285 L 1510.7142857142858 547.5 C 1510.7142857142858 557.5, 1510.7142857142858 557.5, 1554 557.5" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Author of → Positive predator–predator interactions</title></path>
-<path data-edge-id="R018" data-source="P_DENNO" data-target="B_W_DENNO1998" d="M 710 316.5 C 755.2857142857143 316.5, 755.2857142857143 316.5, 755.2857142857143 306.5 L 755.2857142857143 52.285714285714285 Q 755.2857142857143 45.285714285714285, 762.2857142857143 45.285714285714285 L 1501.7142857142858 45.285714285714285 Q 1508.7142857142858 45.285714285714285, 1508.7142857142858 52.285714285714285 L 1508.7142857142858 552.5 C 1508.7142857142858 562.5, 1508.7142857142858 562.5, 1554 562.5" opacity=".62" marker-end="url(#arrow)"><title>Robert F. Denno · Author of → Positive predator–predator interactions</title></path>
-<path data-edge-id="R019" data-source="W_LOSEY1999" data-target="B_W_NCR602" d="M 2230 57.75 C 2254 57.75, 2254 57.75, 2254 146.875 S 2254 236, 2230 236" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Bt Corn and European Corn Borer</title></path>
-<path data-edge-id="R020" data-source="P_HELLMICH" data-target="B_W_NCR602" d="M 710 347.5 C 747.5714285714286 347.5, 747.5714285714286 347.5, 747.5714285714286 337.5 L 747.5714285714286 16.57142857142857 Q 747.5714285714286 9.571428571428571, 754.5714285714286 9.571428571428571 L 1509.4285714285713 9.571428571428571 Q 1516.4285714285713 9.571428571428571, 1516.4285714285713 16.57142857142857 L 1516.4285714285713 221 C 1516.4285714285713 231, 1516.4285714285713 231, 1554 231" opacity=".62" marker-end="url(#arrow)"><title>Richard L. Hellmich · Edited → Bt Corn and European Corn Borer</title></path>
-<path data-edge-id="R021" data-source="B_P_HUTCHISON" data-target="B_W_NCR602" d="M 710 748 C 749.5714285714286 748, 749.5714285714286 748, 749.5714285714286 738 L 749.5714285714286 25.571428571428573 Q 749.5714285714286 18.571428571428573, 756.5714285714286 18.571428571428573 L 1507.4285714285713 18.571428571428573 Q 1514.4285714285713 18.571428571428573, 1514.4285714285713 25.571428571428573 L 1514.4285714285713 226 C 1514.4285714285713 236, 1514.4285714285713 236, 1554 236" opacity=".62" marker-end="url(#arrow)"><title>William D. Hutchison · Edited → Bt Corn and European Corn Borer</title></path>
-<path data-edge-id="R022" data-source="B_P_ANDOW" data-target="B_W_NCR602" d="M 710 779 C 751.5714285714286 779, 751.5714285714286 779, 751.5714285714286 769 L 751.5714285714286 34.57142857142857 Q 751.5714285714286 27.571428571428573, 758.5714285714286 27.571428571428573 L 1505.4285714285713 27.571428571428573 Q 1512.4285714285713 27.571428571428573, 1512.4285714285713 34.57142857142857 L 1512.4285714285713 231 C 1512.4285714285713 241, 1512.4285714285713 241, 1554 241" opacity=".62" marker-end="url(#arrow)"><title>David A. Andow · Contributed to → Bt Corn and European Corn Borer</title></path>
-<path data-edge-id="R023" data-source="P_HELLMICH" data-target="W_STANLEYHORN2001" d="M 710 342.5 C 753.5714285714286 342.5, 753.5714285714286 342.5, 753.5714285714286 332.5 L 753.5714285714286 43.57142857142857 Q 753.5714285714286 36.57142857142857, 760.5714285714286 36.57142857142857 L 1503.4285714285713 36.57142857142857 Q 1510.4285714285713 36.57142857142857, 1510.4285714285713 43.57142857142857 L 1510.4285714285713 82.76923076923077 C 1510.4285714285713 92.76923076923077, 1510.4285714285713 92.76923076923077, 1554 92.76923076923077" opacity=".62" marker-end="url(#arrow)"><title>Richard L. Hellmich · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R024" data-source="P_OBRYCKI" data-target="W_STANLEYHORN2001" d="M 710 373.5 C 755.5714285714286 373.5, 755.5714285714286 373.5, 755.5714285714286 363.5 L 755.5714285714286 52.57142857142857 Q 755.5714285714286 45.57142857142857, 762.5714285714286 45.57142857142857 L 1501.4285714285713 45.57142857142857 Q 1508.4285714285713 45.57142857142857, 1508.4285714285713 52.57142857142857 L 1508.4285714285713 84.46153846153847 C 1508.4285714285713 94.46153846153847, 1508.4285714285713 94.46153846153847, 1554 94.46153846153847" opacity=".62" marker-end="url(#arrow)"><title>John J. Obrycki · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R025" data-source="B_P_STANLEYHORN" data-target="W_STANLEYHORN2001" d="M 710 686 C 747.8571428571429 686, 747.8571428571429 686, 747.8571428571429 676 L 747.8571428571429 16.857142857142858 Q 747.8571428571429 9.857142857142858, 754.8571428571429 9.857142857142858 L 1509.142857142857 9.857142857142858 Q 1516.142857142857 9.857142857142858, 1516.142857142857 16.857142857142858 L 1516.142857142857 92.92307692307692 C 1516.142857142857 102.92307692307692, 1516.142857142857 102.92307692307692, 1554 102.92307692307692" opacity=".62" marker-end="url(#arrow)"><title>Diane E. Stanley-Horn · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R026" data-source="P_SEARS" data-target="W_STANLEYHORN2001" d="M 710 717 C 749.8571428571429 717, 749.8571428571429 717, 749.8571428571429 707 L 749.8571428571429 25.857142857142858 Q 749.8571428571429 18.857142857142858, 756.8571428571429 18.857142857142858 L 1507.142857142857 18.857142857142858 Q 1514.142857142857 18.857142857142858, 1514.142857142857 25.857142857142858 L 1514.142857142857 94.61538461538461 C 1514.142857142857 104.61538461538461, 1514.142857142857 104.61538461538461, 1554 104.61538461538461" opacity=".62" marker-end="url(#arrow)"><title>Mark K. Sears · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R027" data-source="B_P_JESSE" data-target="W_STANLEYHORN2001" d="M 710 404.5 C 751.8571428571429 404.5, 751.8571428571429 404.5, 751.8571428571429 394.5 L 751.8571428571429 34.85714285714286 Q 751.8571428571429 27.857142857142858, 758.8571428571429 27.857142857142858 L 1505.142857142857 27.857142857142858 Q 1512.142857142857 27.857142857142858, 1512.142857142857 34.85714285714286 L 1512.142857142857 87.84615384615384 C 1512.142857142857 97.84615384615384, 1512.142857142857 97.84615384615384, 1554 97.84615384615384" opacity=".62" marker-end="url(#arrow)"><title>Laura C. H. Jesse · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R028" data-source="P_LOSEY" data-target="B_W_BIOSCI2001" d="M 710 64.42857142857143 C 753.8571428571429 64.42857142857143, 753.8571428571429 64.42857142857143, 753.8571428571429 54.42857142857143 L 753.8571428571429 43.857142857142854 Q 753.8571428571429 36.857142857142854, 760.8571428571429 36.857142857142854 L 1503.142857142857 36.857142857142854 Q 1510.142857142857 36.857142857142854, 1510.142857142857 43.857142857142854 L 1510.142857142857 375 C 1510.142857142857 385, 1510.142857142857 385, 1554 385" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Author of → Transgenic insecticidal corn</title></path>
-<path data-edge-id="R029" data-source="P_OBRYCKI" data-target="B_W_BIOSCI2001" d="M 710 378.5 C 755.8571428571429 378.5, 755.8571428571429 378.5, 755.8571428571429 368.5 L 755.8571428571429 52.857142857142854 Q 755.8571428571429 45.857142857142854, 762.8571428571429 45.857142857142854 L 1501.142857142857 45.857142857142854 Q 1508.142857142857 45.857142857142854, 1508.142857142857 52.857142857142854 L 1508.142857142857 380 C 1508.142857142857 390, 1508.142857142857 390, 1554 390" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John J. Obrycki · Author of → Transgenic insecticidal corn</title></path>
-<path data-edge-id="R030" data-source="B_P_JESSE" data-target="B_W_BIOSCI2001" d="M 710 409.5 C 748.1428571428571 409.5, 748.1428571428571 409.5, 748.1428571428571 399.5 L 748.1428571428571 17.142857142857142 Q 748.1428571428571 10.142857142857142, 755.1428571428571 10.142857142857142 L 1508.857142857143 10.142857142857142 Q 1515.857142857143 10.142857142857142, 1515.857142857143 17.142857142857142 L 1515.857142857143 385 C 1515.857142857143 395, 1515.857142857143 395, 1554 395" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Laura C. H. Jesse · Author of → Transgenic insecticidal corn</title></path>
-<path data-edge-id="R031" data-source="W_LOSEY1999" data-target="B_W_REF02" d="M 2230 55 C 2254 55, 2254 55, 2254 110.75 S 2254 166.5, 2230 166.5" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
-<path data-edge-id="R032" data-source="W_LOSEY1999" data-target="B_W_REF03" d="M 2230 68.75 C 2254 68.75, 2254 68.75, 2254 345.375 S 2254 622, 2230 622" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Dispersion and deposition of corn pollen from experimental sources</title></path>
-<path data-edge-id="R033" data-source="W_LOSEY1999" data-target="B_W_REF04" d="M 2230 60.5 C 2254 60.5, 2254 60.5, 2254 167.5 S 2254 274.5, 2230 274.5" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
-<path data-edge-id="R034" data-source="W_LOSEY1999" data-target="B_W_REF05" d="M 2230 63.25 C 2254 63.25, 2254 63.25, 2254 191.875 S 2254 320.5, 2230 320.5" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
-<path data-edge-id="R035" data-source="W_LOSEY1999" data-target="B_W_REF06" d="M 2230 71.5 C 2254 71.5, 2254 71.5, 2254 362.25 S 2254 653, 2230 653" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Establishment of common milkweed (Asclepias syriaca) in corn, soybean, and wheat</title></path>
-<path data-edge-id="R036" data-source="W_LOSEY1999" data-target="B_W_REF07" d="M 2230 74.25 C 2254 74.25, 2254 74.25, 2254 379.125 S 2254 684, 2230 684" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Monarch butterfly orientation: missing pieces of a magnificent puzzle</title></path>
-<path data-edge-id="R037" data-source="W_LOSEY1999" data-target="B_W_REF08" d="M 2230 66 C 2254 66, 2254 66, 2254 247.25 S 2254 428.5, 2230 428.5" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title></path>
-<path data-edge-id="R038" data-source="W_LOSEY1999" data-target="B_W_REF09" d="M 2230 77 C 2254 77, 2254 77, 2254 396 S 2254 715, 2230 715" opacity=".62" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Bt-corn resistance management</title></path>
-<path data-edge-id="R039" data-source="B_P_FEARING" data-target="B_W_REF02" d="M 710 435.5 C 750.1428571428571 435.5, 750.1428571428571 435.5, 750.1428571428571 425.5 L 750.1428571428571 26.142857142857142 Q 750.1428571428571 19.142857142857142, 757.1428571428571 19.142857142857142 L 1506.857142857143 19.142857142857142 Q 1513.857142857143 19.142857142857142, 1513.857142857143 26.142857142857142 L 1513.857142857143 146.5 C 1513.857142857143 156.5, 1513.857142857143 156.5, 1554 156.5" opacity=".62" marker-end="url(#arrow)"><title>Patricia L. Fearing · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
-<path data-edge-id="R040" data-source="B_P_BROWN" data-target="B_W_REF02" d="M 710 466.5 C 752.1428571428571 466.5, 752.1428571428571 466.5, 752.1428571428571 456.5 L 752.1428571428571 35.14285714285714 Q 752.1428571428571 28.142857142857142, 759.1428571428571 28.142857142857142 L 1504.857142857143 28.142857142857142 Q 1511.857142857143 28.142857142857142, 1511.857142857143 35.14285714285714 L 1511.857142857143 151.5 C 1511.857142857143 161.5, 1511.857142857143 161.5, 1554 161.5" opacity=".62" marker-end="url(#arrow)"><title>Devon Brown · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
-<path data-edge-id="R041" data-source="B_P_VLACHOS" data-target="B_W_REF02" d="M 710 497.5 C 754.1428571428571 497.5, 754.1428571428571 497.5, 754.1428571428571 487.5 L 754.1428571428571 44.142857142857146 Q 754.1428571428571 37.142857142857146, 761.1428571428571 37.142857142857146 L 1502.857142857143 37.142857142857146 Q 1509.857142857143 37.142857142857146, 1509.857142857143 44.142857142857146 L 1509.857142857143 156.5 C 1509.857142857143 166.5, 1509.857142857143 166.5, 1554 166.5" opacity=".62" marker-end="url(#arrow)"><title>Demetra Vlachos · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
-<path data-edge-id="R042" data-source="B_P_MEGHJI" data-target="B_W_REF02" d="M 710 528.5 C 756.1428571428571 528.5, 756.1428571428571 528.5, 756.1428571428571 518.5 L 756.1428571428571 53.142857142857146 Q 756.1428571428571 46.142857142857146, 763.1428571428571 46.142857142857146 L 1500.857142857143 46.142857142857146 Q 1507.857142857143 46.142857142857146, 1507.857142857143 53.142857142857146 L 1507.857142857143 161.5 C 1507.857142857143 171.5, 1507.857142857143 171.5, 1554 171.5" opacity=".62" marker-end="url(#arrow)"><title>Moez Meghji · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
-<path data-edge-id="R043" data-source="B_P_PRIVALLE" data-target="B_W_REF02" d="M 710 559.5 C 748.4285714285714 559.5, 748.4285714285714 559.5, 748.4285714285714 549.5 L 748.4285714285714 17.42857142857143 Q 748.4285714285714 10.428571428571429, 755.4285714285714 10.428571428571429 L 1508.5714285714287 10.428571428571429 Q 1515.5714285714287 10.428571428571429, 1515.5714285714287 17.42857142857143 L 1515.5714285714287 166.5 C 1515.5714285714287 176.5, 1515.5714285714287 176.5, 1554 176.5" opacity=".62" marker-end="url(#arrow)"><title>Laura Privalle · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
-<path data-edge-id="R044" data-source="B_P_FEARING" data-target="B_O_CIBA_BIOTECH" d="M 710 440.5 C 752 440.5, 752 213.5, 794 213.5" opacity=".62" marker-end="url(#arrow)"><title>Patricia L. Fearing · Affiliated with → Ciba Agricultural Biotechnology</title></path>
-<path data-edge-id="R045" data-source="B_P_BROWN" data-target="B_O_CIBA_BIOTECH" d="M 710 471.5 C 752 471.5, 752 218.5, 794 218.5" opacity=".62" marker-end="url(#arrow)"><title>Devon Brown · Affiliated with → Ciba Agricultural Biotechnology</title></path>
-<path data-edge-id="R046" data-source="B_P_VLACHOS" data-target="B_O_CIBA_BIOTECH" d="M 710 502.5 C 752 502.5, 752 223.5, 794 223.5" opacity=".62" marker-end="url(#arrow)"><title>Demetra Vlachos · Affiliated with → Ciba Agricultural Biotechnology</title></path>
-<path data-edge-id="R047" data-source="B_P_PRIVALLE" data-target="B_O_CIBA_BIOTECH" d="M 710 564.5 C 752 564.5, 752 228.5, 794 228.5" opacity=".62" marker-end="url(#arrow)"><title>Laura Privalle · Affiliated with → Ciba Agricultural Biotechnology</title></path>
-<path data-edge-id="R048" data-source="B_P_MEGHJI" data-target="B_O_CIBA_SEEDS" d="M 710 533.5 C 752 533.5, 752 686, 794 686" opacity=".62" marker-end="url(#arrow)"><title>Moez Meghji · Affiliated with → Ciba Seeds</title></path>
-<path data-edge-id="R049" data-source="B_P_MALCOLM" data-target="B_W_REF04" d="M 710 247 C 750.4285714285714 247, 750.4285714285714 247, 750.4285714285714 237 L 750.4285714285714 26.428571428571427 Q 750.4285714285714 19.428571428571427, 757.4285714285714 19.428571428571427 L 1506.5714285714287 19.428571428571427 Q 1513.5714285714287 19.428571428571427, 1513.5714285714287 26.428571428571427 L 1513.5714285714287 264.5 C 1513.5714285714287 274.5, 1513.5714285714287 274.5, 1554 274.5" opacity=".62" marker-end="url(#arrow)"><title>Stephen B. Malcolm · Author of → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
-<path data-edge-id="R050" data-source="B_P_MALCOLM" data-target="B_W_REF05" d="M 710 257 C 752.4285714285714 257, 752.4285714285714 257, 752.4285714285714 247 L 752.4285714285714 35.42857142857143 Q 752.4285714285714 28.428571428571427, 759.4285714285714 28.428571428571427 L 1504.5714285714287 28.428571428571427 Q 1511.5714285714287 28.428571428571427, 1511.5714285714287 35.42857142857143 L 1511.5714285714287 310.5 C 1511.5714285714287 320.5, 1511.5714285714287 320.5, 1554 320.5" opacity=".62" marker-end="url(#arrow)"><title>Stephen B. Malcolm · Author of → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
-<path data-edge-id="R051" data-source="B_P_MALCOLM" data-target="B_O_FLORIDA" d="M 710 252 C 752 252, 752 283, 794 283" opacity=".62" marker-end="url(#arrow)"><title>Stephen B. Malcolm · Affiliated with → University of Florida — Department of Zoology</title></path>
-<path data-edge-id="R052" data-source="B_P_COCKRELL" data-target="B_W_REF04" d="M 710 278 C 754.4285714285714 278, 754.4285714285714 278, 754.4285714285714 268 L 754.4285714285714 44.42857142857143 Q 754.4285714285714 37.42857142857143, 761.4285714285714 37.42857142857143 L 1502.5714285714287 37.42857142857143 Q 1509.5714285714287 37.42857142857143, 1509.5714285714287 44.42857142857143 L 1509.5714285714287 269.5 C 1509.5714285714287 279.5, 1509.5714285714287 279.5, 1554 279.5" opacity=".62" marker-end="url(#arrow)"><title>Barbara J. Cockrell · Author of → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
-<path data-edge-id="R053" data-source="B_P_COCKRELL" data-target="B_W_REF05" d="M 710 288 C 756.4285714285714 288, 756.4285714285714 288, 756.4285714285714 278 L 756.4285714285714 53.42857142857143 Q 756.4285714285714 46.42857142857143, 763.4285714285714 46.42857142857143 L 1500.5714285714287 46.42857142857143 Q 1507.5714285714287 46.42857142857143, 1507.5714285714287 53.42857142857143 L 1507.5714285714287 315.5 C 1507.5714285714287 325.5, 1507.5714285714287 325.5, 1554 325.5" opacity=".62" marker-end="url(#arrow)"><title>Barbara J. Cockrell · Author of → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
-<path data-edge-id="R054" data-source="B_P_COCKRELL" data-target="B_O_FLORIDA" d="M 710 283 C 752 283, 752 288, 794 288" opacity=".62" marker-end="url(#arrow)"><title>Barbara J. Cockrell · Affiliated with → University of Florida — Department of Zoology</title></path>
-<path data-edge-id="R055" data-source="P_BROWER" data-target="B_W_REF04" d="M 710 97 C 748.7142857142857 97, 748.7142857142857 97, 748.7142857142857 87 L 748.7142857142857 17.714285714285715 Q 748.7142857142857 10.714285714285714, 755.7142857142857 10.714285714285714 L 1508.2857142857142 10.714285714285714 Q 1515.2857142857142 10.714285714285714, 1515.2857142857142 17.714285714285715 L 1515.2857142857142 259.5 C 1515.2857142857142 269.5, 1515.2857142857142 269.5, 1554 269.5" opacity=".62" marker-end="url(#arrow)"><title>Lincoln Brower · Author of → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
-<path data-edge-id="R056" data-source="P_BROWER" data-target="B_W_REF05" d="M 710 107 C 750.7142857142857 107, 750.7142857142857 107, 750.7142857142857 97 L 750.7142857142857 26.714285714285715 Q 750.7142857142857 19.714285714285715, 757.7142857142857 19.714285714285715 L 1506.2857142857142 19.714285714285715 Q 1513.2857142857142 19.714285714285715, 1513.2857142857142 26.714285714285715 L 1513.2857142857142 305.5 C 1513.2857142857142 315.5, 1513.2857142857142 315.5, 1554 315.5" opacity=".62" marker-end="url(#arrow)"><title>Lincoln Brower · Author of → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
-<path data-edge-id="R057" data-source="P_BROWER" data-target="B_O_FLORIDA" d="M 710 102 C 752 102, 752 278, 794 278" opacity=".62" marker-end="url(#arrow)"><title>Lincoln Brower · Affiliated with → University of Florida — Department of Zoology</title></path>
-<path data-edge-id="R058" data-source="B_P_WASSENAAR" data-target="B_W_REF08" d="M 710 595.5 C 752.7142857142857 595.5, 752.7142857142857 595.5, 752.7142857142857 585.5 L 752.7142857142857 35.714285714285715 Q 752.7142857142857 28.714285714285715, 759.7142857142857 28.714285714285715 L 1504.2857142857142 28.714285714285715 Q 1511.2857142857142 28.714285714285715, 1511.2857142857142 35.714285714285715 L 1511.2857142857142 416 C 1511.2857142857142 426, 1511.2857142857142 426, 1554 426" opacity=".62" marker-end="url(#arrow)"><title>Leonard I. Wassenaar · Author of → Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title></path>
-<path data-edge-id="R059" data-source="B_P_WASSENAAR" data-target="B_O_ENV_CANADA" d="M 710 590.5 C 752 590.5, 752 156.5, 794 156.5" opacity=".62" marker-end="url(#arrow)"><title>Leonard I. Wassenaar · Affiliated with → Environment Canada</title></path>
-<path data-edge-id="R060" data-source="B_P_HOBSON" data-target="B_W_REF08" d="M 710 626.5 C 754.7142857142857 626.5, 754.7142857142857 626.5, 754.7142857142857 616.5 L 754.7142857142857 44.714285714285715 Q 754.7142857142857 37.714285714285715, 761.7142857142857 37.714285714285715 L 1502.2857142857142 37.714285714285715 Q 1509.2857142857142 37.714285714285715, 1509.2857142857142 44.714285714285715 L 1509.2857142857142 421 C 1509.2857142857142 431, 1509.2857142857142 431, 1554 431" opacity=".62" marker-end="url(#arrow)"><title>Keith A. Hobson · Author of → Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title></path>
-<path data-edge-id="R061" data-source="B_P_HOBSON" data-target="B_O_ENV_CANADA" d="M 710 621.5 C 752 621.5, 752 161.5, 794 161.5" opacity=".62" marker-end="url(#arrow)"><title>Keith A. Hobson · Affiliated with → Environment Canada</title></path>
-<path data-edge-id="R062" data-source="O_USDA_ARS" data-target="C_O_POOL" d="M 1470 86 C 1494 86, 1494 86, 1494 70.5 S 1494 55, 1470 55" opacity=".62" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → ARS–ABSTC grant pool</title></path>
-<path data-edge-id="R063" data-source="O_ABSTC" data-target="C_O_POOL" d="M 1470 244.5 C 1494 244.5, 1494 244.5, 1494 155.25 S 1494 66, 1470 66" opacity=".62" marker-end="url(#arrow)"><title>Agricultural Biotechnology Stewardship Technical Committee · Funded → ARS–ABSTC grant pool</title></path>
-<path data-edge-id="R064" data-source="C_O_POOL" data-target="W_SEARS2001" d="M 1470 62.333333333333336 C 1512 62.333333333333336, 1512 117, 1554 117" opacity=".62" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R065" data-source="C_O_POOL" data-target="W_STANLEYHORN2001" d="M 1470 58.666666666666664 C 1512 58.666666666666664, 1512 87.6923076923077, 1554 87.6923076923077" opacity=".62" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R066" data-source="C_O_POOL" data-target="C_W_PLEASANTS2001" d="M 1470 73.33333333333333 C 1512 73.33333333333333, 1512 746, 1554 746" opacity=".62" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Pleasants et al. 2001 pollen deposition</title></path>
-<path data-edge-id="R067" data-source="C_O_POOL" data-target="C_W_HELLMICH2001" d="M 1470 77 C 1512 77, 1512 777, 1554 777" opacity=".62" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Hellmich et al. 2001 toxicity</title></path>
-<path data-edge-id="R068" data-source="O_MONSANTO" data-target="O_ABSTC" d="M 1470 314 C 1494 314, 1494 314, 1494 281.75 S 1494 249.5, 1470 249.5" opacity=".62" marker-end="url(#arrow)"><title>Monsanto Company · Member of → Agricultural Biotechnology Stewardship Technical Committee</title></path>
-<path data-edge-id="R069" data-source="O_SYNGENTA" data-target="O_ABSTC" d="M 1470 748 C 1494 748, 1494 748, 1494 503.75 S 1494 259.5, 1470 259.5" opacity=".62" marker-end="url(#arrow)"><title>Syngenta Seeds, Inc. · Member of → Agricultural Biotechnology Stewardship Technical Committee</title></path>
-<path data-edge-id="R070" data-source="P_LOSEY" data-target="O_MONSANTO" d="M 710 62.857142857142854 C 752 62.857142857142854, 752 311.5, 794 311.5" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Contacted → Monsanto Company</title></path>
-<path data-edge-id="R071" data-source="P_LOSEY" data-target="O_NOVARTIS" d="M 710 73.85714285714286 C 752 73.85714285714286, 752 717, 794 717" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Contacted → Novartis</title></path>
-<path data-edge-id="R072" data-source="P_SACHS" data-target="C_O_PANEL" d="M 710 197.5 C 752 197.5, 752 404.5, 794 404.5" opacity=".62" marker-end="url(#arrow)"><title>Eric Sachs · Member of → 2000 monarch research steering committee</title></path>
-<path data-edge-id="R073" data-source="P_MELLON" data-target="C_O_PANEL" d="M 710 228.5 C 752 228.5, 752 409.5, 794 409.5" opacity=".62" marker-end="url(#arrow)"><title>Margaret Mellon · Member of → 2000 monarch research steering committee</title></path>
-<path data-edge-id="R074" data-source="P_SACHS" data-target="O_MONSANTO" d="M 710 192.5 C 752 192.5, 752 316.5, 794 316.5" opacity=".62" marker-end="url(#arrow)"><title>Eric Sachs · Affiliated with → Monsanto Company</title></path>
-<path data-edge-id="R075" data-source="P_MELLON" data-target="O_UCS" d="M 710 218.5 C 752 218.5, 752 342.5, 794 342.5" opacity=".62" marker-end="url(#arrow)"><title>Margaret Mellon · Affiliated with → Union of Concerned Scientists</title></path>
-<path data-edge-id="R076" data-source="C_O_PANEL" data-target="C_O_POOL" d="M 1470 407 C 1494 407, 1494 407, 1494 238.33333333333334 S 1494 69.66666666666667, 1470 69.66666666666667" opacity=".62" marker-end="url(#arrow)"><title>2000 monarch research steering committee · Selected projects for → ARS–ABSTC grant pool</title></path>
-<path data-edge-id="R077" data-source="O_USDA_ARS" data-target="C_W_ANDERSON2005" d="M 1470 94.8 C 1512 94.8, 1512 351.5, 1554 351.5" opacity=".62" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → Anderson et al. 2005 anthers and pollen</title></path>
-<path data-edge-id="R078" data-source="O_EPA" data-target="C_W_ANDERSON2005" d="M 1470 130.2 C 1512 130.2, 1512 356.5, 1554 356.5" opacity=".62" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Funded → Anderson et al. 2005 anthers and pollen</title></path>
-<path data-edge-id="R079" data-source="O_ABSTC" data-target="C_W_ANDERSON2005" d="M 1470 254.5 C 1512 254.5, 1512 361.5, 1554 361.5" opacity=".62" marker-end="url(#arrow)"><title>Agricultural Biotechnology Stewardship Technical Committee · Funded → Anderson et al. 2005 anthers and pollen</title></path>
-<path data-edge-id="R080" data-source="C_O_HATCH" data-target="C_W_ANDERSON2005" d="M 1470 810 C 1512 810, 1512 366.5, 1554 366.5" opacity=".62" marker-end="url(#arrow)"><title>Hatch Act and Iowa State funding · Funded → Anderson et al. 2005 anthers and pollen</title></path>
-<path data-edge-id="R081" data-source="C_O_CFIA" data-target="W_SEARS2001" d="M 1470 376 C 1512 376, 1512 130.75, 1554 130.75" opacity=".62" marker-end="url(#arrow)"><title>Canadian Food Inspection Agency · Funded → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R082" data-source="B_O_ENV_CANADA" data-target="W_SEARS2001" d="M 1470 159 C 1512 159, 1512 122.5, 1554 122.5" opacity=".62" marker-end="url(#arrow)"><title>Environment Canada · Funded → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R083" data-source="C_O_OMAFRA" data-target="W_SEARS2001" d="M 1470 435.5 C 1512 435.5, 1512 133.5, 1554 133.5" opacity=".62" marker-end="url(#arrow)"><title>Ontario Ministry of Agriculture, Food and Rural Affairs · Funded → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R084" data-source="C_O_MAES" data-target="W_SEARS2001" d="M 1470 471.5 C 1512 471.5, 1512 136.25, 1554 136.25" opacity=".62" marker-end="url(#arrow)"><title>Maryland Agricultural Experiment Station · Funded → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R085" data-source="C_O_LEOPOLD" data-target="W_SEARS2001" d="M 1470 502.5 C 1512 502.5, 1512 139, 1554 139" opacity=".62" marker-end="url(#arrow)"><title>Leopold Center for Sustainable Agriculture · Funded → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R086" data-source="C_O_CFIA" data-target="W_STANLEYHORN2001" d="M 1470 371 C 1512 371, 1512 96.15384615384616, 1554 96.15384615384616" opacity=".62" marker-end="url(#arrow)"><title>Canadian Food Inspection Agency · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R087" data-source="B_O_ENV_CANADA" data-target="W_STANLEYHORN2001" d="M 1470 154 C 1512 154, 1512 89.38461538461539, 1554 89.38461538461539" opacity=".62" marker-end="url(#arrow)"><title>Environment Canada · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R088" data-source="C_O_ONTARIO" data-target="W_STANLEYHORN2001" d="M 1470 779 C 1512 779, 1512 106.3076923076923, 1554 106.3076923076923" opacity=".62" marker-end="url(#arrow)"><title>Ontario Corn Growers Association · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R089" data-source="C_O_MAES" data-target="W_STANLEYHORN2001" d="M 1470 466.5 C 1512 466.5, 1512 99.53846153846153, 1554 99.53846153846153" opacity=".62" marker-end="url(#arrow)"><title>Maryland Agricultural Experiment Station · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R090" data-source="C_O_LEOPOLD" data-target="W_STANLEYHORN2001" d="M 1470 497.5 C 1512 497.5, 1512 101.23076923076923, 1554 101.23076923076923" opacity=".62" marker-end="url(#arrow)"><title>Leopold Center for Sustainable Agriculture · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R091" data-source="O_USDA_ARS" data-target="C_W_DIVELY2004" d="M 1470 99.2 C 1512 99.2, 1512 462, 1554 462" opacity=".62" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → Dively et al. 2004 chronic exposure</title></path>
-<path data-edge-id="R092" data-source="O_EPA" data-target="C_W_DIVELY2004" d="M 1470 134.6 C 1512 134.6, 1512 467, 1554 467" opacity=".62" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Funded → Dively et al. 2004 chronic exposure</title></path>
-<path data-edge-id="R093" data-source="C_O_NTOS" data-target="C_W_DIVELY2004" d="M 1470 903 C 1512 903, 1512 472, 1554 472" opacity=".62" marker-end="url(#arrow)"><title>ABSTC Nontarget Organism Subcommittee · Funded → Dively et al. 2004 chronic exposure</title></path>
-<path data-edge-id="R094" data-source="C_O_ILLINOISFOUND" data-target="C_W_ZANGERL2001" d="M 1470 841 C 1512 841, 1512 588.5, 1554 588.5" opacity=".62" marker-end="url(#arrow)"><title>University of Illinois Foundation · Funded → Zangerl et al. 2001 event 176</title></path>
-<path data-edge-id="R095" data-source="C_O_ILLINOISCAS" data-target="C_W_ZANGERL2001" d="M 1470 872 C 1512 872, 1512 593.5, 1554 593.5" opacity=".62" marker-end="url(#arrow)"><title>University of Illinois at Urbana-Champaign Center for Advanced Study · Funded → Zangerl et al. 2001 event 176</title></path>
-<path data-edge-id="R096" data-source="P_LOSEY" data-target="C_O_EARLY_INDUSTRY" d="M 710 77 C 752 77, 752 934, 794 934" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Declined research proposal → 1999 industry research arrangement</title></path>
-<path data-edge-id="R097" data-source="P_SPANGLER" data-target="P_LOSEY" d="M 710 810 C 734 810, 734 810, 734 442.7142857142857 S 734 75.42857142857143, 710 75.42857142857143" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Steven Spangler · Discussed research → John E. Losey</title></path>
-<path data-edge-id="R098" data-source="D_P_GOLDBURG" data-target="O_EDF" d="M 710 841 C 752 841, 752 531, 794 531" opacity=".62" marker-end="url(#arrow)"><title>Rebecca Goldburg · Affiliated with → Environmental Defense Fund</title></path>
-<path data-edge-id="R099" data-source="O_EDF" data-target="O_EPA" d="M 1470 531 C 1494 531, 1494 531, 1494 335 S 1494 139, 1470 139" opacity=".62" marker-end="url(#arrow)"><title>Environmental Defense Fund · Advocated to → US Environmental Protection Agency</title></path>
-<path data-edge-id="R100" data-source="P_MELLON" data-target="O_UCS" d="M 710 223.5 C 752 223.5, 752 347.5, 794 347.5" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Margaret Mellon · Affiliated with → Union of Concerned Scientists</title></path>
-<path data-edge-id="R101" data-source="O_UCS" data-target="W_LOSEY1999" d="M 1470 345 C 1512 345, 1512 71, 1554 71" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Union of Concerned Scientists · Public advocacy about → Transgenic pollen harms monarch larvae</title></path>
-<path data-edge-id="R102" data-source="D_P_WEISS" data-target="W_LOSEY1999" d="M 710 652.5 C 756.7142857142857 652.5, 756.7142857142857 652.5, 756.7142857142857 642.5 L 756.7142857142857 53.714285714285715 Q 756.7142857142857 46.714285714285715, 763.7142857142857 46.714285714285715 L 1500.2857142857142 46.714285714285715 Q 1507.2857142857142 46.714285714285715, 1507.2857142857142 53.714285714285715 L 1507.2857142857142 66 C 1507.2857142857142 76, 1507.2857142857142 76, 1554 76" opacity=".62" marker-end="url(#arrow)"><title>Rick Weiss · Reported on → Transgenic pollen harms monarch larvae</title></path>
-<path data-edge-id="R103" data-source="D_P_WEISS" data-target="D_O_WP" d="M 710 657.5 C 752 657.5, 752 996, 794 996" opacity=".62" marker-end="url(#arrow)"><title>Rick Weiss · Published in → The Washington Post</title></path>
-<path data-edge-id="R104" data-source="O_EPA" data-target="O_CORNELL" d="M 1470 125.8 C 1494 125.8, 1494 125.8, 1494 157.9 S 1494 190, 1470 190" opacity=".62" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Consulted → Cornell University</title></path>
-<path data-edge-id="R105" data-source="O_EPA" data-target="O_USDA_ARS" d="M 1470 117 C 1494 117, 1494 117, 1494 103.7 S 1494 90.4, 1470 90.4" opacity=".62" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Consulted → USDA Agricultural Research Service</title></path>
-<path data-edge-id="R106" data-source="O_USDA_ARS" data-target="J_WORKSHOP2000" d="M 1470 108 C 1494 108, 1494 108, 1494 598.5 S 1494 1089, 1470 1089" opacity=".62" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Organized research for → Monarch research workshop, February 2000</title></path>
-<path data-edge-id="R107" data-source="P_MELLON" data-target="W_SEARS2001" d="M 710 213.5 C 749 213.5, 749 213.5, 749 203.5 L 749 18 Q 749 11, 756 11 L 1508 11 Q 1515 11, 1515 18 L 1515 118 C 1515 128, 1515 128, 1554 128" opacity=".62" marker-end="url(#arrow)"><title>Margaret Mellon · Research steering → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R108" data-source="P_SACHS" data-target="W_SEARS2001" d="M 710 187.5 C 751 187.5, 751 187.5, 751 177.5 L 751 27 Q 751 20, 758 20 L 1506 20 Q 1513 20, 1513 27 L 1513 115.25 C 1513 125.25, 1513 125.25, 1554 125.25" opacity=".62" marker-end="url(#arrow)"><title>Eric Sachs · Research steering → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R109" data-source="O_EPA" data-target="W_SEARS2001" d="M 1470 121.4 C 1512 121.4, 1512 119.75, 1554 119.75" opacity=".62" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Used as evidence → Sears et al. 2001 risk assessment</title></path>
-<path data-edge-id="R110" data-source="D_O_BIO" data-target="J_SYMPOSIUM1999" d="M 1470 965 C 1494 965, 1494 965, 1494 777.75 S 1494 590.5, 1470 590.5" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>Biotechnology Industry Organization · Media briefing → Monarch symposium, November 2, 1999</title></path>
-<path data-edge-id="R111" data-source="O_USDA_ARS" data-target="J_ORIGIN_HOSTS" d="M 1470 103.6 C 1494 103.6, 1494 103.6, 1494 332.8 S 1494 562, 1470 562" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → 1998–1999 weed alternative-host research</title></path>
-<path data-edge-id="R112" data-source="P_LOSEY" data-target="J_ORIGIN_HOSTS" d="M 710 70.71428571428571 C 752 70.71428571428571, 752 562, 794 562" stroke-dasharray="5 4" opacity=".62" marker-end="url(#arrow)"><title>John E. Losey · Researched → 1998–1999 weed alternative-host research</title></path>
-<path data-edge-id="R113" data-source="P_SACHS" data-target="W_STANLEYHORN2001" d="M 710 182.5 C 753 182.5, 753 182.5, 753 172.5 L 753 36 Q 753 29, 760 29 L 1504 29 Q 1511 29, 1511 36 L 1511 81.07692307692308 C 1511 91.07692307692308, 1511 91.07692307692308, 1554 91.07692307692308" opacity=".62" marker-end="url(#arrow)"><title>Eric Sachs · Critically reviewed → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R114" data-source="M_P_TAYLOR" data-target="W_STANLEYHORN2001" d="M 710 872 C 755 872, 755 872, 755 862 L 755 45 Q 755 38, 762 38 L 1502 38 Q 1509 38, 1509 45 L 1509 98 C 1509 108, 1509 108, 1554 108" opacity=".62" marker-end="url(#arrow)"><title>Orley Taylor · Provided materials → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
-<path data-edge-id="R115" data-source="O_USDA" data-target="W_OBERHAUSER2001" d="M 1470 1027 C 1512 1027, 1512 215, 1554 215" opacity=".62" marker-end="url(#arrow)"><title>United States Department of Agriculture · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
-<path data-edge-id="R116" data-source="C_O_CFIA" data-target="W_OBERHAUSER2001" d="M 1470 381 C 1512 381, 1512 200, 1554 200" opacity=".62" marker-end="url(#arrow)"><title>Canadian Food Inspection Agency · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
-<path data-edge-id="R117" data-source="B_O_ENV_CANADA" data-target="W_OBERHAUSER2001" d="M 1470 164 C 1512 164, 1512 195, 1554 195" opacity=".62" marker-end="url(#arrow)"><title>Environment Canada · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
-<path data-edge-id="R118" data-source="C_O_OMAFRA" data-target="W_OBERHAUSER2001" d="M 1470 440.5 C 1512 440.5, 1512 205, 1554 205" opacity=".62" marker-end="url(#arrow)"><title>Ontario Ministry of Agriculture, Food and Rural Affairs · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
-<path data-edge-id="R119" data-source="P_OBERHAUSER" data-target="W_OBERHAUSER2001" d="M 710 903 C 757 903, 757 903, 757 893 L 757 54 Q 757 47, 764 47 L 1500 47 Q 1507 47, 1507 54 L 1507 200 C 1507 210, 1507 210, 1554 210" opacity=".62" marker-end="url(#arrow)"><title>Karen S. Oberhauser · Author of → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
-<path data-edge-id="R120" data-source="O_WORKING_GROUP1999" data-target="J_SYMPOSIUM1999" d="M 1470 1058 C 1494 1058, 1494 1058, 1494 826.75 S 1494 595.5, 1470 595.5" opacity=".62" marker-end="url(#arrow)"><title>Agricultural Biotechnology Stewardship Working Group · Organized symposium → Monarch symposium, November 2, 1999</title></path>
+<text x="40" y="45" font-size="30" font-weight="700">Monarch Butterfly Paper · Full Research Network</text>
+<text x="40" y="69" font-size="14" fill="#536881">1995–2005 · 86 nodes / 120 relationships</text>
+<path d="M 1882 64 h 22" fill="none" stroke="#8295ad" stroke-width="1.7" stroke-dasharray="5 4"/>
+<text x="1914" y="68" font-size="12" fill="#536881">Dashed: grade C · Arrows: relationship direction</text>
+<g data-tier="0" aria-label="Researchers">
+<rect class="tier" x="28" y="99" width="2191" height="255" rx="13" fill="#f8fbff" stroke="#d5e1ee"/>
+<circle cx="53" cy="128" r="5.5" fill="#233449"/>
+<text x="47" y="153" font-size="16" font-weight="700" fill="#233449">Researchers</text>
+<text x="47" y="176" font-size="13" fill="#536881">29 nodes</text></g>
+<g data-tier="1" aria-label="Organizations &amp; Projects">
+<rect class="tier" x="28" y="464" width="2191" height="457" rx="13" fill="#ecf2fa" stroke="#d5e1ee"/>
+<path d="M 53 487.5 l 5.5 5.5 -5.5 5.5 -5.5 -5.5 Z" fill="#55657D"/>
+<text x="47" y="518" font-size="16" font-weight="700" fill="#55657D">Organizations</text>
+<text x="47" y="537" font-size="16" font-weight="700" fill="#55657D">&amp; Projects</text>
+<text x="47" y="560" font-size="13" fill="#536881">35 nodes</text></g>
+<g data-tier="2" aria-label="Papers &amp; Events">
+<rect class="tier" x="28" y="1052" width="2191" height="415" rx="13" fill="#f8fbff" stroke="#d5e1ee"/>
+<rect x="47.5" y="1075.5" width="11" height="11" rx="2" fill="#1266BF"/>
+<text x="47" y="1106" font-size="16" font-weight="700" fill="#1266BF">Papers</text>
+<text x="47" y="1125" font-size="16" font-weight="700" fill="#1266BF">&amp; Events</text>
+<text x="47" y="1148" font-size="13" fill="#536881">22 nodes</text></g>
+<g fill="none" stroke="#8da1b9" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+<path class="relation" data-edge-id="R001" data-source="P_LOSEY" data-target="W_LOSEY1999" d="M 347.00 123.50 L 341.00 123.50 C 337.69 123.50, 335.00 126.19, 335.00 129.50 L 335.00 357.00 C 335.00 362.52, 330.52 367.00, 325.00 367.00 L 193.00 367.00 C 187.48 367.00, 183.00 371.48, 183.00 377.00 L 183.00 924.00 C 183.00 929.52, 187.48 934.00, 193.00 934.00 L 325.00 934.00 C 330.52 934.00, 335.00 938.48, 335.00 944.00 L 335.00 1101.00 C 335.00 1104.31, 337.69 1107.00, 341.00 1107.00 L 347.00 1107.00" opacity=".36" marker-end="url(#arrow)"><title>John E. Losey · Author of → Transgenic pollen harms monarch larvae</title></path>
+<path class="relation" data-edge-id="R002" data-source="P_RAYOR" data-target="W_LOSEY1999" d="M 996.00 130.50 L 990.00 130.50 C 986.69 130.50, 984.00 133.19, 984.00 136.50 L 984.00 360.00 C 984.00 365.52, 979.52 370.00, 974.00 370.00 L 196.00 370.00 C 190.48 370.00, 186.00 374.48, 186.00 380.00 L 186.00 927.00 C 186.00 932.52, 190.48 937.00, 196.00 937.00 L 319.00 937.00 C 324.52 937.00, 329.00 941.48, 329.00 947.00 L 329.00 1116.00 C 329.00 1120.97, 333.03 1125.00, 338.00 1125.00 L 347.00 1125.00" opacity=".36" marker-end="url(#arrow)"><title>Linda S. Rayor · Author of → Transgenic pollen harms monarch larvae</title></path>
+<path class="relation" data-edge-id="R003" data-source="P_CARTER" data-target="W_LOSEY1999" d="M 1304.00 130.50 L 1298.00 130.50 C 1294.69 130.50, 1292.00 133.19, 1292.00 136.50 L 1292.00 363.00 C 1292.00 368.52, 1287.52 373.00, 1282.00 373.00 L 199.00 373.00 C 193.48 373.00, 189.00 377.48, 189.00 383.00 L 189.00 930.00 C 189.00 935.52, 193.48 940.00, 199.00 940.00 L 316.00 940.00 C 321.52 940.00, 326.00 944.48, 326.00 950.00 L 326.00 1118.00 C 326.00 1123.52, 330.48 1128.00, 336.00 1128.00 L 347.00 1128.00" opacity=".36" marker-end="url(#arrow)"><title>Maureen E. Carter · Author of → Transgenic pollen harms monarch larvae</title></path>
+<path class="relation" data-edge-id="R004" data-source="P_LOSEY" data-target="O_CORNELL" d="M 347.00 143.21 L 309.00 143.21 C 303.48 143.21, 299.00 147.69, 299.00 153.21 L 299.00 438.00 C 299.00 443.52, 303.48 448.00, 309.00 448.00 L 1581.00 448.00 C 1586.52 448.00, 1591.00 452.48, 1591.00 458.00 L 1591.00 494.00 C 1591.00 497.31, 1593.69 500.00, 1597.00 500.00 L 1603.00 500.00" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Affiliated with → Cornell University</title></path>
+<path class="relation" data-edge-id="R005" data-source="P_RAYOR" data-target="O_CORNELL" d="M 996.00 139.50 L 985.00 139.50 C 979.48 139.50, 975.00 143.98, 975.00 149.50 L 975.00 384.00 C 975.00 389.52, 979.48 394.00, 985.00 394.00 L 1578.00 394.00 C 1583.52 394.00, 1588.00 398.48, 1588.00 404.00 L 1588.00 495.50 C 1588.00 499.64, 1591.36 503.00, 1595.50 503.00 L 1603.00 503.00" opacity=".53" marker-end="url(#arrow)"><title>Linda S. Rayor · Affiliated with → Cornell University</title></path>
+<path class="relation" data-edge-id="R006" data-source="P_CARTER" data-target="O_CORNELL" d="M 1304.00 139.50 L 1293.00 139.50 C 1287.48 139.50, 1283.00 143.98, 1283.00 149.50 L 1283.00 381.00 C 1283.00 386.52, 1287.48 391.00, 1293.00 391.00 L 1575.00 391.00 C 1580.52 391.00, 1585.00 395.48, 1585.00 401.00 L 1585.00 500.00 C 1585.00 504.97, 1589.03 509.00, 1594.00 509.00 L 1603.00 509.00" opacity=".53" marker-end="url(#arrow)"><title>Maureen E. Carter · Affiliated with → Cornell University</title></path>
+<path class="relation" data-edge-id="R007" data-source="P_RAYOR" data-target="P_BROWER" d="M 996.00 133.50 L 988.50 133.50 C 984.36 133.50, 981.00 136.86, 981.00 141.00 L 981.00 402.00 C 981.00 407.52, 976.52 412.00, 971.00 412.00 L 662.00 412.00 C 656.48 412.00, 652.00 407.52, 652.00 402.00 L 652.00 151.00 C 652.00 145.48, 656.48 141.00, 662.00 141.00 L 676.00 141.00" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>Linda S. Rayor · Contacted → Lincoln Brower</title></path>
+<path class="relation" data-edge-id="R008" data-source="P_LOSEY" data-target="P_BROWER" d="M 347.00 130.07 L 333.00 130.07 C 327.48 130.07, 323.00 134.55, 323.00 140.07 L 323.00 375.00 C 323.00 380.52, 327.48 385.00, 333.00 385.00 L 654.00 385.00 C 659.52 385.00, 664.00 380.52, 664.00 375.00 L 664.00 135.00 C 664.00 131.69, 666.69 129.00, 670.00 129.00 L 676.00 129.00" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Discussed → Lincoln Brower</title></path>
+<path class="relation" data-edge-id="R009" data-source="P_RAYOR" data-target="O_KANSAS" d="M 996.00 136.50 L 987.00 136.50 C 982.03 136.50, 978.00 140.53, 978.00 145.50 L 978.00 411.00 C 978.00 416.52, 973.52 421.00, 968.00 421.00 L 665.00 421.00 C 659.48 421.00, 655.00 425.48, 655.00 431.00 L 655.00 710.50 C 655.00 716.02, 659.48 720.50, 665.00 720.50 L 676.00 720.50" opacity=".53" marker-end="url(#arrow)"><title>Linda S. Rayor · Earned degree from → University of Kansas</title></path>
+<path class="relation" data-edge-id="R010" data-source="P_LOSEY" data-target="O_MARYLAND" d="M 347.00 126.79 L 338.00 126.79 C 333.03 126.79, 329.00 130.82, 329.00 135.79 L 329.00 373.00 C 329.00 374.66, 330.34 376.00, 332.00 376.00 L 332.00 376.00 C 333.66 376.00, 335.00 377.34, 335.00 379.00 L 335.00 714.50 C 335.00 717.81, 337.69 720.50, 341.00 720.50 L 347.00 720.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Earned degree from → University of Maryland</title></path>
+<path class="relation" data-edge-id="R011" data-source="P_LOSEY" data-target="P_DENNO" d="M 347.00 135.00 L 324.00 135.00 C 318.48 135.00, 314.00 139.48, 314.00 145.00 L 314.00 381.00 C 314.00 386.52, 318.48 391.00, 324.00 391.00 L 962.00 391.00 C 967.52 391.00, 972.00 386.52, 972.00 381.00 L 972.00 189.50 C 972.00 183.98, 976.48 179.50, 982.00 179.50 L 996.00 179.50" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Co-authored with → Robert F. Denno</title></path>
+<path class="relation" data-edge-id="R012" data-source="P_LOSEY" data-target="W_STANLEYHORN2001" d="M 347.00 131.71 L 330.00 131.71 C 324.48 131.71, 320.00 136.19, 320.00 141.71 L 320.00 366.00 C 320.00 371.52, 315.52 376.00, 310.00 376.00 L 202.00 376.00 C 196.48 376.00, 192.00 380.48, 192.00 386.00 L 192.00 933.00 C 192.00 938.52, 196.48 943.00, 202.00 943.00 L 654.00 943.00 C 659.52 943.00, 664.00 947.48, 664.00 953.00 L 664.00 1101.00 C 664.00 1104.31, 666.69 1107.00, 670.00 1107.00 L 676.00 1107.00" opacity=".36" marker-end="url(#arrow)"><title>John E. Losey · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R013" data-source="P_LOSEY" data-target="A_W_REFUGE2001" d="M 347.00 128.43 L 336.00 128.43 C 330.48 128.43, 326.00 132.91, 326.00 138.43 L 326.00 369.00 C 326.00 374.52, 321.52 379.00, 316.00 379.00 L 205.00 379.00 C 199.48 379.00, 195.00 383.48, 195.00 389.00 L 195.00 936.00 C 195.00 941.52, 199.48 946.00, 205.00 946.00 L 301.00 946.00 C 306.52 946.00, 311.00 950.48, 311.00 956.00 L 311.00 1327.00 C 311.00 1332.52, 315.48 1337.00, 321.00 1337.00 L 347.00 1337.00" opacity=".36" marker-end="url(#arrow)"><title>John E. Losey · Author of → Evaluation of Noncorn Host Plants as a Refuge</title></path>
+<path class="relation" data-edge-id="R014" data-source="P_CARTER" data-target="A_W_REFUGE2001" d="M 1304.00 133.50 L 1296.50 133.50 C 1292.36 133.50, 1289.00 136.86, 1289.00 141.00 L 1289.00 372.00 C 1289.00 377.52, 1284.52 382.00, 1279.00 382.00 L 208.00 382.00 C 202.48 382.00, 198.00 386.48, 198.00 392.00 L 198.00 939.00 C 198.00 944.52, 202.48 949.00, 208.00 949.00 L 298.00 949.00 C 303.52 949.00, 308.00 953.48, 308.00 959.00 L 308.00 1330.00 C 308.00 1335.52, 312.48 1340.00, 318.00 1340.00 L 347.00 1340.00" opacity=".36" marker-end="url(#arrow)"><title>Maureen E. Carter · Author of → Evaluation of Noncorn Host Plants as a Refuge</title></path>
+<path class="relation" data-edge-id="R015" data-source="P_LOSEY" data-target="A_W_STEM2002" d="M 347.00 133.36 L 327.00 133.36 C 321.48 133.36, 317.00 137.83, 317.00 143.36 L 317.00 375.00 C 317.00 380.52, 312.52 385.00, 307.00 385.00 L 211.00 385.00 C 205.48 385.00, 201.00 389.48, 201.00 395.00 L 201.00 942.00 C 201.00 947.52, 205.48 952.00, 211.00 952.00 L 603.00 952.00 C 608.52 952.00, 613.00 956.48, 613.00 962.00 L 613.00 1327.00 C 613.00 1332.52, 617.48 1337.00, 623.00 1337.00 L 676.00 1337.00" stroke-dasharray="5 4" opacity=".36" marker-end="url(#arrow)"><title>John E. Losey · Author of → The effect of stem diameter on European corn borer</title></path>
+<path class="relation" data-edge-id="R016" data-source="P_CARTER" data-target="A_W_STEM2002" d="M 1304.00 136.50 L 1295.00 136.50 C 1290.03 136.50, 1286.00 140.53, 1286.00 145.50 L 1286.00 378.00 C 1286.00 383.52, 1281.52 388.00, 1276.00 388.00 L 214.00 388.00 C 208.48 388.00, 204.00 392.48, 204.00 398.00 L 204.00 945.00 C 204.00 950.52, 208.48 955.00, 214.00 955.00 L 600.00 955.00 C 605.52 955.00, 610.00 959.48, 610.00 965.00 L 610.00 1330.00 C 610.00 1335.52, 614.48 1340.00, 620.00 1340.00 L 676.00 1340.00" stroke-dasharray="5 4" opacity=".36" marker-end="url(#arrow)"><title>Maureen E. Carter · Author of → The effect of stem diameter on European corn borer</title></path>
+<path class="relation" data-edge-id="R017" data-source="P_LOSEY" data-target="B_W_DENNO1998" d="M 347.00 138.29 L 318.00 138.29 C 312.48 138.29, 308.00 142.76, 308.00 148.29 L 308.00 381.00 C 308.00 386.52, 303.52 391.00, 298.00 391.00 L 217.00 391.00 C 211.48 391.00, 207.00 395.48, 207.00 401.00 L 207.00 948.00 C 207.00 953.52, 211.48 958.00, 217.00 958.00 L 935.00 958.00 C 940.52 958.00, 945.00 962.48, 945.00 968.00 L 945.00 1327.00 C 945.00 1332.52, 949.48 1337.00, 955.00 1337.00 L 996.00 1337.00" opacity=".36" marker-end="url(#arrow)"><title>John E. Losey · Author of → Positive predator–predator interactions</title></path>
+<path class="relation" data-edge-id="R018" data-source="P_DENNO" data-target="B_W_DENNO1998" d="M 996.00 182.50 L 979.00 182.50 C 973.48 182.50, 969.00 186.98, 969.00 192.50 L 969.00 384.00 C 969.00 389.52, 964.52 394.00, 959.00 394.00 L 220.00 394.00 C 214.48 394.00, 210.00 398.48, 210.00 404.00 L 210.00 951.00 C 210.00 956.52, 214.48 961.00, 220.00 961.00 L 932.00 961.00 C 937.52 961.00, 942.00 965.48, 942.00 971.00 L 942.00 1330.00 C 942.00 1335.52, 946.48 1340.00, 952.00 1340.00 L 996.00 1340.00" opacity=".36" marker-end="url(#arrow)"><title>Robert F. Denno · Author of → Positive predator–predator interactions</title></path>
+<path class="relation" data-edge-id="R019" data-source="W_LOSEY1999" data-target="B_W_NCR602" d="M 347.00 1143.00 L 333.00 1143.00 C 327.48 1143.00, 323.00 1147.48, 323.00 1153.00 L 323.00 1482.00 C 323.00 1487.52, 327.48 1492.00, 333.00 1492.00 L 1862.00 1492.00 C 1867.52 1492.00, 1872.00 1487.52, 1872.00 1482.00 L 1872.00 1132.00 C 1872.00 1126.48, 1876.48 1122.00, 1882.00 1122.00 L 1902.00 1122.00" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Bt Corn and European Corn Borer</title></path>
+<path class="relation" data-edge-id="R020" data-source="P_HELLMICH" data-target="B_W_NCR602" d="M 1304.00 182.50 L 1287.00 182.50 C 1281.48 182.50, 1277.00 186.98, 1277.00 192.50 L 1277.00 393.00 C 1277.00 398.52, 1281.48 403.00, 1287.00 403.00 L 2160.00 403.00 C 2165.52 403.00, 2170.00 407.48, 2170.00 413.00 L 2170.00 933.00 C 2170.00 938.52, 2165.52 943.00, 2160.00 943.00 L 1900.00 943.00 C 1894.48 943.00, 1890.00 947.48, 1890.00 953.00 L 1890.00 1119.00 C 1890.00 1122.31, 1892.69 1125.00, 1896.00 1125.00 L 1902.00 1125.00" opacity=".36" marker-end="url(#arrow)"><title>Richard L. Hellmich · Edited → Bt Corn and European Corn Borer</title></path>
+<path class="relation" data-edge-id="R021" data-source="B_P_HUTCHISON" data-target="B_W_NCR602" d="M 1603.00 273.00 L 1577.00 273.00 C 1571.48 273.00, 1567.00 277.48, 1567.00 283.00 L 1567.00 363.00 C 1567.00 368.52, 1571.48 373.00, 1577.00 373.00 L 2163.00 373.00 C 2168.52 373.00, 2173.00 377.48, 2173.00 383.00 L 2173.00 924.00 C 2173.00 929.52, 2168.52 934.00, 2163.00 934.00 L 1897.00 934.00 C 1891.48 934.00, 1887.00 938.48, 1887.00 944.00 L 1887.00 1120.50 C 1887.00 1124.64, 1890.36 1128.00, 1894.50 1128.00 L 1902.00 1128.00" opacity=".36" marker-end="url(#arrow)"><title>William D. Hutchison · Edited → Bt Corn and European Corn Borer</title></path>
+<path class="relation" data-edge-id="R022" data-source="B_P_ANDOW" data-target="B_W_NCR602" d="M 1902.00 273.00 L 1876.00 273.00 C 1870.48 273.00, 1866.00 277.48, 1866.00 283.00 L 1866.00 384.00 C 1866.00 389.52, 1870.48 394.00, 1876.00 394.00 L 2166.00 394.00 C 2171.52 394.00, 2176.00 398.48, 2176.00 404.00 L 2176.00 927.00 C 2176.00 932.52, 2171.52 937.00, 2166.00 937.00 L 1894.00 937.00 C 1888.48 937.00, 1884.00 941.48, 1884.00 947.00 L 1884.00 1122.00 C 1884.00 1126.97, 1888.03 1131.00, 1893.00 1131.00 L 1902.00 1131.00" opacity=".36" marker-end="url(#arrow)"><title>David A. Andow · Contributed to → Bt Corn and European Corn Borer</title></path>
+<path class="relation" data-edge-id="R023" data-source="P_HELLMICH" data-target="W_STANLEYHORN2001" d="M 1304.00 179.50 L 1290.00 179.50 C 1284.48 179.50, 1280.00 183.98, 1280.00 189.50 L 1280.00 387.00 C 1280.00 392.52, 1275.52 397.00, 1270.00 397.00 L 223.00 397.00 C 217.48 397.00, 213.00 401.48, 213.00 407.00 L 213.00 954.00 C 213.00 959.52, 217.48 964.00, 223.00 964.00 L 633.00 964.00 C 638.52 964.00, 643.00 968.48, 643.00 974.00 L 643.00 1118.00 C 643.00 1123.52, 647.48 1128.00, 653.00 1128.00 L 676.00 1128.00" opacity=".36" marker-end="url(#arrow)"><title>Richard L. Hellmich · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R024" data-source="P_OBRYCKI" data-target="W_STANLEYHORN2001" d="M 1603.00 179.50 L 1589.00 179.50 C 1583.48 179.50, 1579.00 183.98, 1579.00 189.50 L 1579.00 411.00 C 1579.00 416.52, 1583.48 421.00, 1589.00 421.00 L 2169.00 421.00 C 2174.52 421.00, 2179.00 425.48, 2179.00 431.00 L 2179.00 945.00 C 2179.00 950.52, 2174.52 955.00, 2169.00 955.00 L 644.00 955.00 C 638.48 955.00, 634.00 959.48, 634.00 965.00 L 634.00 1127.00 C 634.00 1132.52, 638.48 1137.00, 644.00 1137.00 L 676.00 1137.00" opacity=".36" marker-end="url(#arrow)"><title>John J. Obrycki · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R025" data-source="B_P_STANLEYHORN" data-target="W_STANLEYHORN2001" d="M 996.00 273.00 L 970.00 273.00 C 964.48 273.00, 960.00 277.48, 960.00 283.00 L 960.00 390.00 C 960.00 395.52, 955.52 400.00, 950.00 400.00 L 226.00 400.00 C 220.48 400.00, 216.00 404.48, 216.00 410.00 L 216.00 957.00 C 216.00 962.52, 220.48 967.00, 226.00 967.00 L 645.00 967.00 C 650.52 967.00, 655.00 971.48, 655.00 977.00 L 655.00 1106.00 C 655.00 1111.52, 659.48 1116.00, 665.00 1116.00 L 676.00 1116.00" opacity=".36" marker-end="url(#arrow)"><title>Diane E. Stanley-Horn · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R026" data-source="P_SEARS" data-target="W_STANLEYHORN2001" d="M 1304.00 273.00 L 1278.00 273.00 C 1272.48 273.00, 1268.00 277.48, 1268.00 283.00 L 1268.00 393.00 C 1268.00 398.52, 1263.52 403.00, 1258.00 403.00 L 229.00 403.00 C 223.48 403.00, 219.00 407.48, 219.00 413.00 L 219.00 960.00 C 219.00 965.52, 223.48 970.00, 229.00 970.00 L 630.00 970.00 C 635.52 970.00, 640.00 974.48, 640.00 980.00 L 640.00 1121.00 C 640.00 1126.52, 644.48 1131.00, 650.00 1131.00 L 676.00 1131.00" opacity=".36" marker-end="url(#arrow)"><title>Mark K. Sears · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R027" data-source="B_P_JESSE" data-target="W_STANLEYHORN2001" d="M 1902.00 179.50 L 1888.00 179.50 C 1882.48 179.50, 1878.00 183.98, 1878.00 189.50 L 1878.00 387.00 C 1878.00 392.52, 1882.48 397.00, 1888.00 397.00 L 2172.00 397.00 C 2177.52 397.00, 2182.00 401.48, 2182.00 407.00 L 2182.00 930.00 C 2182.00 935.52, 2177.52 940.00, 2172.00 940.00 L 638.00 940.00 C 632.48 940.00, 628.00 944.48, 628.00 950.00 L 628.00 1133.00 C 628.00 1138.52, 632.48 1143.00, 638.00 1143.00 L 676.00 1143.00" opacity=".36" marker-end="url(#arrow)"><title>Laura C. H. Jesse · Author of → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R028" data-source="P_LOSEY" data-target="B_W_BIOSCI2001" d="M 347.00 139.93 L 315.00 139.93 C 309.48 139.93, 305.00 144.41, 305.00 149.93 L 305.00 396.00 C 305.00 401.52, 300.52 406.00, 295.00 406.00 L 232.00 406.00 C 226.48 406.00, 222.00 410.48, 222.00 416.00 L 222.00 963.00 C 222.00 968.52, 226.48 973.00, 232.00 973.00 L 1267.00 973.00 C 1272.52 973.00, 1277.00 977.48, 1277.00 983.00 L 1277.00 1228.00 C 1277.00 1233.52, 1281.48 1238.00, 1287.00 1238.00 L 1304.00 1238.00" stroke-dasharray="5 4" opacity=".36" marker-end="url(#arrow)"><title>John E. Losey · Author of → Transgenic insecticidal corn</title></path>
+<path class="relation" data-edge-id="R029" data-source="P_OBRYCKI" data-target="B_W_BIOSCI2001" d="M 1603.00 182.50 L 1586.00 182.50 C 1580.48 182.50, 1576.00 186.98, 1576.00 192.50 L 1576.00 402.00 C 1576.00 407.52, 1580.48 412.00, 1586.00 412.00 L 2175.00 412.00 C 2180.52 412.00, 2185.00 416.48, 2185.00 422.00 L 2185.00 954.00 C 2185.00 959.52, 2180.52 964.00, 2175.00 964.00 L 1284.00 964.00 C 1278.48 964.00, 1274.00 968.48, 1274.00 974.00 L 1274.00 1231.00 C 1274.00 1236.52, 1278.48 1241.00, 1284.00 1241.00 L 1304.00 1241.00" stroke-dasharray="5 4" opacity=".36" marker-end="url(#arrow)"><title>John J. Obrycki · Author of → Transgenic insecticidal corn</title></path>
+<path class="relation" data-edge-id="R030" data-source="B_P_JESSE" data-target="B_W_BIOSCI2001" d="M 1902.00 182.50 L 1885.00 182.50 C 1879.48 182.50, 1875.00 186.98, 1875.00 192.50 L 1875.00 417.00 C 1875.00 422.52, 1879.48 427.00, 1885.00 427.00 L 2178.00 427.00 C 2183.52 427.00, 2188.00 431.48, 2188.00 437.00 L 2188.00 939.00 C 2188.00 944.52, 2183.52 949.00, 2178.00 949.00 L 1281.00 949.00 C 1275.48 949.00, 1271.00 953.48, 1271.00 959.00 L 1271.00 1234.00 C 1271.00 1239.52, 1275.48 1244.00, 1281.00 1244.00 L 1304.00 1244.00" stroke-dasharray="5 4" opacity=".36" marker-end="url(#arrow)"><title>Laura C. H. Jesse · Author of → Transgenic insecticidal corn</title></path>
+<path class="relation" data-edge-id="R031" data-source="W_LOSEY1999" data-target="B_W_REF02" d="M 347.00 1131.00 L 339.50 1131.00 C 335.36 1131.00, 332.00 1134.36, 332.00 1138.50 L 332.00 1491.00 C 332.00 1496.52, 336.48 1501.00, 342.00 1501.00 L 1249.00 1501.00 C 1254.52 1501.00, 1259.00 1496.52, 1259.00 1491.00 L 1259.00 1129.00 C 1259.00 1123.48, 1263.48 1119.00, 1269.00 1119.00 L 1304.00 1119.00" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
+<path class="relation" data-edge-id="R032" data-source="W_LOSEY1999" data-target="B_W_REF03" d="M 347.00 1140.00 L 336.00 1140.00 C 330.48 1140.00, 326.00 1144.48, 326.00 1150.00 L 326.00 1485.00 C 326.00 1490.52, 330.48 1495.00, 336.00 1495.00 L 1578.00 1495.00 C 1583.52 1495.00, 1588.00 1490.52, 1588.00 1485.00 L 1588.00 1346.00 C 1588.00 1341.86, 1591.36 1338.50, 1595.50 1338.50 L 1603.00 1338.50" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Dispersion and deposition of corn pollen from experimental sources</title></path>
+<path class="relation" data-edge-id="R033" data-source="W_LOSEY1999" data-target="B_W_REF04" d="M 347.00 1110.00 L 315.00 1110.00 C 309.48 1110.00, 305.00 1114.48, 305.00 1120.00 L 305.00 1474.00 C 305.00 1477.31, 302.31 1480.00, 299.00 1480.00 L 299.00 1480.00 C 295.69 1480.00, 293.00 1477.31, 293.00 1474.00 L 293.00 1246.50 C 293.00 1240.98, 297.48 1236.50, 303.00 1236.50 L 347.00 1236.50" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
+<path class="relation" data-edge-id="R034" data-source="W_LOSEY1999" data-target="B_W_REF05" d="M 347.00 1116.00 L 312.00 1116.00 C 306.48 1116.00, 302.00 1120.48, 302.00 1126.00 L 302.00 1479.00 C 302.00 1484.52, 306.48 1489.00, 312.00 1489.00 L 654.00 1489.00 C 659.52 1489.00, 664.00 1484.52, 664.00 1479.00 L 664.00 1242.50 C 664.00 1239.19, 666.69 1236.50, 670.00 1236.50 L 676.00 1236.50" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
+<path class="relation" data-edge-id="R035" data-source="W_LOSEY1999" data-target="B_W_REF06" d="M 347.00 1146.00 L 306.00 1146.00 C 300.48 1146.00, 296.00 1150.48, 296.00 1156.00 L 296.00 1473.00 C 296.00 1478.52, 300.48 1483.00, 306.00 1483.00 L 1880.00 1483.00 C 1885.52 1483.00, 1890.00 1478.52, 1890.00 1473.00 L 1890.00 1344.50 C 1890.00 1341.19, 1892.69 1338.50, 1896.00 1338.50 L 1902.00 1338.50" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Establishment of common milkweed (Asclepias syriaca) in corn, soybean, and wheat</title></path>
+<path class="relation" data-edge-id="R036" data-source="W_LOSEY1999" data-target="B_W_REF07" d="M 347.00 1113.00 L 341.00 1113.00 C 337.69 1113.00, 335.00 1115.69, 335.00 1119.00 L 335.00 1472.50 C 335.00 1476.64, 331.64 1480.00, 327.50 1480.00 L 327.50 1480.00 C 323.36 1480.00, 320.00 1476.64, 320.00 1472.50 L 320.00 1429.00 C 320.00 1423.48, 324.48 1419.00, 330.00 1419.00 L 347.00 1419.00" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Monarch butterfly orientation: missing pieces of a magnificent puzzle</title></path>
+<path class="relation" data-edge-id="R037" data-source="W_LOSEY1999" data-target="B_W_REF08" d="M 347.00 1137.00 L 338.00 1137.00 C 333.03 1137.00, 329.00 1141.03, 329.00 1146.00 L 329.00 1488.00 C 329.00 1493.52, 333.48 1498.00, 339.00 1498.00 L 1581.00 1498.00 C 1586.52 1498.00, 1591.00 1493.52, 1591.00 1488.00 L 1591.00 1244.00 C 1591.00 1240.69, 1593.69 1238.00, 1597.00 1238.00 L 1603.00 1238.00" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title></path>
+<path class="relation" data-edge-id="R038" data-source="W_LOSEY1999" data-target="B_W_REF09" d="M 347.00 1122.00 L 309.00 1122.00 C 303.48 1122.00, 299.00 1126.48, 299.00 1132.00 L 299.00 1476.00 C 299.00 1481.52, 303.48 1486.00, 309.00 1486.00 L 651.00 1486.00 C 656.52 1486.00, 661.00 1481.52, 661.00 1476.00 L 661.00 1426.50 C 661.00 1422.36, 664.36 1419.00, 668.50 1419.00 L 676.00 1419.00" opacity=".53" marker-end="url(#arrow)"><title>Transgenic pollen harms monarch larvae · Cites → Bt-corn resistance management</title></path>
+<path class="relation" data-edge-id="R039" data-source="B_P_FEARING" data-target="B_W_REF02" d="M 347.00 225.50 L 291.00 225.50 C 285.48 225.50, 281.00 229.98, 281.00 235.50 L 281.00 399.00 C 281.00 404.52, 276.52 409.00, 271.00 409.00 L 235.00 409.00 C 229.48 409.00, 225.00 413.48, 225.00 419.00 L 225.00 966.00 C 225.00 971.52, 229.48 976.00, 235.00 976.00 L 1282.00 976.00 C 1287.52 976.00, 1292.00 980.48, 1292.00 986.00 L 1292.00 1116.00 C 1292.00 1119.31, 1294.69 1122.00, 1298.00 1122.00 L 1304.00 1122.00" opacity=".36" marker-end="url(#arrow)"><title>Patricia L. Fearing · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
+<path class="relation" data-edge-id="R040" data-source="B_P_BROWN" data-target="B_W_REF02" d="M 676.00 225.50 L 650.00 225.50 C 644.48 225.50, 640.00 229.98, 640.00 235.50 L 640.00 402.00 C 640.00 407.52, 635.52 412.00, 630.00 412.00 L 238.00 412.00 C 232.48 412.00, 228.00 416.48, 228.00 422.00 L 228.00 969.00 C 228.00 974.52, 232.48 979.00, 238.00 979.00 L 1279.00 979.00 C 1284.52 979.00, 1289.00 983.48, 1289.00 989.00 L 1289.00 1117.50 C 1289.00 1121.64, 1292.36 1125.00, 1296.50 1125.00 L 1304.00 1125.00" opacity=".36" marker-end="url(#arrow)"><title>Devon Brown · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
+<path class="relation" data-edge-id="R041" data-source="B_P_VLACHOS" data-target="B_W_REF02" d="M 996.00 225.50 L 976.00 225.50 C 970.48 225.50, 966.00 229.98, 966.00 235.50 L 966.00 375.00 C 966.00 380.52, 970.48 385.00, 976.00 385.00 L 2181.00 385.00 C 2186.52 385.00, 2191.00 389.48, 2191.00 395.00 L 2191.00 993.00 C 2191.00 998.52, 2186.52 1003.00, 2181.00 1003.00 L 1296.00 1003.00 C 1290.48 1003.00, 1286.00 1007.48, 1286.00 1013.00 L 1286.00 1119.00 C 1286.00 1123.97, 1290.03 1128.00, 1295.00 1128.00 L 1304.00 1128.00" opacity=".36" marker-end="url(#arrow)"><title>Demetra Vlachos · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
+<path class="relation" data-edge-id="R042" data-source="B_P_MEGHJI" data-target="B_W_REF02" d="M 1304.00 228.50 L 1281.00 228.50 C 1275.48 228.50, 1271.00 232.98, 1271.00 238.50 L 1271.00 396.00 C 1271.00 401.52, 1275.48 406.00, 1281.00 406.00 L 2184.00 406.00 C 2189.52 406.00, 2194.00 410.48, 2194.00 416.00 L 2194.00 978.00 C 2194.00 983.52, 2189.52 988.00, 2184.00 988.00 L 1293.00 988.00 C 1287.48 988.00, 1283.00 992.48, 1283.00 998.00 L 1283.00 1121.00 C 1283.00 1126.52, 1287.48 1131.00, 1293.00 1131.00 L 1304.00 1131.00" opacity=".36" marker-end="url(#arrow)"><title>Moez Meghji · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
+<path class="relation" data-edge-id="R043" data-source="B_P_PRIVALLE" data-target="B_W_REF02" d="M 1603.00 225.50 L 1583.00 225.50 C 1577.48 225.50, 1573.00 229.98, 1573.00 235.50 L 1573.00 378.00 C 1573.00 383.52, 1577.48 388.00, 1583.00 388.00 L 2187.00 388.00 C 2192.52 388.00, 2197.00 392.48, 2197.00 398.00 L 2197.00 957.00 C 2197.00 962.52, 2192.52 967.00, 2187.00 967.00 L 1290.00 967.00 C 1284.48 967.00, 1280.00 971.48, 1280.00 977.00 L 1280.00 1124.00 C 1280.00 1129.52, 1284.48 1134.00, 1290.00 1134.00 L 1304.00 1134.00" opacity=".36" marker-end="url(#arrow)"><title>Laura Privalle · Author of → Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title></path>
+<path class="relation" data-edge-id="R044" data-source="B_P_FEARING" data-target="B_O_CIBA_BIOTECH" d="M 347.00 228.50 L 288.00 228.50 C 282.48 228.50, 278.00 232.98, 278.00 238.50 L 278.00 423.00 C 278.00 428.52, 282.48 433.00, 288.00 433.00 L 1880.00 433.00 C 1885.52 433.00, 1890.00 437.48, 1890.00 443.00 L 1890.00 494.00 C 1890.00 497.31, 1892.69 500.00, 1896.00 500.00 L 1902.00 500.00" opacity=".53" marker-end="url(#arrow)"><title>Patricia L. Fearing · Affiliated with → Ciba Agricultural Biotechnology</title></path>
+<path class="relation" data-edge-id="R045" data-source="B_P_BROWN" data-target="B_O_CIBA_BIOTECH" d="M 676.00 228.50 L 647.00 228.50 C 641.48 228.50, 637.00 232.98, 637.00 238.50 L 637.00 366.00 C 637.00 371.52, 641.48 376.00, 647.00 376.00 L 1877.00 376.00 C 1882.52 376.00, 1887.00 380.48, 1887.00 386.00 L 1887.00 495.50 C 1887.00 499.64, 1890.36 503.00, 1894.50 503.00 L 1902.00 503.00" opacity=".53" marker-end="url(#arrow)"><title>Devon Brown · Affiliated with → Ciba Agricultural Biotechnology</title></path>
+<path class="relation" data-edge-id="R046" data-source="B_P_VLACHOS" data-target="B_O_CIBA_BIOTECH" d="M 996.00 228.50 L 973.00 228.50 C 967.48 228.50, 963.00 232.98, 963.00 238.50 L 963.00 369.00 C 963.00 374.52, 967.48 379.00, 973.00 379.00 L 1874.00 379.00 C 1879.52 379.00, 1884.00 383.48, 1884.00 389.00 L 1884.00 497.00 C 1884.00 501.97, 1888.03 506.00, 1893.00 506.00 L 1902.00 506.00" opacity=".53" marker-end="url(#arrow)"><title>Demetra Vlachos · Affiliated with → Ciba Agricultural Biotechnology</title></path>
+<path class="relation" data-edge-id="R047" data-source="B_P_PRIVALLE" data-target="B_O_CIBA_BIOTECH" d="M 1603.00 228.50 L 1580.00 228.50 C 1574.48 228.50, 1570.00 232.98, 1570.00 238.50 L 1570.00 372.00 C 1570.00 377.52, 1574.48 382.00, 1580.00 382.00 L 1871.00 382.00 C 1876.52 382.00, 1881.00 386.48, 1881.00 392.00 L 1881.00 499.00 C 1881.00 504.52, 1885.48 509.00, 1891.00 509.00 L 1902.00 509.00" opacity=".53" marker-end="url(#arrow)"><title>Laura Privalle · Affiliated with → Ciba Agricultural Biotechnology</title></path>
+<path class="relation" data-edge-id="R048" data-source="B_P_MEGHJI" data-target="B_O_CIBA_SEEDS" d="M 1304.00 225.50 L 1284.00 225.50 C 1278.48 225.50, 1274.00 229.98, 1274.00 235.50 L 1274.00 381.00 C 1274.00 386.52, 1269.52 391.00, 1264.00 391.00 L 988.00 391.00 C 982.48 391.00, 978.00 395.48, 978.00 401.00 L 978.00 711.50 C 978.00 716.47, 982.03 720.50, 987.00 720.50 L 996.00 720.50" opacity=".53" marker-end="url(#arrow)"><title>Moez Meghji · Affiliated with → Ciba Seeds</title></path>
+<path class="relation" data-edge-id="R049" data-source="B_P_MALCOLM" data-target="B_W_REF04" d="M 347.00 178.00 L 300.00 178.00 C 294.48 178.00, 290.00 182.48, 290.00 188.00 L 290.00 405.00 C 290.00 410.52, 285.52 415.00, 280.00 415.00 L 241.00 415.00 C 235.48 415.00, 231.00 419.48, 231.00 425.00 L 231.00 972.00 C 231.00 977.52, 235.48 982.00, 241.00 982.00 L 310.00 982.00 C 315.52 982.00, 320.00 986.48, 320.00 992.00 L 320.00 1229.50 C 320.00 1235.02, 324.48 1239.50, 330.00 1239.50 L 347.00 1239.50" opacity=".36" marker-end="url(#arrow)"><title>Stephen B. Malcolm · Author of → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
+<path class="relation" data-edge-id="R050" data-source="B_P_MALCOLM" data-target="B_W_REF05" d="M 347.00 184.00 L 294.00 184.00 C 288.48 184.00, 284.00 188.48, 284.00 194.00 L 284.00 408.00 C 284.00 413.52, 279.52 418.00, 274.00 418.00 L 244.00 418.00 C 238.48 418.00, 234.00 422.48, 234.00 428.00 L 234.00 975.00 C 234.00 980.52, 238.48 985.00, 244.00 985.00 L 612.00 985.00 C 617.52 985.00, 622.00 989.48, 622.00 995.00 L 622.00 1229.50 C 622.00 1235.02, 626.48 1239.50, 632.00 1239.50 L 676.00 1239.50" opacity=".36" marker-end="url(#arrow)"><title>Stephen B. Malcolm · Author of → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
+<path class="relation" data-edge-id="R051" data-source="B_P_MALCOLM" data-target="B_O_FLORIDA" d="M 347.00 181.00 L 297.00 181.00 C 291.48 181.00, 287.00 185.48, 287.00 191.00 L 287.00 399.00 C 287.00 404.52, 291.48 409.00, 297.00 409.00 L 654.00 409.00 C 659.52 409.00, 664.00 413.48, 664.00 419.00 L 664.00 567.50 C 664.00 570.81, 666.69 573.50, 670.00 573.50 L 676.00 573.50" opacity=".53" marker-end="url(#arrow)"><title>Stephen B. Malcolm · Affiliated with → University of Florida — Department of Zoology</title></path>
+<path class="relation" data-edge-id="R052" data-source="B_P_COCKRELL" data-target="B_W_REF04" d="M 676.00 178.00 L 659.00 178.00 C 653.48 178.00, 649.00 182.48, 649.00 188.00 L 649.00 411.00 C 649.00 416.52, 644.52 421.00, 639.00 421.00 L 247.00 421.00 C 241.48 421.00, 237.00 425.48, 237.00 431.00 L 237.00 978.00 C 237.00 983.52, 241.48 988.00, 247.00 988.00 L 304.00 988.00 C 309.52 988.00, 314.00 992.48, 314.00 998.00 L 314.00 1235.50 C 314.00 1241.02, 318.48 1245.50, 324.00 1245.50 L 347.00 1245.50" opacity=".36" marker-end="url(#arrow)"><title>Barbara J. Cockrell · Author of → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
+<path class="relation" data-edge-id="R053" data-source="B_P_COCKRELL" data-target="B_W_REF05" d="M 676.00 184.00 L 653.00 184.00 C 647.48 184.00, 643.00 188.48, 643.00 194.00 L 643.00 414.00 C 643.00 419.52, 638.52 424.00, 633.00 424.00 L 250.00 424.00 C 244.48 424.00, 240.00 428.48, 240.00 434.00 L 240.00 981.00 C 240.00 986.52, 244.48 991.00, 250.00 991.00 L 606.00 991.00 C 611.52 991.00, 616.00 995.48, 616.00 1001.00 L 616.00 1235.50 C 616.00 1241.02, 620.48 1245.50, 626.00 1245.50 L 676.00 1245.50" opacity=".36" marker-end="url(#arrow)"><title>Barbara J. Cockrell · Author of → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
+<path class="relation" data-edge-id="R054" data-source="B_P_COCKRELL" data-target="B_O_FLORIDA" d="M 676.00 181.00 L 656.00 181.00 C 650.48 181.00, 646.00 185.48, 646.00 191.00 L 646.00 373.00 C 646.00 376.31, 648.69 379.00, 652.00 379.00 L 652.00 379.00 C 655.31 379.00, 658.00 381.69, 658.00 385.00 L 658.00 570.50 C 658.00 575.47, 662.03 579.50, 667.00 579.50 L 676.00 579.50" opacity=".53" marker-end="url(#arrow)"><title>Barbara J. Cockrell · Affiliated with → University of Florida — Department of Zoology</title></path>
+<path class="relation" data-edge-id="R055" data-source="P_BROWER" data-target="B_W_REF04" d="M 676.00 132.00 L 668.50 132.00 C 664.36 132.00, 661.00 135.36, 661.00 139.50 L 661.00 417.00 C 661.00 422.52, 656.52 427.00, 651.00 427.00 L 253.00 427.00 C 247.48 427.00, 243.00 431.48, 243.00 437.00 L 243.00 984.00 C 243.00 989.52, 247.48 994.00, 253.00 994.00 L 307.00 994.00 C 312.52 994.00, 317.00 998.48, 317.00 1004.00 L 317.00 1232.50 C 317.00 1238.02, 321.48 1242.50, 327.00 1242.50 L 347.00 1242.50" opacity=".36" marker-end="url(#arrow)"><title>Lincoln Brower · Author of → Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title></path>
+<path class="relation" data-edge-id="R056" data-source="P_BROWER" data-target="B_W_REF05" d="M 676.00 138.00 L 665.00 138.00 C 659.48 138.00, 655.00 142.48, 655.00 148.00 L 655.00 420.00 C 655.00 425.52, 650.52 430.00, 645.00 430.00 L 256.00 430.00 C 250.48 430.00, 246.00 434.48, 246.00 440.00 L 246.00 987.00 C 246.00 992.52, 250.48 997.00, 256.00 997.00 L 609.00 997.00 C 614.52 997.00, 619.00 1001.48, 619.00 1007.00 L 619.00 1232.50 C 619.00 1238.02, 623.48 1242.50, 629.00 1242.50 L 676.00 1242.50" opacity=".36" marker-end="url(#arrow)"><title>Lincoln Brower · Author of → Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title></path>
+<path class="relation" data-edge-id="R057" data-source="P_BROWER" data-target="B_O_FLORIDA" d="M 676.00 135.00 L 667.00 135.00 C 662.03 135.00, 658.00 139.03, 658.00 144.00 L 658.00 422.50 C 658.00 423.33, 658.67 424.00, 659.50 424.00 L 659.50 424.00 C 660.33 424.00, 661.00 424.67, 661.00 425.50 L 661.00 569.00 C 661.00 573.14, 664.36 576.50, 668.50 576.50 L 676.00 576.50" opacity=".53" marker-end="url(#arrow)"><title>Lincoln Brower · Affiliated with → University of Florida — Department of Zoology</title></path>
+<path class="relation" data-edge-id="R058" data-source="B_P_WASSENAAR" data-target="B_W_REF08" d="M 1902.00 228.50 L 1879.00 228.50 C 1873.48 228.50, 1869.00 232.98, 1869.00 238.50 L 1869.00 390.00 C 1869.00 395.52, 1873.48 400.00, 1879.00 400.00 L 2190.00 400.00 C 2195.52 400.00, 2200.00 404.48, 2200.00 410.00 L 2200.00 966.00 C 2200.00 971.52, 2195.52 976.00, 2190.00 976.00 L 1583.00 976.00 C 1577.48 976.00, 1573.00 980.48, 1573.00 986.00 L 1573.00 1234.00 C 1573.00 1239.52, 1577.48 1244.00, 1583.00 1244.00 L 1603.00 1244.00" opacity=".36" marker-end="url(#arrow)"><title>Leonard I. Wassenaar · Author of → Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title></path>
+<path class="relation" data-edge-id="R059" data-source="B_P_WASSENAAR" data-target="B_O_ENV_CANADA" d="M 1902.00 225.50 L 1882.00 225.50 C 1876.48 225.50, 1872.00 229.98, 1872.00 235.50 L 1872.00 387.00 C 1872.00 392.52, 1867.52 397.00, 1862.00 397.00 L 1299.00 397.00 C 1293.48 397.00, 1289.00 401.48, 1289.00 407.00 L 1289.00 503.00 C 1289.00 507.14, 1292.36 510.50, 1296.50 510.50 L 1304.00 510.50" opacity=".53" marker-end="url(#arrow)"><title>Leonard I. Wassenaar · Affiliated with → Environment Canada</title></path>
+<path class="relation" data-edge-id="R060" data-source="B_P_HOBSON" data-target="B_W_REF08" d="M 347.00 274.50 L 282.00 274.50 C 276.48 274.50, 272.00 278.98, 272.00 284.50 L 272.00 423.00 C 272.00 428.52, 267.52 433.00, 262.00 433.00 L 259.00 433.00 C 253.48 433.00, 249.00 437.48, 249.00 443.00 L 249.00 990.00 C 249.00 995.52, 253.48 1000.00, 259.00 1000.00 L 1566.00 1000.00 C 1571.52 1000.00, 1576.00 1004.48, 1576.00 1010.00 L 1576.00 1231.00 C 1576.00 1236.52, 1580.48 1241.00, 1586.00 1241.00 L 1603.00 1241.00" opacity=".36" marker-end="url(#arrow)"><title>Keith A. Hobson · Author of → Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title></path>
+<path class="relation" data-edge-id="R061" data-source="B_P_HOBSON" data-target="B_O_ENV_CANADA" d="M 347.00 271.50 L 285.00 271.50 C 279.48 271.50, 275.00 275.98, 275.00 281.50 L 275.00 435.00 C 275.00 440.52, 279.48 445.00, 285.00 445.00 L 1282.00 445.00 C 1287.52 445.00, 1292.00 449.48, 1292.00 455.00 L 1292.00 492.50 C 1292.00 495.81, 1294.69 498.50, 1298.00 498.50 L 1304.00 498.50" opacity=".53" marker-end="url(#arrow)"><title>Keith A. Hobson · Affiliated with → Environment Canada</title></path>
+<path class="relation" data-edge-id="R062" data-source="O_USDA_ARS" data-target="C_O_POOL" d="M 676.00 497.00 L 662.00 497.00 C 656.48 497.00, 652.00 501.48, 652.00 507.00 L 652.00 972.00 C 652.00 977.52, 647.52 982.00, 642.00 982.00 L 336.00 982.00 C 330.48 982.00, 326.00 977.52, 326.00 972.00 L 326.00 508.50 C 326.00 502.98, 330.48 498.50, 336.00 498.50 L 347.00 498.50" opacity=".53" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → ARS–ABSTC grant pool</title></path>
+<path class="relation" data-edge-id="R063" data-source="O_ABSTC" data-target="C_O_POOL" d="M 347.00 572.00 L 318.00 572.00 C 312.48 572.00, 308.00 576.48, 308.00 582.00 L 308.00 1014.00 C 308.00 1019.52, 312.48 1024.00, 318.00 1024.00 L 319.00 1024.00 C 324.52 1024.00, 329.00 1019.52, 329.00 1014.00 L 329.00 504.50 C 329.00 499.53, 333.03 495.50, 338.00 495.50 L 347.00 495.50" opacity=".53" marker-end="url(#arrow)"><title>Agricultural Biotechnology Stewardship Technical Committee · Funded → ARS–ABSTC grant pool</title></path>
+<path class="relation" data-edge-id="R064" data-source="C_O_POOL" data-target="W_SEARS2001" d="M 347.00 504.50 L 330.00 504.50 C 324.48 504.50, 320.00 508.98, 320.00 514.50 L 320.00 978.00 C 320.00 983.52, 324.48 988.00, 330.00 988.00 L 974.00 988.00 C 979.52 988.00, 984.00 992.48, 984.00 998.00 L 984.00 1108.50 C 984.00 1111.81, 986.69 1114.50, 990.00 1114.50 L 996.00 1114.50" opacity=".53" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R065" data-source="C_O_POOL" data-target="W_STANLEYHORN2001" d="M 347.00 501.50 L 333.00 501.50 C 327.48 501.50, 323.00 505.98, 323.00 511.50 L 323.00 984.00 C 323.00 989.52, 327.48 994.00, 333.00 994.00 L 651.00 994.00 C 656.52 994.00, 661.00 998.48, 661.00 1004.00 L 661.00 1102.50 C 661.00 1106.64, 664.36 1110.00, 668.50 1110.00 L 676.00 1110.00" opacity=".53" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R066" data-source="C_O_POOL" data-target="C_W_PLEASANTS2001" d="M 347.00 507.50 L 327.00 507.50 C 321.48 507.50, 317.00 511.98, 317.00 517.50 L 317.00 936.00 C 317.00 941.52, 321.48 946.00, 327.00 946.00 L 929.00 946.00 C 934.52 946.00, 939.00 950.48, 939.00 956.00 L 939.00 1409.00 C 939.00 1414.52, 943.48 1419.00, 949.00 1419.00 L 996.00 1419.00" opacity=".53" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Pleasants et al. 2001 pollen deposition</title></path>
+<path class="relation" data-edge-id="R067" data-source="C_O_POOL" data-target="C_W_HELLMICH2001" d="M 347.00 510.50 L 324.00 510.50 C 318.48 510.50, 314.00 514.98, 314.00 520.50 L 314.00 939.00 C 314.00 944.52, 318.48 949.00, 324.00 949.00 L 1252.00 949.00 C 1257.52 949.00, 1262.00 953.48, 1262.00 959.00 L 1262.00 1409.00 C 1262.00 1414.52, 1266.48 1419.00, 1272.00 1419.00 L 1304.00 1419.00" opacity=".53" marker-end="url(#arrow)"><title>ARS–ABSTC grant pool · Funded → Hellmich et al. 2001 toxicity</title></path>
+<path class="relation" data-edge-id="R068" data-source="O_MONSANTO" data-target="O_ABSTC" d="M 996.00 576.50 L 967.00 576.50 C 961.48 576.50, 957.00 580.98, 957.00 586.50 L 957.00 1011.00 C 957.00 1016.52, 952.52 1021.00, 947.00 1021.00 L 315.00 1021.00 C 309.48 1021.00, 305.00 1016.52, 305.00 1011.00 L 305.00 585.00 C 305.00 579.48, 309.48 575.00, 315.00 575.00 L 347.00 575.00" opacity=".53" marker-end="url(#arrow)"><title>Monsanto Company · Member of → Agricultural Biotechnology Stewardship Technical Committee</title></path>
+<path class="relation" data-edge-id="R069" data-source="O_SYNGENTA" data-target="O_ABSTC" d="M 1603.00 720.50 L 1592.00 720.50 C 1586.48 720.50, 1582.00 724.98, 1582.00 730.50 L 1582.00 1005.00 C 1582.00 1010.52, 1577.52 1015.00, 1572.00 1015.00 L 309.00 1015.00 C 303.48 1015.00, 299.00 1010.52, 299.00 1005.00 L 299.00 591.00 C 299.00 585.48, 303.48 581.00, 309.00 581.00 L 347.00 581.00" opacity=".53" marker-end="url(#arrow)"><title>Syngenta Seeds, Inc. · Member of → Agricultural Biotechnology Stewardship Technical Committee</title></path>
+<path class="relation" data-edge-id="R070" data-source="P_LOSEY" data-target="O_MONSANTO" d="M 347.00 136.64 L 321.00 136.64 C 315.48 136.64, 311.00 141.12, 311.00 146.64 L 311.00 396.00 C 311.00 401.52, 315.48 406.00, 321.00 406.00 L 974.00 406.00 C 979.52 406.00, 984.00 410.48, 984.00 416.00 L 984.00 567.50 C 984.00 570.81, 986.69 573.50, 990.00 573.50 L 996.00 573.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Contacted → Monsanto Company</title></path>
+<path class="relation" data-edge-id="R071" data-source="P_LOSEY" data-target="O_NOVARTIS" d="M 347.00 141.57 L 312.00 141.57 C 306.48 141.57, 302.00 146.05, 302.00 151.57 L 302.00 441.00 C 302.00 446.52, 306.48 451.00, 312.00 451.00 L 1267.00 451.00 C 1272.52 451.00, 1277.00 455.48, 1277.00 461.00 L 1277.00 710.50 C 1277.00 716.02, 1281.48 720.50, 1287.00 720.50 L 1304.00 720.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Contacted → Novartis</title></path>
+<path class="relation" data-edge-id="R072" data-source="P_SACHS" data-target="C_O_PANEL" d="M 1603.00 139.50 L 1592.00 139.50 C 1586.48 139.50, 1582.00 143.98, 1582.00 149.50 L 1582.00 414.00 C 1582.00 419.52, 1586.48 424.00, 1592.00 424.00 L 1868.00 424.00 C 1873.52 424.00, 1878.00 428.48, 1878.00 434.00 L 1878.00 566.50 C 1878.00 572.02, 1882.48 576.50, 1888.00 576.50 L 1902.00 576.50" opacity=".53" marker-end="url(#arrow)"><title>Eric Sachs · Member of → 2000 monarch research steering committee</title></path>
+<path class="relation" data-edge-id="R073" data-source="P_MELLON" data-target="C_O_PANEL" d="M 1902.00 139.50 L 1891.00 139.50 C 1885.48 139.50, 1881.00 143.98, 1881.00 149.50 L 1881.00 415.00 C 1881.00 416.66, 1879.66 418.00, 1878.00 418.00 L 1878.00 418.00 C 1876.34 418.00, 1875.00 419.34, 1875.00 421.00 L 1875.00 569.50 C 1875.00 575.02, 1879.48 579.50, 1885.00 579.50 L 1902.00 579.50" opacity=".53" marker-end="url(#arrow)"><title>Margaret Mellon · Member of → 2000 monarch research steering committee</title></path>
+<path class="relation" data-edge-id="R074" data-source="P_SACHS" data-target="O_MONSANTO" d="M 1603.00 136.50 L 1594.00 136.50 C 1589.03 136.50, 1585.00 140.53, 1585.00 145.50 L 1585.00 390.00 C 1585.00 395.52, 1580.52 400.00, 1575.00 400.00 L 991.00 400.00 C 985.48 400.00, 981.00 404.48, 981.00 410.00 L 981.00 572.00 C 981.00 576.14, 984.36 579.50, 988.50 579.50 L 996.00 579.50" opacity=".53" marker-end="url(#arrow)"><title>Eric Sachs · Affiliated with → Monsanto Company</title></path>
+<path class="relation" data-edge-id="R075" data-source="P_MELLON" data-target="O_UCS" d="M 1902.00 133.50 L 1894.50 133.50 C 1890.36 133.50, 1887.00 136.86, 1887.00 141.00 L 1887.00 357.00 C 1887.00 362.52, 1882.52 367.00, 1877.00 367.00 L 1296.00 367.00 C 1290.48 367.00, 1286.00 371.48, 1286.00 377.00 L 1286.00 567.50 C 1286.00 572.47, 1290.03 576.50, 1295.00 576.50 L 1304.00 576.50" opacity=".53" marker-end="url(#arrow)"><title>Margaret Mellon · Affiliated with → Union of Concerned Scientists</title></path>
+<path class="relation" data-edge-id="R076" data-source="C_O_PANEL" data-target="C_O_POOL" d="M 1902.00 573.50 L 1896.00 573.50 C 1892.69 573.50, 1890.00 576.19, 1890.00 579.50 L 1890.00 1017.00 C 1890.00 1022.52, 1885.52 1027.00, 1880.00 1027.00 L 321.00 1027.00 C 315.48 1027.00, 311.00 1022.52, 311.00 1017.00 L 311.00 523.50 C 311.00 517.98, 315.48 513.50, 321.00 513.50 L 347.00 513.50" opacity=".53" marker-end="url(#arrow)"><title>2000 monarch research steering committee · Selected projects for → ARS–ABSTC grant pool</title></path>
+<path class="relation" data-edge-id="R077" data-source="O_USDA_ARS" data-target="C_W_ANDERSON2005" d="M 676.00 503.00 L 656.00 503.00 C 650.48 503.00, 646.00 507.48, 646.00 513.00 L 646.00 960.00 C 646.00 965.52, 650.48 970.00, 656.00 970.00 L 941.00 970.00 C 946.52 970.00, 951.00 974.48, 951.00 980.00 L 951.00 1232.50 C 951.00 1238.02, 955.48 1242.50, 961.00 1242.50 L 996.00 1242.50" opacity=".53" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → Anderson et al. 2005 anthers and pollen</title></path>
+<path class="relation" data-edge-id="R078" data-source="O_EPA" data-target="C_W_ANDERSON2005" d="M 996.00 503.00 L 979.00 503.00 C 973.48 503.00, 969.00 507.48, 969.00 513.00 L 969.00 933.00 C 969.00 938.52, 964.52 943.00, 959.00 943.00 L 958.00 943.00 C 952.48 943.00, 948.00 947.48, 948.00 953.00 L 948.00 1235.50 C 948.00 1241.02, 952.48 1245.50, 958.00 1245.50 L 996.00 1245.50" opacity=".53" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Funded → Anderson et al. 2005 anthers and pollen</title></path>
+<path class="relation" data-edge-id="R079" data-source="O_ABSTC" data-target="C_W_ANDERSON2005" d="M 347.00 578.00 L 312.00 578.00 C 306.48 578.00, 302.00 582.48, 302.00 588.00 L 302.00 1008.00 C 302.00 1013.52, 306.48 1018.00, 312.00 1018.00 L 947.00 1018.00 C 952.52 1018.00, 957.00 1022.48, 957.00 1028.00 L 957.00 1226.50 C 957.00 1232.02, 961.48 1236.50, 967.00 1236.50 L 996.00 1236.50" opacity=".53" marker-end="url(#arrow)"><title>Agricultural Biotechnology Stewardship Technical Committee · Funded → Anderson et al. 2005 anthers and pollen</title></path>
+<path class="relation" data-edge-id="R080" data-source="C_O_HATCH" data-target="C_W_ANDERSON2005" d="M 347.00 784.00 L 341.00 784.00 C 337.69 784.00, 335.00 786.69, 335.00 790.00 L 335.00 927.00 C 335.00 932.52, 339.48 937.00, 345.00 937.00 L 944.00 937.00 C 949.52 937.00, 954.00 941.48, 954.00 947.00 L 954.00 1229.50 C 954.00 1235.02, 958.48 1239.50, 964.00 1239.50 L 996.00 1239.50" opacity=".53" marker-end="url(#arrow)"><title>Hatch Act and Iowa State funding · Funded → Anderson et al. 2005 anthers and pollen</title></path>
+<path class="relation" data-edge-id="R081" data-source="C_O_CFIA" data-target="W_SEARS2001" d="M 1603.00 576.50 L 1594.00 576.50 C 1589.03 576.50, 1585.00 580.53, 1585.00 585.50 L 1585.00 951.00 C 1585.00 956.52, 1580.52 961.00, 1575.00 961.00 L 973.00 961.00 C 967.48 961.00, 963.00 965.48, 963.00 971.00 L 963.00 1125.50 C 963.00 1131.02, 967.48 1135.50, 973.00 1135.50 L 996.00 1135.50" opacity=".53" marker-end="url(#arrow)"><title>Canadian Food Inspection Agency · Funded → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R082" data-source="B_O_ENV_CANADA" data-target="W_SEARS2001" d="M 1304.00 504.50 L 1298.00 504.50 C 1294.69 504.50, 1292.00 507.19, 1292.00 510.50 L 1292.00 1008.00 C 1292.00 1013.52, 1287.52 1018.00, 1282.00 1018.00 L 979.00 1018.00 C 973.48 1018.00, 969.00 1022.48, 969.00 1028.00 L 969.00 1119.50 C 969.00 1125.02, 973.48 1129.50, 979.00 1129.50 L 996.00 1129.50" opacity=".53" marker-end="url(#arrow)"><title>Environment Canada · Funded → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R083" data-source="C_O_OMAFRA" data-target="W_SEARS2001" d="M 347.00 655.50 L 306.00 655.50 C 300.48 655.50, 296.00 659.98, 296.00 665.50 L 296.00 1002.00 C 296.00 1007.52, 300.48 1012.00, 306.00 1012.00 L 971.00 1012.00 C 976.52 1012.00, 981.00 1016.48, 981.00 1022.00 L 981.00 1110.00 C 981.00 1114.14, 984.36 1117.50, 988.50 1117.50 L 996.00 1117.50" opacity=".53" marker-end="url(#arrow)"><title>Ontario Ministry of Agriculture, Food and Rural Affairs · Funded → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R084" data-source="C_O_MAES" data-target="W_SEARS2001" d="M 676.00 658.50 L 668.50 658.50 C 664.36 658.50, 661.00 661.86, 661.00 666.00 L 661.00 957.00 C 661.00 962.52, 665.48 967.00, 671.00 967.00 L 968.00 967.00 C 973.52 967.00, 978.00 971.48, 978.00 977.00 L 978.00 1111.50 C 978.00 1116.47, 982.03 1120.50, 987.00 1120.50 L 996.00 1120.50" opacity=".53" marker-end="url(#arrow)"><title>Maryland Agricultural Experiment Station · Funded → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R085" data-source="C_O_LEOPOLD" data-target="W_SEARS2001" d="M 996.00 658.50 L 988.50 658.50 C 984.36 658.50, 981.00 661.86, 981.00 666.00 L 981.00 1034.50 C 981.00 1036.99, 978.99 1039.00, 976.50 1039.00 L 976.50 1039.00 C 974.01 1039.00, 972.00 1041.01, 972.00 1043.50 L 972.00 1116.50 C 972.00 1122.02, 976.48 1126.50, 982.00 1126.50 L 996.00 1126.50" opacity=".53" marker-end="url(#arrow)"><title>Leopold Center for Sustainable Agriculture · Funded → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R086" data-source="C_O_CFIA" data-target="W_STANLEYHORN2001" d="M 1603.00 573.50 L 1595.50 573.50 C 1591.36 573.50, 1588.00 576.86, 1588.00 581.00 L 1588.00 942.00 C 1588.00 947.52, 1583.52 952.00, 1578.00 952.00 L 641.00 952.00 C 635.48 952.00, 631.00 956.48, 631.00 962.00 L 631.00 1130.00 C 631.00 1135.52, 635.48 1140.00, 641.00 1140.00 L 676.00 1140.00" opacity=".53" marker-end="url(#arrow)"><title>Canadian Food Inspection Agency · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R087" data-source="B_O_ENV_CANADA" data-target="W_STANLEYHORN2001" d="M 1304.00 501.50 L 1284.00 501.50 C 1278.48 501.50, 1274.00 505.98, 1274.00 511.50 L 1274.00 1014.00 C 1274.00 1019.52, 1269.52 1024.00, 1264.00 1024.00 L 656.00 1024.00 C 650.48 1024.00, 646.00 1028.48, 646.00 1034.00 L 646.00 1115.00 C 646.00 1120.52, 650.48 1125.00, 656.00 1125.00 L 676.00 1125.00" opacity=".53" marker-end="url(#arrow)"><title>Environment Canada · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R088" data-source="C_O_ONTARIO" data-target="W_STANLEYHORN2001" d="M 1902.00 720.50 L 1891.00 720.50 C 1885.48 720.50, 1881.00 724.98, 1881.00 730.50 L 1881.00 924.00 C 1881.00 929.52, 1876.52 934.00, 1871.00 934.00 L 635.00 934.00 C 629.48 934.00, 625.00 938.48, 625.00 944.00 L 625.00 1136.00 C 625.00 1141.52, 629.48 1146.00, 635.00 1146.00 L 676.00 1146.00" opacity=".53" marker-end="url(#arrow)"><title>Ontario Corn Growers Association · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R089" data-source="C_O_MAES" data-target="W_STANLEYHORN2001" d="M 676.00 655.50 L 670.00 655.50 C 666.69 655.50, 664.00 658.19, 664.00 661.50 L 664.00 979.00 C 664.00 980.66, 662.66 982.00, 661.00 982.00 L 661.00 982.00 C 659.34 982.00, 658.00 983.34, 658.00 985.00 L 658.00 1104.00 C 658.00 1108.97, 662.03 1113.00, 667.00 1113.00 L 676.00 1113.00" opacity=".53" marker-end="url(#arrow)"><title>Maryland Agricultural Experiment Station · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R090" data-source="C_O_LEOPOLD" data-target="W_STANLEYHORN2001" d="M 996.00 655.50 L 990.00 655.50 C 986.69 655.50, 984.00 658.19, 984.00 661.50 L 984.00 1023.00 C 984.00 1028.52, 979.52 1033.00, 974.00 1033.00 L 662.00 1033.00 C 656.48 1033.00, 652.00 1037.48, 652.00 1043.00 L 652.00 1109.00 C 652.00 1114.52, 656.48 1119.00, 662.00 1119.00 L 676.00 1119.00" opacity=".53" marker-end="url(#arrow)"><title>Leopold Center for Sustainable Agriculture · Funded → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R091" data-source="O_USDA_ARS" data-target="C_W_DIVELY2004" d="M 676.00 512.00 L 647.00 512.00 C 641.48 512.00, 637.00 516.48, 637.00 522.00 L 637.00 975.00 C 637.00 980.52, 641.48 985.00, 647.00 985.00 L 1871.00 985.00 C 1876.52 985.00, 1881.00 989.48, 1881.00 995.00 L 1881.00 1228.00 C 1881.00 1233.52, 1885.48 1238.00, 1891.00 1238.00 L 1902.00 1238.00" opacity=".53" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → Dively et al. 2004 chronic exposure</title></path>
+<path class="relation" data-edge-id="R092" data-source="O_EPA" data-target="C_W_DIVELY2004" d="M 996.00 512.00 L 970.00 512.00 C 964.48 512.00, 960.00 516.48, 960.00 522.00 L 960.00 927.00 C 960.00 932.52, 964.48 937.00, 970.00 937.00 L 1868.00 937.00 C 1873.52 937.00, 1878.00 941.48, 1878.00 947.00 L 1878.00 1231.00 C 1878.00 1236.52, 1882.48 1241.00, 1888.00 1241.00 L 1902.00 1241.00" opacity=".53" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Funded → Dively et al. 2004 chronic exposure</title></path>
+<path class="relation" data-edge-id="R093" data-source="C_O_NTOS" data-target="C_W_DIVELY2004" d="M 1304.00 784.00 L 1293.00 784.00 C 1287.48 784.00, 1283.00 788.48, 1283.00 794.00 L 1283.00 963.00 C 1283.00 968.52, 1287.48 973.00, 1293.00 973.00 L 1865.00 973.00 C 1870.52 973.00, 1875.00 977.48, 1875.00 983.00 L 1875.00 1234.00 C 1875.00 1239.52, 1879.48 1244.00, 1885.00 1244.00 L 1902.00 1244.00" opacity=".53" marker-end="url(#arrow)"><title>ABSTC Nontarget Organism Subcommittee · Funded → Dively et al. 2004 chronic exposure</title></path>
+<path class="relation" data-edge-id="R094" data-source="C_O_ILLINOISFOUND" data-target="C_W_ZANGERL2001" d="M 676.00 784.00 L 667.00 784.00 C 662.03 784.00, 658.00 788.03, 658.00 793.00 L 658.00 1026.00 C 658.00 1031.52, 662.48 1036.00, 668.00 1036.00 L 1258.00 1036.00 C 1263.52 1036.00, 1268.00 1040.48, 1268.00 1046.00 L 1268.00 1327.00 C 1268.00 1332.52, 1272.48 1337.00, 1278.00 1337.00 L 1304.00 1337.00" opacity=".53" marker-end="url(#arrow)"><title>University of Illinois Foundation · Funded → Zangerl et al. 2001 event 176</title></path>
+<path class="relation" data-edge-id="R095" data-source="C_O_ILLINOISCAS" data-target="C_W_ZANGERL2001" d="M 996.00 784.00 L 987.00 784.00 C 982.03 784.00, 978.00 788.03, 978.00 793.00 L 978.00 933.00 C 978.00 938.52, 982.48 943.00, 988.00 943.00 L 1255.00 943.00 C 1260.52 943.00, 1265.00 947.48, 1265.00 953.00 L 1265.00 1330.00 C 1265.00 1335.52, 1269.48 1340.00, 1275.00 1340.00 L 1304.00 1340.00" opacity=".53" marker-end="url(#arrow)"><title>University of Illinois at Urbana-Champaign Center for Advanced Study · Funded → Zangerl et al. 2001 event 176</title></path>
+<path class="relation" data-edge-id="R096" data-source="P_LOSEY" data-target="C_O_EARLY_INDUSTRY" d="M 347.00 146.50 L 303.00 146.50 C 297.48 146.50, 293.00 150.98, 293.00 156.50 L 293.00 408.00 C 293.00 413.52, 297.48 418.00, 303.00 418.00 L 1569.00 418.00 C 1574.52 418.00, 1579.00 422.48, 1579.00 428.00 L 1579.00 774.00 C 1579.00 779.52, 1583.48 784.00, 1589.00 784.00 L 1603.00 784.00" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Declined research proposal → 1999 industry research arrangement</title></path>
+<path class="relation" data-edge-id="R097" data-source="P_SPANGLER" data-target="P_LOSEY" d="M 347.00 319.00 L 279.00 319.00 C 273.48 319.00, 269.00 323.48, 269.00 329.00 L 269.00 432.00 C 269.00 437.52, 273.48 442.00, 279.00 442.00 L 322.00 442.00 C 327.52 442.00, 332.00 437.52, 332.00 432.00 L 332.00 132.64 C 332.00 128.50, 335.36 125.14, 339.50 125.14 L 347.00 125.14" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>Steven Spangler · Discussed research → John E. Losey</title></path>
+<path class="relation" data-edge-id="R098" data-source="D_P_GOLDBURG" data-target="O_EDF" d="M 676.00 319.00 L 638.00 319.00 C 632.48 319.00, 628.00 323.48, 628.00 329.00 L 628.00 357.00 C 628.00 362.52, 632.48 367.00, 638.00 367.00 L 1270.00 367.00 C 1275.52 367.00, 1280.00 371.48, 1280.00 377.00 L 1280.00 645.50 C 1280.00 651.02, 1284.48 655.50, 1290.00 655.50 L 1304.00 655.50" opacity=".53" marker-end="url(#arrow)"><title>Rebecca Goldburg · Affiliated with → Environmental Defense Fund</title></path>
+<path class="relation" data-edge-id="R099" data-source="O_EDF" data-target="O_EPA" d="M 1304.00 658.50 L 1295.00 658.50 C 1290.03 658.50, 1286.00 662.53, 1286.00 667.50 L 1286.00 972.00 C 1286.00 977.52, 1281.52 982.00, 1276.00 982.00 L 976.00 982.00 C 970.48 982.00, 966.00 977.52, 966.00 972.00 L 966.00 516.00 C 966.00 510.48, 970.48 506.00, 976.00 506.00 L 996.00 506.00" opacity=".53" marker-end="url(#arrow)"><title>Environmental Defense Fund · Advocated to → US Environmental Protection Agency</title></path>
+<path class="relation" data-edge-id="R100" data-source="P_MELLON" data-target="O_UCS" d="M 1902.00 136.50 L 1893.00 136.50 C 1888.03 136.50, 1884.00 140.53, 1884.00 145.50 L 1884.00 399.00 C 1884.00 404.52, 1879.52 409.00, 1874.00 409.00 L 1293.00 409.00 C 1287.48 409.00, 1283.00 413.48, 1283.00 419.00 L 1283.00 569.50 C 1283.00 575.02, 1287.48 579.50, 1293.00 579.50 L 1304.00 579.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>Margaret Mellon · Affiliated with → Union of Concerned Scientists</title></path>
+<path class="relation" data-edge-id="R101" data-source="O_UCS" data-target="W_LOSEY1999" d="M 1304.00 573.50 L 1296.50 573.50 C 1292.36 573.50, 1289.00 576.86, 1289.00 581.00 L 1289.00 1020.00 C 1289.00 1025.52, 1284.52 1030.00, 1279.00 1030.00 L 333.00 1030.00 C 327.48 1030.00, 323.00 1034.48, 323.00 1040.00 L 323.00 1124.00 C 323.00 1129.52, 327.48 1134.00, 333.00 1134.00 L 347.00 1134.00" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>Union of Concerned Scientists · Public advocacy about → Transgenic pollen harms monarch larvae</title></path>
+<path class="relation" data-edge-id="R102" data-source="D_P_WEISS" data-target="W_LOSEY1999" d="M 676.00 271.50 L 644.00 271.50 C 638.48 271.50, 634.00 275.98, 634.00 281.50 L 634.00 426.00 C 634.00 431.52, 629.52 436.00, 624.00 436.00 L 262.00 436.00 C 256.48 436.00, 252.00 440.48, 252.00 446.00 L 252.00 993.00 C 252.00 998.52, 256.48 1003.00, 262.00 1003.00 L 322.00 1003.00 C 327.52 1003.00, 332.00 1007.48, 332.00 1013.00 L 332.00 1111.50 C 332.00 1115.64, 335.36 1119.00, 339.50 1119.00 L 347.00 1119.00" opacity=".36" marker-end="url(#arrow)"><title>Rick Weiss · Reported on → Transgenic pollen harms monarch larvae</title></path>
+<path class="relation" data-edge-id="R103" data-source="D_P_WEISS" data-target="D_O_WP" d="M 676.00 274.50 L 641.00 274.50 C 635.48 274.50, 631.00 278.98, 631.00 284.50 L 631.00 369.00 C 631.00 374.52, 626.52 379.00, 621.00 379.00 L 342.00 379.00 C 336.48 379.00, 332.00 383.48, 332.00 389.00 L 332.00 857.00 C 332.00 861.14, 335.36 864.50, 339.50 864.50 L 347.00 864.50" opacity=".53" marker-end="url(#arrow)"><title>Rick Weiss · Published in → The Washington Post</title></path>
+<path class="relation" data-edge-id="R104" data-source="O_EPA" data-target="O_CORNELL" d="M 996.00 509.00 L 973.00 509.00 C 967.48 509.00, 963.00 513.48, 963.00 519.00 L 963.00 960.00 C 963.00 965.52, 967.48 970.00, 973.00 970.00 L 1581.00 970.00 C 1586.52 970.00, 1591.00 965.52, 1591.00 960.00 L 1591.00 512.00 C 1591.00 508.69, 1593.69 506.00, 1597.00 506.00 L 1603.00 506.00" opacity=".53" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Consulted → Cornell University</title></path>
+<path class="relation" data-edge-id="R105" data-source="O_EPA" data-target="O_USDA_ARS" d="M 996.00 497.00 L 985.00 497.00 C 979.48 497.00, 975.00 501.48, 975.00 507.00 L 975.00 954.00 C 975.00 959.52, 970.52 964.00, 965.00 964.00 L 659.00 964.00 C 653.48 964.00, 649.00 959.52, 649.00 954.00 L 649.00 510.00 C 649.00 504.48, 653.48 500.00, 659.00 500.00 L 676.00 500.00" opacity=".53" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Consulted → USDA Agricultural Research Service</title></path>
+<path class="relation" data-edge-id="R106" data-source="O_USDA_ARS" data-target="J_WORKSHOP2000" d="M 676.00 506.00 L 653.00 506.00 C 647.48 506.00, 643.00 510.48, 643.00 516.00 L 643.00 993.00 C 643.00 998.52, 647.48 1003.00, 653.00 1003.00 L 1270.00 1003.00 C 1275.52 1003.00, 1280.00 998.52, 1280.00 993.00 L 1280.00 874.50 C 1280.00 868.98, 1284.48 864.50, 1290.00 864.50 L 1304.00 864.50" opacity=".53" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Organized research for → Monarch research workshop, February 2000</title></path>
+<path class="relation" data-edge-id="R107" data-source="P_MELLON" data-target="W_SEARS2001" d="M 1902.00 130.50 L 1896.00 130.50 C 1892.69 130.50, 1890.00 133.19, 1890.00 136.50 L 1890.00 369.00 C 1890.00 374.52, 1894.48 379.00, 1900.00 379.00 L 2193.00 379.00 C 2198.52 379.00, 2203.00 383.48, 2203.00 389.00 L 2203.00 948.00 C 2203.00 953.52, 2198.52 958.00, 2193.00 958.00 L 970.00 958.00 C 964.48 958.00, 960.00 962.48, 960.00 968.00 L 960.00 1128.50 C 960.00 1134.02, 964.48 1138.50, 970.00 1138.50 L 996.00 1138.50" opacity=".36" marker-end="url(#arrow)"><title>Margaret Mellon · Research steering → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R108" data-source="P_SACHS" data-target="W_SEARS2001" d="M 1603.00 133.50 L 1595.50 133.50 C 1591.36 133.50, 1588.00 136.86, 1588.00 141.00 L 1588.00 405.00 C 1588.00 410.52, 1592.48 415.00, 1598.00 415.00 L 2196.00 415.00 C 2201.52 415.00, 2206.00 419.48, 2206.00 425.00 L 2206.00 984.00 C 2206.00 989.52, 2201.52 994.00, 2196.00 994.00 L 976.00 994.00 C 970.48 994.00, 966.00 998.48, 966.00 1004.00 L 966.00 1122.50 C 966.00 1128.02, 970.48 1132.50, 976.00 1132.50 L 996.00 1132.50" opacity=".36" marker-end="url(#arrow)"><title>Eric Sachs · Research steering → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R109" data-source="O_EPA" data-target="W_SEARS2001" d="M 996.00 500.00 L 982.00 500.00 C 976.48 500.00, 972.00 504.48, 972.00 510.00 L 972.00 1019.50 C 972.00 1020.33, 972.67 1021.00, 973.50 1021.00 L 973.50 1021.00 C 974.33 1021.00, 975.00 1021.67, 975.00 1022.50 L 975.00 1113.50 C 975.00 1119.02, 979.48 1123.50, 985.00 1123.50 L 996.00 1123.50" opacity=".53" marker-end="url(#arrow)"><title>US Environmental Protection Agency · Used as evidence → Sears et al. 2001 risk assessment</title></path>
+<path class="relation" data-edge-id="R110" data-source="D_O_BIO" data-target="J_SYMPOSIUM1999" d="M 1902.00 784.00 L 1888.00 784.00 C 1882.48 784.00, 1878.00 788.48, 1878.00 794.00 L 1878.00 940.00 C 1878.00 941.66, 1879.34 943.00, 1881.00 943.00 L 1881.00 943.00 C 1882.66 943.00, 1884.00 941.66, 1884.00 940.00 L 1884.00 667.50 C 1884.00 662.53, 1888.03 658.50, 1893.00 658.50 L 1902.00 658.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>Biotechnology Industry Organization · Media briefing → Monarch symposium, November 2, 1999</title></path>
+<path class="relation" data-edge-id="R111" data-source="O_USDA_ARS" data-target="J_ORIGIN_HOSTS" d="M 676.00 509.00 L 650.00 509.00 C 644.48 509.00, 640.00 513.48, 640.00 519.00 L 640.00 987.00 C 640.00 992.52, 644.48 997.00, 650.00 997.00 L 1563.00 997.00 C 1568.52 997.00, 1573.00 992.52, 1573.00 987.00 L 1573.00 668.50 C 1573.00 662.98, 1577.48 658.50, 1583.00 658.50 L 1603.00 658.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>USDA Agricultural Research Service · Funded → 1998–1999 weed alternative-host research</title></path>
+<path class="relation" data-edge-id="R112" data-source="P_LOSEY" data-target="J_ORIGIN_HOSTS" d="M 347.00 144.86 L 306.00 144.86 C 300.48 144.86, 296.00 149.33, 296.00 154.86 L 296.00 405.00 C 296.00 410.52, 300.48 415.00, 306.00 415.00 L 1572.00 415.00 C 1577.52 415.00, 1582.00 419.48, 1582.00 425.00 L 1582.00 645.50 C 1582.00 651.02, 1586.48 655.50, 1592.00 655.50 L 1603.00 655.50" stroke-dasharray="5 4" opacity=".53" marker-end="url(#arrow)"><title>John E. Losey · Researched → 1998–1999 weed alternative-host research</title></path>
+<path class="relation" data-edge-id="R113" data-source="P_SACHS" data-target="W_STANLEYHORN2001" d="M 1603.00 130.50 L 1597.00 130.50 C 1593.69 130.50, 1591.00 133.19, 1591.00 136.50 L 1591.00 381.00 C 1591.00 386.52, 1595.48 391.00, 1601.00 391.00 L 2199.00 391.00 C 2204.52 391.00, 2209.00 395.48, 2209.00 401.00 L 2209.00 981.00 C 2209.00 986.52, 2204.52 991.00, 2199.00 991.00 L 647.00 991.00 C 641.48 991.00, 637.00 995.48, 637.00 1001.00 L 637.00 1124.00 C 637.00 1129.52, 641.48 1134.00, 647.00 1134.00 L 676.00 1134.00" opacity=".36" marker-end="url(#arrow)"><title>Eric Sachs · Critically reviewed → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R114" data-source="M_P_TAYLOR" data-target="W_STANLEYHORN2001" d="M 996.00 319.00 L 967.00 319.00 C 961.48 319.00, 957.00 323.48, 957.00 329.00 L 957.00 429.00 C 957.00 434.52, 952.52 439.00, 947.00 439.00 L 265.00 439.00 C 259.48 439.00, 255.00 443.48, 255.00 449.00 L 255.00 996.00 C 255.00 1001.52, 259.48 1006.00, 265.00 1006.00 L 639.00 1006.00 C 644.52 1006.00, 649.00 1010.48, 649.00 1016.00 L 649.00 1112.00 C 649.00 1117.52, 653.48 1122.00, 659.00 1122.00 L 676.00 1122.00" opacity=".36" marker-end="url(#arrow)"><title>Orley Taylor · Provided materials → Assessing the impact of Cry1Ab-expressing corn pollen</title></path>
+<path class="relation" data-edge-id="R115" data-source="O_USDA" data-target="W_OBERHAUSER2001" d="M 676.00 864.50 L 665.00 864.50 C 659.48 864.50, 655.00 868.98, 655.00 874.50 L 655.00 996.00 C 655.00 1001.52, 659.48 1006.00, 665.00 1006.00 L 1578.00 1006.00 C 1583.52 1006.00, 1588.00 1010.48, 1588.00 1016.00 L 1588.00 1116.00 C 1588.00 1120.14, 1591.36 1123.50, 1595.50 1123.50 L 1603.00 1123.50" opacity=".53" marker-end="url(#arrow)"><title>United States Department of Agriculture · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
+<path class="relation" data-edge-id="R116" data-source="C_O_CFIA" data-target="W_OBERHAUSER2001" d="M 1603.00 579.50 L 1586.00 579.50 C 1580.48 579.50, 1576.00 583.98, 1576.00 589.50 L 1576.00 977.50 C 1576.00 978.33, 1576.67 979.00, 1577.50 979.00 L 1577.50 979.00 C 1578.33 979.00, 1579.00 979.67, 1579.00 980.50 L 1579.00 1122.50 C 1579.00 1128.02, 1583.48 1132.50, 1589.00 1132.50 L 1603.00 1132.50" opacity=".53" marker-end="url(#arrow)"><title>Canadian Food Inspection Agency · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
+<path class="relation" data-edge-id="R117" data-source="B_O_ENV_CANADA" data-target="W_OBERHAUSER2001" d="M 1304.00 507.50 L 1281.00 507.50 C 1275.48 507.50, 1271.00 511.98, 1271.00 517.50 L 1271.00 933.00 C 1271.00 938.52, 1275.48 943.00, 1281.00 943.00 L 1575.00 943.00 C 1580.52 943.00, 1585.00 947.48, 1585.00 953.00 L 1585.00 1117.50 C 1585.00 1122.47, 1589.03 1126.50, 1594.00 1126.50 L 1603.00 1126.50" opacity=".53" marker-end="url(#arrow)"><title>Environment Canada · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
+<path class="relation" data-edge-id="R118" data-source="C_O_OMAFRA" data-target="W_OBERHAUSER2001" d="M 347.00 658.50 L 303.00 658.50 C 297.48 658.50, 293.00 662.98, 293.00 668.50 L 293.00 999.00 C 293.00 1004.52, 297.48 1009.00, 303.00 1009.00 L 1581.00 1009.00 C 1586.52 1009.00, 1591.00 1013.48, 1591.00 1019.00 L 1591.00 1114.50 C 1591.00 1117.81, 1593.69 1120.50, 1597.00 1120.50 L 1603.00 1120.50" opacity=".53" marker-end="url(#arrow)"><title>Ontario Ministry of Agriculture, Food and Rural Affairs · Funded → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
+<path class="relation" data-edge-id="R119" data-source="P_OBERHAUSER" data-target="W_OBERHAUSER2001" d="M 1304.00 319.00 L 1275.00 319.00 C 1269.48 319.00, 1265.00 323.48, 1265.00 329.00 L 1265.00 360.00 C 1265.00 365.52, 1269.48 370.00, 1275.00 370.00 L 2202.00 370.00 C 2207.52 370.00, 2212.00 374.48, 2212.00 380.00 L 2212.00 972.00 C 2212.00 977.52, 2207.52 982.00, 2202.00 982.00 L 1592.00 982.00 C 1586.48 982.00, 1582.00 986.48, 1582.00 992.00 L 1582.00 1119.50 C 1582.00 1125.02, 1586.48 1129.50, 1592.00 1129.50 L 1603.00 1129.50" opacity=".36" marker-end="url(#arrow)"><title>Karen S. Oberhauser · Author of → Temporal and spatial overlap between monarch larvae and corn pollen</title></path>
+<path class="relation" data-edge-id="R120" data-source="O_WORKING_GROUP1999" data-target="J_SYMPOSIUM1999" d="M 996.00 864.50 L 964.00 864.50 C 958.48 864.50, 954.00 868.98, 954.00 874.50 L 954.00 936.00 C 954.00 941.52, 958.48 946.00, 964.00 946.00 L 1877.00 946.00 C 1882.52 946.00, 1887.00 941.52, 1887.00 936.00 L 1887.00 663.00 C 1887.00 658.86, 1890.36 655.50, 1894.50 655.50 L 1902.00 655.50" opacity=".53" marker-end="url(#arrow)"><title>Agricultural Biotechnology Stewardship Working Group · Organized symposium → Monarch symposium, November 2, 1999</title></path>
 </g>
-<g data-node-id="P_LOSEY" data-label-width="632"><title>John E. Losey</title>
-<circle cx="50" cy="66" r="12" fill="#233449"/>
-<text x="68" y="70.5" font-size="14">
-<tspan x="68" y="70.5">John E. Losey</tspan>
-</text></g>
-<g data-node-id="P_BROWER" data-label-width="632"><title>Lincoln Brower</title>
-<circle cx="50" cy="97" r="6.666666666666666" fill="#233449"/>
-<text x="68" y="101.5" font-size="14">
-<tspan x="68" y="101.5">Lincoln Brower</tspan>
-</text></g>
-<g data-node-id="P_RAYOR" data-label-width="632"><title>Linda S. Rayor</title>
-<circle cx="50" cy="128" r="6.133333333333333" fill="#233449"/>
-<text x="68" y="132.5" font-size="14">
-<tspan x="68" y="132.5">Linda S. Rayor</tspan>
-</text></g>
-<g data-node-id="P_CARTER" data-label-width="632"><title>Maureen E. Carter</title>
-<circle cx="50" cy="159" r="6.133333333333333" fill="#233449"/>
-<text x="68" y="163.5" font-size="14">
-<tspan x="68" y="163.5">Maureen E. Carter</tspan>
-</text></g>
-<g data-node-id="P_SACHS" data-label-width="632"><title>Eric Sachs</title>
-<circle cx="50" cy="190" r="6.133333333333333" fill="#233449"/>
-<text x="68" y="194.5" font-size="14">
-<tspan x="68" y="194.5">Eric Sachs</tspan>
-</text></g>
-<g data-node-id="P_MELLON" data-label-width="632"><title>Margaret Mellon</title>
-<circle cx="50" cy="221" r="6.133333333333333" fill="#233449"/>
-<text x="68" y="225.5" font-size="14">
-<tspan x="68" y="225.5">Margaret Mellon</tspan>
-</text></g>
-<g data-node-id="B_P_MALCOLM" data-label-width="632"><title>Stephen B. Malcolm</title>
-<circle cx="50" cy="252" r="5.6" fill="#233449"/>
-<text x="68" y="256.5" font-size="14">
-<tspan x="68" y="256.5">Stephen B. Malcolm</tspan>
-</text></g>
-<g data-node-id="B_P_COCKRELL" data-label-width="632"><title>Barbara J. Cockrell</title>
-<circle cx="50" cy="283" r="5.6" fill="#233449"/>
-<text x="68" y="287.5" font-size="14">
-<tspan x="68" y="287.5">Barbara J. Cockrell</tspan>
-</text></g>
-<g data-node-id="P_DENNO" data-label-width="632"><title>Robert F. Denno</title>
-<circle cx="50" cy="314" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="318.5" font-size="14">
-<tspan x="68" y="318.5">Robert F. Denno</tspan>
-</text></g>
-<g data-node-id="P_HELLMICH" data-label-width="632"><title>Richard L. Hellmich</title>
-<circle cx="50" cy="345" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="349.5" font-size="14">
-<tspan x="68" y="349.5">Richard L. Hellmich</tspan>
-</text></g>
-<g data-node-id="P_OBRYCKI" data-label-width="632"><title>John J. Obrycki</title>
-<circle cx="50" cy="376" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="380.5" font-size="14">
-<tspan x="68" y="380.5">John J. Obrycki</tspan>
-</text></g>
-<g data-node-id="B_P_JESSE" data-label-width="632"><title>Laura C. H. Jesse</title>
-<circle cx="50" cy="407" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="411.5" font-size="14">
-<tspan x="68" y="411.5">Laura C. H. Jesse</tspan>
-</text></g>
-<g data-node-id="B_P_FEARING" data-label-width="632"><title>Patricia L. Fearing</title>
-<circle cx="50" cy="438" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="442.5" font-size="14">
-<tspan x="68" y="442.5">Patricia L. Fearing</tspan>
-</text></g>
-<g data-node-id="B_P_BROWN" data-label-width="632"><title>Devon Brown</title>
-<circle cx="50" cy="469" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="473.5" font-size="14">
-<tspan x="68" y="473.5">Devon Brown</tspan>
-</text></g>
-<g data-node-id="B_P_VLACHOS" data-label-width="632"><title>Demetra Vlachos</title>
-<circle cx="50" cy="500" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="504.5" font-size="14">
-<tspan x="68" y="504.5">Demetra Vlachos</tspan>
-</text></g>
-<g data-node-id="B_P_MEGHJI" data-label-width="632"><title>Moez Meghji</title>
-<circle cx="50" cy="531" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="535.5" font-size="14">
-<tspan x="68" y="535.5">Moez Meghji</tspan>
-</text></g>
-<g data-node-id="B_P_PRIVALLE" data-label-width="632"><title>Laura Privalle</title>
-<circle cx="50" cy="562" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="566.5" font-size="14">
-<tspan x="68" y="566.5">Laura Privalle</tspan>
-</text></g>
-<g data-node-id="B_P_WASSENAAR" data-label-width="632"><title>Leonard I. Wassenaar</title>
-<circle cx="50" cy="593" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="597.5" font-size="14">
-<tspan x="68" y="597.5">Leonard I. Wassenaar</tspan>
-</text></g>
-<g data-node-id="B_P_HOBSON" data-label-width="632"><title>Keith A. Hobson</title>
-<circle cx="50" cy="624" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="628.5" font-size="14">
-<tspan x="68" y="628.5">Keith A. Hobson</tspan>
-</text></g>
-<g data-node-id="D_P_WEISS" data-label-width="632"><title>Rick Weiss</title>
-<circle cx="50" cy="655" r="5.066666666666666" fill="#233449"/>
-<text x="68" y="659.5" font-size="14">
-<tspan x="68" y="659.5">Rick Weiss</tspan>
-</text></g>
-<g data-node-id="B_P_STANLEYHORN" data-label-width="632"><title>Diane E. Stanley-Horn</title>
-<circle cx="50" cy="686" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="690.5" font-size="14">
-<tspan x="68" y="690.5">Diane E. Stanley-Horn</tspan>
-</text></g>
-<g data-node-id="P_SEARS" data-label-width="632"><title>Mark K. Sears</title>
-<circle cx="50" cy="717" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="721.5" font-size="14">
-<tspan x="68" y="721.5">Mark K. Sears</tspan>
-</text></g>
-<g data-node-id="B_P_HUTCHISON" data-label-width="632"><title>William D. Hutchison</title>
-<circle cx="50" cy="748" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="752.5" font-size="14">
-<tspan x="68" y="752.5">William D. Hutchison</tspan>
-</text></g>
-<g data-node-id="B_P_ANDOW" data-label-width="632"><title>David A. Andow</title>
-<circle cx="50" cy="779" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="783.5" font-size="14">
-<tspan x="68" y="783.5">David A. Andow</tspan>
-</text></g>
-<g data-node-id="P_SPANGLER" data-label-width="632"><title>Steven Spangler</title>
-<circle cx="50" cy="810" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="814.5" font-size="14">
-<tspan x="68" y="814.5">Steven Spangler</tspan>
-</text></g>
-<g data-node-id="D_P_GOLDBURG" data-label-width="632"><title>Rebecca Goldburg</title>
-<circle cx="50" cy="841" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="845.5" font-size="14">
-<tspan x="68" y="845.5">Rebecca Goldburg</tspan>
-</text></g>
-<g data-node-id="M_P_TAYLOR" data-label-width="632"><title>Orley Taylor</title>
-<circle cx="50" cy="872" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="876.5" font-size="14">
-<tspan x="68" y="876.5">Orley Taylor</tspan>
-</text></g>
-<g data-node-id="P_OBERHAUSER" data-label-width="632"><title>Karen S. Oberhauser</title>
-<circle cx="50" cy="903" r="4.533333333333333" fill="#233449"/>
-<text x="68" y="907.5" font-size="14">
-<tspan x="68" y="907.5">Karen S. Oberhauser</tspan>
-</text></g>
-<g data-node-id="D_P_YOON" data-label-width="632"><title>Carol Kaesuk Yoon</title>
-<circle cx="50" cy="934" r="4" fill="#233449"/>
-<text x="68" y="938.5" font-size="14">
-<tspan x="68" y="938.5">Carol Kaesuk Yoon</tspan>
-</text></g>
-<g data-node-id="C_O_POOL" data-label-width="632"><title>ARS–ABSTC grant pool</title>
-<path d="M 810 58.266666666666666 l 7.733333333333333 7.733333333333333 -7.733333333333333 7.733333333333333 -7.733333333333333 -7.733333333333333 Z" fill="#55657D"/>
-<text x="828" y="70.5" font-size="14">
-<tspan x="828" y="70.5">ARS–ABSTC grant pool</tspan>
-</text></g>
-<g data-node-id="O_USDA_ARS" data-label-width="632"><title>USDA Agricultural Research Service</title>
-<path d="M 810 89.8 l 7.2 7.2 -7.2 7.2 -7.2 -7.2 Z" fill="#55657D"/>
-<text x="828" y="101.5" font-size="14">
-<tspan x="828" y="101.5">USDA Agricultural Research Service</tspan>
-</text></g>
-<g data-node-id="O_EPA" data-label-width="632"><title>US Environmental Protection Agency</title>
-<path d="M 810 120.8 l 7.2 7.2 -7.2 7.2 -7.2 -7.2 Z" fill="#55657D"/>
-<text x="828" y="132.5" font-size="14">
-<tspan x="828" y="132.5">US Environmental Protection Agency</tspan>
-</text></g>
-<g data-node-id="B_O_ENV_CANADA" data-label-width="632"><title>Environment Canada</title>
-<path d="M 810 152.33333333333334 l 6.666666666666666 6.666666666666666 -6.666666666666666 6.666666666666666 -6.666666666666666 -6.666666666666666 Z" fill="#55657D"/>
-<text x="828" y="163.5" font-size="14">
-<tspan x="828" y="163.5">Environment Canada</tspan>
-</text></g>
-<g data-node-id="O_CORNELL" data-label-width="632"><title>Cornell University</title>
-<path d="M 810 183.86666666666667 l 6.133333333333333 6.133333333333333 -6.133333333333333 6.133333333333333 -6.133333333333333 -6.133333333333333 Z" fill="#55657D"/>
-<text x="828" y="194.5" font-size="14">
-<tspan x="828" y="194.5">Cornell University</tspan>
-</text></g>
-<g data-node-id="B_O_CIBA_BIOTECH" data-label-width="632"><title>Ciba Agricultural Biotechnology</title>
-<path d="M 810 214.86666666666667 l 6.133333333333333 6.133333333333333 -6.133333333333333 6.133333333333333 -6.133333333333333 -6.133333333333333 Z" fill="#55657D"/>
-<text x="828" y="225.5" font-size="14">
-<tspan x="828" y="225.5">Ciba Agricultural Biotechnology</tspan>
-</text></g>
-<g data-node-id="O_ABSTC" data-label-width="632"><title>Agricultural Biotechnology Stewardship Technical Committee</title>
-<path d="M 810 245.86666666666667 l 6.133333333333333 6.133333333333333 -6.133333333333333 6.133333333333333 -6.133333333333333 -6.133333333333333 Z" fill="#55657D"/>
-<text x="828" y="256.5" font-size="14">
-<tspan x="828" y="256.5">Agricultural Biotechnology Stewardship Technical Committee</tspan>
-</text></g>
-<g data-node-id="B_O_FLORIDA" data-label-width="632"><title>University of Florida — Department of Zoology</title>
-<path d="M 810 277.4 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
-<text x="828" y="287.5" font-size="14">
-<tspan x="828" y="287.5">University of Florida — Department of Zoology</tspan>
-</text></g>
-<g data-node-id="O_MONSANTO" data-label-width="632"><title>Monsanto Company</title>
-<path d="M 810 308.4 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
-<text x="828" y="318.5" font-size="14">
-<tspan x="828" y="318.5">Monsanto Company</tspan>
-</text></g>
-<g data-node-id="O_UCS" data-label-width="632"><title>Union of Concerned Scientists</title>
-<path d="M 810 339.4 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
-<text x="828" y="349.5" font-size="14">
-<tspan x="828" y="349.5">Union of Concerned Scientists</tspan>
-</text></g>
-<g data-node-id="C_O_CFIA" data-label-width="632"><title>Canadian Food Inspection Agency</title>
-<path d="M 810 370.4 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
-<text x="828" y="380.5" font-size="14">
-<tspan x="828" y="380.5">Canadian Food Inspection Agency</tspan>
-</text></g>
-<g data-node-id="C_O_PANEL" data-label-width="632"><title>2000 monarch research steering committee</title>
-<path d="M 810 401.4 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
-<text x="828" y="411.5" font-size="14">
-<tspan x="828" y="411.5">2000 monarch research steering committee</tspan>
-</text></g>
-<g data-node-id="C_O_OMAFRA" data-label-width="632"><title>Ontario Ministry of Agriculture, Food and Rural Affairs</title>
-<path d="M 810 432.93333333333334 l 5.066666666666666 5.066666666666666 -5.066666666666666 5.066666666666666 -5.066666666666666 -5.066666666666666 Z" fill="#55657D"/>
-<text x="828" y="442.5" font-size="14">
-<tspan x="828" y="442.5">Ontario Ministry of Agriculture, Food and Rural Affairs</tspan>
-</text></g>
-<g data-node-id="C_O_MAES" data-label-width="632"><title>Maryland Agricultural Experiment Station</title>
-<path d="M 810 463.93333333333334 l 5.066666666666666 5.066666666666666 -5.066666666666666 5.066666666666666 -5.066666666666666 -5.066666666666666 Z" fill="#55657D"/>
-<text x="828" y="473.5" font-size="14">
-<tspan x="828" y="473.5">Maryland Agricultural Experiment Station</tspan>
-</text></g>
-<g data-node-id="C_O_LEOPOLD" data-label-width="632"><title>Leopold Center for Sustainable Agriculture</title>
-<path d="M 810 494.93333333333334 l 5.066666666666666 5.066666666666666 -5.066666666666666 5.066666666666666 -5.066666666666666 -5.066666666666666 Z" fill="#55657D"/>
-<text x="828" y="504.5" font-size="14">
-<tspan x="828" y="504.5">Leopold Center for Sustainable Agriculture</tspan>
-</text></g>
-<g data-node-id="O_EDF" data-label-width="632"><title>Environmental Defense Fund</title>
-<path d="M 810 525.9333333333333 l 5.066666666666666 5.066666666666666 -5.066666666666666 5.066666666666666 -5.066666666666666 -5.066666666666666 Z" fill="#55657D"/>
-<text x="828" y="535.5" font-size="14">
-<tspan x="828" y="535.5">Environmental Defense Fund</tspan>
-</text></g>
-<g data-node-id="J_ORIGIN_HOSTS" data-label-width="632"><title>1998–1999 weed alternative-host research</title>
-<path d="M 810 556.9333333333333 l 5.066666666666666 5.066666666666666 -5.066666666666666 5.066666666666666 -5.066666666666666 -5.066666666666666 Z" fill="#55657D"/>
-<text x="828" y="566.5" font-size="14">
-<tspan x="828" y="566.5">1998–1999 weed alternative-host research</tspan>
-</text></g>
-<g data-node-id="J_SYMPOSIUM1999" data-label-width="632"><title>Monarch symposium, November 2, 1999</title>
-<path d="M 810 587.9333333333333 l 5.066666666666666 5.066666666666666 -5.066666666666666 5.066666666666666 -5.066666666666666 -5.066666666666666 Z" fill="#55657D"/>
-<text x="828" y="597.5" font-size="14">
-<tspan x="828" y="597.5">Monarch symposium, November 2, 1999</tspan>
-</text></g>
-<g data-node-id="O_MARYLAND" data-label-width="632"><title>University of Maryland</title>
-<path d="M 810 619.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="628.5" font-size="14">
-<tspan x="828" y="628.5">University of Maryland</tspan>
-</text></g>
-<g data-node-id="O_KANSAS" data-label-width="632"><title>University of Kansas</title>
-<path d="M 810 650.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="659.5" font-size="14">
-<tspan x="828" y="659.5">University of Kansas</tspan>
-</text></g>
-<g data-node-id="B_O_CIBA_SEEDS" data-label-width="632"><title>Ciba Seeds</title>
-<path d="M 810 681.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="690.5" font-size="14">
-<tspan x="828" y="690.5">Ciba Seeds</tspan>
-</text></g>
-<g data-node-id="O_NOVARTIS" data-label-width="632"><title>Novartis</title>
-<path d="M 810 712.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="721.5" font-size="14">
-<tspan x="828" y="721.5">Novartis</tspan>
-</text></g>
-<g data-node-id="O_SYNGENTA" data-label-width="632"><title>Syngenta Seeds, Inc.</title>
-<path d="M 810 743.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="752.5" font-size="14">
-<tspan x="828" y="752.5">Syngenta Seeds, Inc.</tspan>
-</text></g>
-<g data-node-id="C_O_ONTARIO" data-label-width="632"><title>Ontario Corn Growers Association</title>
-<path d="M 810 774.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="783.5" font-size="14">
-<tspan x="828" y="783.5">Ontario Corn Growers Association</tspan>
-</text></g>
-<g data-node-id="C_O_HATCH" data-label-width="632"><title>Hatch Act and Iowa State funding</title>
-<path d="M 810 805.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="814.5" font-size="14">
-<tspan x="828" y="814.5">Hatch Act and Iowa State funding</tspan>
-</text></g>
-<g data-node-id="C_O_ILLINOISFOUND" data-label-width="632"><title>University of Illinois Foundation</title>
-<path d="M 810 836.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="845.5" font-size="14">
-<tspan x="828" y="845.5">University of Illinois Foundation</tspan>
-</text></g>
-<g data-node-id="C_O_ILLINOISCAS" data-label-width="632"><title>University of Illinois at Urbana-Champaign Center for Advanced Study</title>
-<path d="M 810 867.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="876.5" font-size="14">
-<tspan x="828" y="876.5">University of Illinois at Urbana-Champaign Center for Advanced Study</tspan>
-</text></g>
-<g data-node-id="C_O_NTOS" data-label-width="632"><title>ABSTC Nontarget Organism Subcommittee</title>
-<path d="M 810 898.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="907.5" font-size="14">
-<tspan x="828" y="907.5">ABSTC Nontarget Organism Subcommittee</tspan>
-</text></g>
-<g data-node-id="C_O_EARLY_INDUSTRY" data-label-width="632"><title>1999 industry research arrangement</title>
-<path d="M 810 929.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="938.5" font-size="14">
-<tspan x="828" y="938.5">1999 industry research arrangement</tspan>
-</text></g>
-<g data-node-id="D_O_BIO" data-label-width="632"><title>Biotechnology Industry Organization</title>
-<path d="M 810 960.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="969.5" font-size="14">
-<tspan x="828" y="969.5">Biotechnology Industry Organization</tspan>
-</text></g>
-<g data-node-id="D_O_WP" data-label-width="632"><title>The Washington Post</title>
-<path d="M 810 991.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="1000.5" font-size="14">
-<tspan x="828" y="1000.5">The Washington Post</tspan>
-</text></g>
-<g data-node-id="O_USDA" data-label-width="632"><title>United States Department of Agriculture</title>
-<path d="M 810 1022.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="1031.5" font-size="14">
-<tspan x="828" y="1031.5">United States Department of Agriculture</tspan>
-</text></g>
-<g data-node-id="O_WORKING_GROUP1999" data-label-width="632"><title>Agricultural Biotechnology Stewardship Working Group</title>
-<path d="M 810 1053.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="1062.5" font-size="14">
-<tspan x="828" y="1062.5">Agricultural Biotechnology Stewardship Working Group</tspan>
-</text></g>
-<g data-node-id="J_WORKSHOP2000" data-label-width="632"><title>Monarch research workshop, February 2000</title>
-<path d="M 810 1084.4666666666667 l 4.533333333333333 4.533333333333333 -4.533333333333333 4.533333333333333 -4.533333333333333 -4.533333333333333 Z" fill="#55657D"/>
-<text x="828" y="1093.5" font-size="14">
-<tspan x="828" y="1093.5">Monarch research workshop, February 2000</tspan>
-</text></g>
-<g data-node-id="C_O_PEW" data-label-width="632"><title>Pew Initiative on Food and Biotechnology</title>
-<path d="M 810 1116 l 4 4 -4 4 -4 -4 Z" fill="#55657D"/>
-<text x="828" y="1124.5" font-size="14">
-<tspan x="828" y="1124.5">Pew Initiative on Food and Biotechnology</tspan>
-</text></g>
-<g data-node-id="W_LOSEY1999" data-label-width="632"><title>Transgenic pollen harms monarch larvae</title>
-<rect x="1558.5333333333333" y="54.53333333333333" width="22.933333333333334" height="22.933333333333334" rx="2" fill="#1266BF"/>
-<text x="1588" y="70.5" font-size="14">
-<tspan x="1588" y="70.5">Transgenic pollen harms monarch larvae</tspan>
-</text></g>
-<g data-node-id="W_STANLEYHORN2001" data-label-width="632"><title>Assessing the impact of Cry1Ab-expressing corn pollen</title>
-<rect x="1558.5333333333333" y="85.53333333333333" width="22.933333333333334" height="22.933333333333334" rx="2" fill="#1266BF"/>
-<text x="1588" y="101.5" font-size="14">
-<tspan x="1588" y="101.5">Assessing the impact of Cry1Ab-expressing corn pollen</tspan>
-</text></g>
-<g data-node-id="W_SEARS2001" data-label-width="632"><title>Sears et al. 2001 risk assessment</title>
-<rect x="1561.2" y="119.2" width="17.6" height="17.6" rx="2" fill="#1266BF"/>
-<text x="1588" y="132.5" font-size="14">
-<tspan x="1588" y="132.5">Sears et al. 2001 risk assessment</tspan>
-</text></g>
-<g data-node-id="B_W_REF02" data-label-width="632"><title>Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title>
-<rect x="1562.8" y="159.3" width="14.4" height="14.4" rx="2" fill="#1266BF"/>
-<text x="1588" y="162.5" font-size="14">
-<tspan x="1588" y="162.5">Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and</tspan>
-<tspan x="1588" y="179.5">silage and stability of expression over successive generations</tspan>
-</text></g>
-<g data-node-id="W_OBERHAUSER2001" data-label-width="632"><title>Temporal and spatial overlap between monarch larvae and corn pollen</title>
-<rect x="1563.3333333333333" y="198.33333333333334" width="13.333333333333332" height="13.333333333333332" rx="2" fill="#1266BF"/>
-<text x="1588" y="209.5" font-size="14">
-<tspan x="1588" y="209.5">Temporal and spatial overlap between monarch larvae and corn pollen</tspan>
-</text></g>
-<g data-node-id="B_W_NCR602" data-label-width="632"><title>Bt Corn and European Corn Borer</title>
-<rect x="1563.8666666666666" y="229.86666666666667" width="12.266666666666666" height="12.266666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="240.5" font-size="14">
-<tspan x="1588" y="240.5">Bt Corn and European Corn Borer</tspan>
-</text></g>
-<g data-node-id="B_W_REF04" data-label-width="632"><title>Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title>
-<rect x="1563.8666666666666" y="268.3666666666667" width="12.266666666666666" height="12.266666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="270.5" font-size="14">
-<tspan x="1588" y="270.5">Spring recolonization of eastern North America by the monarch butterfly:</tspan>
-<tspan x="1588" y="287.5">successive brood or single sweep migration?</tspan>
-</text></g>
-<g data-node-id="B_W_REF05" data-label-width="632"><title>Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title>
-<rect x="1563.8666666666666" y="314.3666666666667" width="12.266666666666666" height="12.266666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="316.5" font-size="14">
-<tspan x="1588" y="316.5">Cardenolide fingerprint of monarch butterflies reared on common milkweed,</tspan>
-<tspan x="1588" y="333.5">Asclepias syriaca L.</tspan>
-</text></g>
-<g data-node-id="C_W_ANDERSON2005" data-label-width="632"><title>Anderson et al. 2005 anthers and pollen</title>
-<rect x="1563.8666666666666" y="352.8666666666667" width="12.266666666666666" height="12.266666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="363.5" font-size="14">
-<tspan x="1588" y="363.5">Anderson et al. 2005 anthers and pollen</tspan>
-</text></g>
-<g data-node-id="B_W_BIOSCI2001" data-label-width="632"><title>Transgenic insecticidal corn</title>
-<rect x="1564.4" y="384.4" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
-<text x="1588" y="394.5" font-size="14">
-<tspan x="1588" y="394.5">Transgenic insecticidal corn</tspan>
-</text></g>
-<g data-node-id="B_W_REF08" data-label-width="632"><title>Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title>
-<rect x="1564.4" y="422.9" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
-<text x="1588" y="424.5" font-size="14">
-<tspan x="1588" y="424.5">Natal origins of migratory monarch butterflies at wintering colonies in Mexico:</tspan>
-<tspan x="1588" y="441.5">new isotopic evidence</tspan>
-</text></g>
-<g data-node-id="C_W_DIVELY2004" data-label-width="632"><title>Dively et al. 2004 chronic exposure</title>
-<rect x="1564.4" y="461.4" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
-<text x="1588" y="471.5" font-size="14">
-<tspan x="1588" y="471.5">Dively et al. 2004 chronic exposure</tspan>
-</text></g>
-<g data-node-id="A_W_REFUGE2001" data-label-width="632"><title>Evaluation of Noncorn Host Plants as a Refuge</title>
-<rect x="1564.9333333333334" y="492.93333333333334" width="10.133333333333333" height="10.133333333333333" rx="2" fill="#1266BF"/>
-<text x="1588" y="502.5" font-size="14">
-<tspan x="1588" y="502.5">Evaluation of Noncorn Host Plants as a Refuge</tspan>
-</text></g>
-<g data-node-id="A_W_STEM2002" data-label-width="632"><title>The effect of stem diameter on European corn borer</title>
-<rect x="1564.9333333333334" y="523.9333333333333" width="10.133333333333333" height="10.133333333333333" rx="2" fill="#1266BF"/>
-<text x="1588" y="533.5" font-size="14">
-<tspan x="1588" y="533.5">The effect of stem diameter on European corn borer</tspan>
-</text></g>
-<g data-node-id="B_W_DENNO1998" data-label-width="632"><title>Positive predator–predator interactions</title>
-<rect x="1564.9333333333334" y="554.9333333333333" width="10.133333333333333" height="10.133333333333333" rx="2" fill="#1266BF"/>
-<text x="1588" y="564.5" font-size="14">
-<tspan x="1588" y="564.5">Positive predator–predator interactions</tspan>
-</text></g>
-<g data-node-id="C_W_ZANGERL2001" data-label-width="632"><title>Zangerl et al. 2001 event 176</title>
-<rect x="1564.9333333333334" y="585.9333333333333" width="10.133333333333333" height="10.133333333333333" rx="2" fill="#1266BF"/>
-<text x="1588" y="595.5" font-size="14">
-<tspan x="1588" y="595.5">Zangerl et al. 2001 event 176</tspan>
-</text></g>
-<g data-node-id="B_W_REF03" data-label-width="632"><title>Dispersion and deposition of corn pollen from experimental sources</title>
-<rect x="1565.4666666666667" y="617.4666666666667" width="9.066666666666666" height="9.066666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="626.5" font-size="14">
-<tspan x="1588" y="626.5">Dispersion and deposition of corn pollen from experimental sources</tspan>
-</text></g>
-<g data-node-id="B_W_REF06" data-label-width="632"><title>Establishment of common milkweed (Asclepias syriaca) in corn, soybean, and wheat</title>
-<rect x="1565.4666666666667" y="648.4666666666667" width="9.066666666666666" height="9.066666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="657.5" font-size="14">
-<tspan x="1588" y="657.5">Establishment of common milkweed (Asclepias syriaca) in corn, soybean, and wheat</tspan>
-</text></g>
-<g data-node-id="B_W_REF07" data-label-width="632"><title>Monarch butterfly orientation: missing pieces of a magnificent puzzle</title>
-<rect x="1565.4666666666667" y="679.4666666666667" width="9.066666666666666" height="9.066666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="688.5" font-size="14">
-<tspan x="1588" y="688.5">Monarch butterfly orientation: missing pieces of a magnificent puzzle</tspan>
-</text></g>
-<g data-node-id="B_W_REF09" data-label-width="632"><title>Bt-corn resistance management</title>
-<rect x="1565.4666666666667" y="710.4666666666667" width="9.066666666666666" height="9.066666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="719.5" font-size="14">
-<tspan x="1588" y="719.5">Bt-corn resistance management</tspan>
-</text></g>
-<g data-node-id="C_W_PLEASANTS2001" data-label-width="632"><title>Pleasants et al. 2001 pollen deposition</title>
-<rect x="1565.4666666666667" y="741.4666666666667" width="9.066666666666666" height="9.066666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="750.5" font-size="14">
-<tspan x="1588" y="750.5">Pleasants et al. 2001 pollen deposition</tspan>
-</text></g>
-<g data-node-id="C_W_HELLMICH2001" data-label-width="632"><title>Hellmich et al. 2001 toxicity</title>
-<rect x="1565.4666666666667" y="772.4666666666667" width="9.066666666666666" height="9.066666666666666" rx="2" fill="#1266BF"/>
-<text x="1588" y="781.5" font-size="14">
-<tspan x="1588" y="781.5">Hellmich et al. 2001 toxicity</tspan>
-</text></g>
-</g></g></svg>
+<g class="node" data-node-id="P_LOSEY" data-tier-index="0"><title>John E. Losey</title>
+<rect class="node-card" x="347" y="116" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="363" cy="135" r="10" fill="#233449"/>
+<text x="380" y="139.5" font-size="14">
+<tspan x="380" y="139.5">John E. Losey</tspan>
+</text></g>
+<g class="node" data-node-id="P_BROWER" data-tier-index="0"><title>Lincoln Brower</title>
+<rect class="node-card" x="676" y="116" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="692" cy="135" r="6" fill="#233449"/>
+<text x="709" y="139.5" font-size="14">
+<tspan x="709" y="139.5">Lincoln Brower</tspan>
+</text></g>
+<g class="node" data-node-id="P_RAYOR" data-tier-index="0"><title>Linda S. Rayor</title>
+<rect class="node-card" x="996" y="116" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1012" cy="135" r="5.6" fill="#233449"/>
+<text x="1029" y="139.5" font-size="14">
+<tspan x="1029" y="139.5">Linda S. Rayor</tspan>
+</text></g>
+<g class="node" data-node-id="P_CARTER" data-tier-index="0"><title>Maureen E. Carter</title>
+<rect class="node-card" x="1304" y="116" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1320" cy="135" r="5.6" fill="#233449"/>
+<text x="1337" y="139.5" font-size="14">
+<tspan x="1337" y="139.5">Maureen E. Carter</tspan>
+</text></g>
+<g class="node" data-node-id="P_SACHS" data-tier-index="0"><title>Eric Sachs</title>
+<rect class="node-card" x="1603" y="116" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1619" cy="135" r="5.6" fill="#233449"/>
+<text x="1636" y="139.5" font-size="14">
+<tspan x="1636" y="139.5">Eric Sachs</tspan>
+</text></g>
+<g class="node" data-node-id="P_MELLON" data-tier-index="0"><title>Margaret Mellon</title>
+<rect class="node-card" x="1902" y="116" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1918" cy="135" r="5.6" fill="#233449"/>
+<text x="1935" y="139.5" font-size="14">
+<tspan x="1935" y="139.5">Margaret Mellon</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_MALCOLM" data-tier-index="0"><title>Stephen B. Malcolm</title>
+<rect class="node-card" x="347" y="162" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="363" cy="181" r="5.2" fill="#233449"/>
+<text x="380" y="185.5" font-size="14">
+<tspan x="380" y="185.5">Stephen B. Malcolm</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_COCKRELL" data-tier-index="0"><title>Barbara J. Cockrell</title>
+<rect class="node-card" x="676" y="162" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="692" cy="181" r="5.2" fill="#233449"/>
+<text x="709" y="185.5" font-size="14">
+<tspan x="709" y="185.5">Barbara J. Cockrell</tspan>
+</text></g>
+<g class="node" data-node-id="P_DENNO" data-tier-index="0"><title>Robert F. Denno</title>
+<rect class="node-card" x="996" y="162" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1012" cy="181" r="4.8" fill="#233449"/>
+<text x="1029" y="185.5" font-size="14">
+<tspan x="1029" y="185.5">Robert F. Denno</tspan>
+</text></g>
+<g class="node" data-node-id="P_HELLMICH" data-tier-index="0"><title>Richard L. Hellmich</title>
+<rect class="node-card" x="1304" y="162" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1320" cy="181" r="4.8" fill="#233449"/>
+<text x="1337" y="185.5" font-size="14">
+<tspan x="1337" y="185.5">Richard L. Hellmich</tspan>
+</text></g>
+<g class="node" data-node-id="P_OBRYCKI" data-tier-index="0"><title>John J. Obrycki</title>
+<rect class="node-card" x="1603" y="162" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1619" cy="181" r="4.8" fill="#233449"/>
+<text x="1636" y="185.5" font-size="14">
+<tspan x="1636" y="185.5">John J. Obrycki</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_JESSE" data-tier-index="0"><title>Laura C. H. Jesse</title>
+<rect class="node-card" x="1902" y="162" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1918" cy="181" r="4.8" fill="#233449"/>
+<text x="1935" y="185.5" font-size="14">
+<tspan x="1935" y="185.5">Laura C. H. Jesse</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_FEARING" data-tier-index="0"><title>Patricia L. Fearing</title>
+<rect class="node-card" x="347" y="208" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="363" cy="227" r="4.8" fill="#233449"/>
+<text x="380" y="231.5" font-size="14">
+<tspan x="380" y="231.5">Patricia L. Fearing</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_BROWN" data-tier-index="0"><title>Devon Brown</title>
+<rect class="node-card" x="676" y="208" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="692" cy="227" r="4.8" fill="#233449"/>
+<text x="709" y="231.5" font-size="14">
+<tspan x="709" y="231.5">Devon Brown</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_VLACHOS" data-tier-index="0"><title>Demetra Vlachos</title>
+<rect class="node-card" x="996" y="208" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1012" cy="227" r="4.8" fill="#233449"/>
+<text x="1029" y="231.5" font-size="14">
+<tspan x="1029" y="231.5">Demetra Vlachos</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_MEGHJI" data-tier-index="0"><title>Moez Meghji</title>
+<rect class="node-card" x="1304" y="208" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1320" cy="227" r="4.8" fill="#233449"/>
+<text x="1337" y="231.5" font-size="14">
+<tspan x="1337" y="231.5">Moez Meghji</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_PRIVALLE" data-tier-index="0"><title>Laura Privalle</title>
+<rect class="node-card" x="1603" y="208" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1619" cy="227" r="4.8" fill="#233449"/>
+<text x="1636" y="231.5" font-size="14">
+<tspan x="1636" y="231.5">Laura Privalle</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_WASSENAAR" data-tier-index="0"><title>Leonard I. Wassenaar</title>
+<rect class="node-card" x="1902" y="208" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1918" cy="227" r="4.8" fill="#233449"/>
+<text x="1935" y="231.5" font-size="14">
+<tspan x="1935" y="231.5">Leonard I. Wassenaar</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_HOBSON" data-tier-index="0"><title>Keith A. Hobson</title>
+<rect class="node-card" x="347" y="254" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="363" cy="273" r="4.8" fill="#233449"/>
+<text x="380" y="277.5" font-size="14">
+<tspan x="380" y="277.5">Keith A. Hobson</tspan>
+</text></g>
+<g class="node" data-node-id="D_P_WEISS" data-tier-index="0"><title>Rick Weiss</title>
+<rect class="node-card" x="676" y="254" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="692" cy="273" r="4.8" fill="#233449"/>
+<text x="709" y="277.5" font-size="14">
+<tspan x="709" y="277.5">Rick Weiss</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_STANLEYHORN" data-tier-index="0"><title>Diane E. Stanley-Horn</title>
+<rect class="node-card" x="996" y="254" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1012" cy="273" r="4.4" fill="#233449"/>
+<text x="1029" y="277.5" font-size="14">
+<tspan x="1029" y="277.5">Diane E. Stanley-Horn</tspan>
+</text></g>
+<g class="node" data-node-id="P_SEARS" data-tier-index="0"><title>Mark K. Sears</title>
+<rect class="node-card" x="1304" y="254" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1320" cy="273" r="4.4" fill="#233449"/>
+<text x="1337" y="277.5" font-size="14">
+<tspan x="1337" y="277.5">Mark K. Sears</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_HUTCHISON" data-tier-index="0"><title>William D. Hutchison</title>
+<rect class="node-card" x="1603" y="254" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1619" cy="273" r="4.4" fill="#233449"/>
+<text x="1636" y="277.5" font-size="14">
+<tspan x="1636" y="277.5">William D. Hutchison</tspan>
+</text></g>
+<g class="node" data-node-id="B_P_ANDOW" data-tier-index="0"><title>David A. Andow</title>
+<rect class="node-card" x="1902" y="254" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1918" cy="273" r="4.4" fill="#233449"/>
+<text x="1935" y="277.5" font-size="14">
+<tspan x="1935" y="277.5">David A. Andow</tspan>
+</text></g>
+<g class="node" data-node-id="P_SPANGLER" data-tier-index="0"><title>Steven Spangler</title>
+<rect class="node-card" x="347" y="300" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="363" cy="319" r="4.4" fill="#233449"/>
+<text x="380" y="323.5" font-size="14">
+<tspan x="380" y="323.5">Steven Spangler</tspan>
+</text></g>
+<g class="node" data-node-id="D_P_GOLDBURG" data-tier-index="0"><title>Rebecca Goldburg</title>
+<rect class="node-card" x="676" y="300" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="692" cy="319" r="4.4" fill="#233449"/>
+<text x="709" y="323.5" font-size="14">
+<tspan x="709" y="323.5">Rebecca Goldburg</tspan>
+</text></g>
+<g class="node" data-node-id="M_P_TAYLOR" data-tier-index="0"><title>Orley Taylor</title>
+<rect class="node-card" x="996" y="300" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1012" cy="319" r="4.4" fill="#233449"/>
+<text x="1029" y="323.5" font-size="14">
+<tspan x="1029" y="323.5">Orley Taylor</tspan>
+</text></g>
+<g class="node" data-node-id="P_OBERHAUSER" data-tier-index="0"><title>Karen S. Oberhauser</title>
+<rect class="node-card" x="1304" y="300" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1320" cy="319" r="4.4" fill="#233449"/>
+<text x="1337" y="323.5" font-size="14">
+<tspan x="1337" y="323.5">Karen S. Oberhauser</tspan>
+</text></g>
+<g class="node" data-node-id="D_P_YOON" data-tier-index="0"><title>Carol Kaesuk Yoon</title>
+<rect class="node-card" x="1603" y="300" width="252" height="38" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<circle cx="1619" cy="319" r="4" fill="#233449"/>
+<text x="1636" y="323.5" font-size="14">
+<tspan x="1636" y="323.5">Carol Kaesuk Yoon</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_POOL" data-tier-index="1"><title>ARS–ABSTC grant pool</title>
+<rect class="node-card" x="347" y="481" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 363 497.7 l 6.8 6.8 -6.8 6.8 -6.8 -6.8 Z" fill="#55657D"/>
+<text x="380" y="509" font-size="14">
+<tspan x="380" y="509">ARS–ABSTC grant pool</tspan>
+</text></g>
+<g class="node" data-node-id="O_USDA_ARS" data-tier-index="1"><title>USDA Agricultural Research Service</title>
+<rect class="node-card" x="676" y="481" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 692 498.1 l 6.4 6.4 -6.4 6.4 -6.4 -6.4 Z" fill="#55657D"/>
+<text x="709" y="500.5" font-size="14">
+<tspan x="709" y="500.5">USDA Agricultural</tspan>
+<tspan x="709" y="517.5">Research Service</tspan>
+</text></g>
+<g class="node" data-node-id="O_EPA" data-tier-index="1"><title>US Environmental Protection Agency</title>
+<rect class="node-card" x="996" y="481" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1012 498.1 l 6.4 6.4 -6.4 6.4 -6.4 -6.4 Z" fill="#55657D"/>
+<text x="1029" y="500.5" font-size="14">
+<tspan x="1029" y="500.5">US Environmental</tspan>
+<tspan x="1029" y="517.5">Protection Agency</tspan>
+</text></g>
+<g class="node" data-node-id="B_O_ENV_CANADA" data-tier-index="1"><title>Environment Canada</title>
+<rect class="node-card" x="1304" y="481" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1320 498.5 l 6 6 -6 6 -6 -6 Z" fill="#55657D"/>
+<text x="1337" y="509" font-size="14">
+<tspan x="1337" y="509">Environment Canada</tspan>
+</text></g>
+<g class="node" data-node-id="O_CORNELL" data-tier-index="1"><title>Cornell University</title>
+<rect class="node-card" x="1603" y="481" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1619 498.9 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
+<text x="1636" y="509" font-size="14">
+<tspan x="1636" y="509">Cornell University</tspan>
+</text></g>
+<g class="node" data-node-id="B_O_CIBA_BIOTECH" data-tier-index="1"><title>Ciba Agricultural Biotechnology</title>
+<rect class="node-card" x="1902" y="481" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1918 498.9 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
+<text x="1935" y="500.5" font-size="14">
+<tspan x="1935" y="500.5">Ciba Agricultural</tspan>
+<tspan x="1935" y="517.5">Biotechnology</tspan>
+</text></g>
+<g class="node" data-node-id="O_ABSTC" data-tier-index="1"><title>Agricultural Biotechnology Stewardship Technical Committee</title>
+<rect class="node-card" x="347" y="536" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 363 570.9 l 5.6 5.6 -5.6 5.6 -5.6 -5.6 Z" fill="#55657D"/>
+<text x="380" y="555.5" font-size="14">
+<tspan x="380" y="555.5">Agricultural</tspan>
+<tspan x="380" y="572.5">Biotechnology</tspan>
+<tspan x="380" y="589.5">Stewardship Technical</tspan>
+<tspan x="380" y="606.5">Committee</tspan>
+</text></g>
+<g class="node" data-node-id="B_O_FLORIDA" data-tier-index="1"><title>University of Florida — Department of Zoology</title>
+<rect class="node-card" x="676" y="536" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 692 571.3 l 5.2 5.2 -5.2 5.2 -5.2 -5.2 Z" fill="#55657D"/>
+<text x="709" y="572.5" font-size="14">
+<tspan x="709" y="572.5">University of Florida —</tspan>
+<tspan x="709" y="589.5">Department of Zoology</tspan>
+</text></g>
+<g class="node" data-node-id="O_MONSANTO" data-tier-index="1"><title>Monsanto Company</title>
+<rect class="node-card" x="996" y="536" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1012 571.3 l 5.2 5.2 -5.2 5.2 -5.2 -5.2 Z" fill="#55657D"/>
+<text x="1029" y="581" font-size="14">
+<tspan x="1029" y="581">Monsanto Company</tspan>
+</text></g>
+<g class="node" data-node-id="O_UCS" data-tier-index="1"><title>Union of Concerned Scientists</title>
+<rect class="node-card" x="1304" y="536" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1320 571.3 l 5.2 5.2 -5.2 5.2 -5.2 -5.2 Z" fill="#55657D"/>
+<text x="1337" y="572.5" font-size="14">
+<tspan x="1337" y="572.5">Union of Concerned</tspan>
+<tspan x="1337" y="589.5">Scientists</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_CFIA" data-tier-index="1"><title>Canadian Food Inspection Agency</title>
+<rect class="node-card" x="1603" y="536" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1619 571.3 l 5.2 5.2 -5.2 5.2 -5.2 -5.2 Z" fill="#55657D"/>
+<text x="1636" y="572.5" font-size="14">
+<tspan x="1636" y="572.5">Canadian Food Inspection</tspan>
+<tspan x="1636" y="589.5">Agency</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_PANEL" data-tier-index="1"><title>2000 monarch research steering committee</title>
+<rect class="node-card" x="1902" y="536" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1918 571.3 l 5.2 5.2 -5.2 5.2 -5.2 -5.2 Z" fill="#55657D"/>
+<text x="1935" y="572.5" font-size="14">
+<tspan x="1935" y="572.5">2000 monarch research</tspan>
+<tspan x="1935" y="589.5">steering committee</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_OMAFRA" data-tier-index="1"><title>Ontario Ministry of Agriculture, Food and Rural Affairs</title>
+<rect class="node-card" x="347" y="625" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 363 652.2 l 4.8 4.8 -4.8 4.8 -4.8 -4.8 Z" fill="#55657D"/>
+<text x="380" y="644.5" font-size="14">
+<tspan x="380" y="644.5">Ontario Ministry of</tspan>
+<tspan x="380" y="661.5">Agriculture, Food and</tspan>
+<tspan x="380" y="678.5">Rural Affairs</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_MAES" data-tier-index="1"><title>Maryland Agricultural Experiment Station</title>
+<rect class="node-card" x="676" y="625" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 692 652.2 l 4.8 4.8 -4.8 4.8 -4.8 -4.8 Z" fill="#55657D"/>
+<text x="709" y="653" font-size="14">
+<tspan x="709" y="653">Maryland Agricultural</tspan>
+<tspan x="709" y="670">Experiment Station</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_LEOPOLD" data-tier-index="1"><title>Leopold Center for Sustainable Agriculture</title>
+<rect class="node-card" x="996" y="625" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1012 652.2 l 4.8 4.8 -4.8 4.8 -4.8 -4.8 Z" fill="#55657D"/>
+<text x="1029" y="653" font-size="14">
+<tspan x="1029" y="653">Leopold Center for</tspan>
+<tspan x="1029" y="670">Sustainable Agriculture</tspan>
+</text></g>
+<g class="node" data-node-id="O_EDF" data-tier-index="1"><title>Environmental Defense Fund</title>
+<rect class="node-card" x="1304" y="625" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1320 652.2 l 4.8 4.8 -4.8 4.8 -4.8 -4.8 Z" fill="#55657D"/>
+<text x="1337" y="653" font-size="14">
+<tspan x="1337" y="653">Environmental Defense</tspan>
+<tspan x="1337" y="670">Fund</tspan>
+</text></g>
+<g class="node" data-node-id="J_ORIGIN_HOSTS" data-tier-index="1"><title>1998–1999 weed alternative-host research</title>
+<rect class="node-card" x="1603" y="625" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1619 652.2 l 4.8 4.8 -4.8 4.8 -4.8 -4.8 Z" fill="#55657D"/>
+<text x="1636" y="644.5" font-size="14">
+<tspan x="1636" y="644.5">1998–1999 weed</tspan>
+<tspan x="1636" y="661.5">alternative-host</tspan>
+<tspan x="1636" y="678.5">research</tspan>
+</text></g>
+<g class="node" data-node-id="J_SYMPOSIUM1999" data-tier-index="1"><title>Monarch symposium, November 2, 1999</title>
+<rect class="node-card" x="1902" y="625" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1918 652.2 l 4.8 4.8 -4.8 4.8 -4.8 -4.8 Z" fill="#55657D"/>
+<text x="1935" y="653" font-size="14">
+<tspan x="1935" y="653">Monarch symposium,</tspan>
+<tspan x="1935" y="670">November 2, 1999</tspan>
+</text></g>
+<g class="node" data-node-id="O_MARYLAND" data-tier-index="1"><title>University of Maryland</title>
+<rect class="node-card" x="347" y="697" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 363 716.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="380" y="725" font-size="14">
+<tspan x="380" y="725">University of Maryland</tspan>
+</text></g>
+<g class="node" data-node-id="O_KANSAS" data-tier-index="1"><title>University of Kansas</title>
+<rect class="node-card" x="676" y="697" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 692 716.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="709" y="725" font-size="14">
+<tspan x="709" y="725">University of Kansas</tspan>
+</text></g>
+<g class="node" data-node-id="B_O_CIBA_SEEDS" data-tier-index="1"><title>Ciba Seeds</title>
+<rect class="node-card" x="996" y="697" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1012 716.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1029" y="725" font-size="14">
+<tspan x="1029" y="725">Ciba Seeds</tspan>
+</text></g>
+<g class="node" data-node-id="O_NOVARTIS" data-tier-index="1"><title>Novartis</title>
+<rect class="node-card" x="1304" y="697" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1320 716.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1337" y="725" font-size="14">
+<tspan x="1337" y="725">Novartis</tspan>
+</text></g>
+<g class="node" data-node-id="O_SYNGENTA" data-tier-index="1"><title>Syngenta Seeds, Inc.</title>
+<rect class="node-card" x="1603" y="697" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1619 716.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1636" y="725" font-size="14">
+<tspan x="1636" y="725">Syngenta Seeds, Inc.</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_ONTARIO" data-tier-index="1"><title>Ontario Corn Growers Association</title>
+<rect class="node-card" x="1902" y="697" width="252" height="47" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1918 716.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1935" y="716.5" font-size="14">
+<tspan x="1935" y="716.5">Ontario Corn Growers</tspan>
+<tspan x="1935" y="733.5">Association</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_HATCH" data-tier-index="1"><title>Hatch Act and Iowa State funding</title>
+<rect class="node-card" x="347" y="752" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 363 779.6 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="380" y="780" font-size="14">
+<tspan x="380" y="780">Hatch Act and Iowa State</tspan>
+<tspan x="380" y="797">funding</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_ILLINOISFOUND" data-tier-index="1"><title>University of Illinois Foundation</title>
+<rect class="node-card" x="676" y="752" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 692 779.6 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="709" y="780" font-size="14">
+<tspan x="709" y="780">University of Illinois</tspan>
+<tspan x="709" y="797">Foundation</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_ILLINOISCAS" data-tier-index="1"><title>University of Illinois at Urbana-Champaign Center for Advanced Study</title>
+<rect class="node-card" x="996" y="752" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1012 779.6 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1029" y="771.5" font-size="14">
+<tspan x="1029" y="771.5">University of Illinois at</tspan>
+<tspan x="1029" y="788.5">Urbana-Champaign Center</tspan>
+<tspan x="1029" y="805.5">for Advanced Study</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_NTOS" data-tier-index="1"><title>ABSTC Nontarget Organism Subcommittee</title>
+<rect class="node-card" x="1304" y="752" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1320 779.6 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1337" y="780" font-size="14">
+<tspan x="1337" y="780">ABSTC Nontarget</tspan>
+<tspan x="1337" y="797">Organism Subcommittee</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_EARLY_INDUSTRY" data-tier-index="1"><title>1999 industry research arrangement</title>
+<rect class="node-card" x="1603" y="752" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1619 779.6 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1636" y="780" font-size="14">
+<tspan x="1636" y="780">1999 industry research</tspan>
+<tspan x="1636" y="797">arrangement</tspan>
+</text></g>
+<g class="node" data-node-id="D_O_BIO" data-tier-index="1"><title>Biotechnology Industry Organization</title>
+<rect class="node-card" x="1902" y="752" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1918 779.6 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1935" y="780" font-size="14">
+<tspan x="1935" y="780">Biotechnology Industry</tspan>
+<tspan x="1935" y="797">Organization</tspan>
+</text></g>
+<g class="node" data-node-id="D_O_WP" data-tier-index="1"><title>The Washington Post</title>
+<rect class="node-card" x="347" y="824" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 363 860.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="380" y="869" font-size="14">
+<tspan x="380" y="869">The Washington Post</tspan>
+</text></g>
+<g class="node" data-node-id="O_USDA" data-tier-index="1"><title>United States Department of Agriculture</title>
+<rect class="node-card" x="676" y="824" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 692 860.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="709" y="860.5" font-size="14">
+<tspan x="709" y="860.5">United States Department</tspan>
+<tspan x="709" y="877.5">of Agriculture</tspan>
+</text></g>
+<g class="node" data-node-id="O_WORKING_GROUP1999" data-tier-index="1"><title>Agricultural Biotechnology Stewardship Working Group</title>
+<rect class="node-card" x="996" y="824" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1012 860.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1029" y="843.5" font-size="14">
+<tspan x="1029" y="843.5">Agricultural</tspan>
+<tspan x="1029" y="860.5">Biotechnology</tspan>
+<tspan x="1029" y="877.5">Stewardship Working</tspan>
+<tspan x="1029" y="894.5">Group</tspan>
+</text></g>
+<g class="node" data-node-id="J_WORKSHOP2000" data-tier-index="1"><title>Monarch research workshop, February 2000</title>
+<rect class="node-card" x="1304" y="824" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1320 860.1 l 4.4 4.4 -4.4 4.4 -4.4 -4.4 Z" fill="#55657D"/>
+<text x="1337" y="860.5" font-size="14">
+<tspan x="1337" y="860.5">Monarch research</tspan>
+<tspan x="1337" y="877.5">workshop, February 2000</tspan>
+</text></g>
+<g class="node" data-node-id="C_O_PEW" data-tier-index="1"><title>Pew Initiative on Food and Biotechnology</title>
+<rect class="node-card" x="1603" y="824" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<path d="M 1619 860.5 l 4 4 -4 4 -4 -4 Z" fill="#55657D"/>
+<text x="1636" y="860.5" font-size="14">
+<tspan x="1636" y="860.5">Pew Initiative on Food</tspan>
+<tspan x="1636" y="877.5">and Biotechnology</tspan>
+</text></g>
+<g class="node" data-node-id="W_LOSEY1999" data-tier-index="2"><title>Transgenic pollen harms monarch larvae</title>
+<rect class="node-card" x="347" y="1069" width="252" height="115" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="353.4" y="1116.9" width="19.2" height="19.2" rx="2" fill="#1266BF"/>
+<text x="380" y="1122.5" font-size="14">
+<tspan x="380" y="1122.5">Transgenic pollen harms</tspan>
+<tspan x="380" y="1139.5">monarch larvae</tspan>
+</text></g>
+<g class="node" data-node-id="W_STANLEYHORN2001" data-tier-index="2"><title>Assessing the impact of Cry1Ab-expressing corn pollen</title>
+<rect class="node-card" x="676" y="1069" width="252" height="115" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="682.4" y="1116.9" width="19.2" height="19.2" rx="2" fill="#1266BF"/>
+<text x="709" y="1114" font-size="14">
+<tspan x="709" y="1114">Assessing the impact of</tspan>
+<tspan x="709" y="1131">Cry1Ab-expressing corn</tspan>
+<tspan x="709" y="1148">pollen</tspan>
+</text></g>
+<g class="node" data-node-id="W_SEARS2001" data-tier-index="2"><title>Sears et al. 2001 risk assessment</title>
+<rect class="node-card" x="996" y="1069" width="252" height="115" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1004.4" y="1118.9" width="15.2" height="15.2" rx="2" fill="#1266BF"/>
+<text x="1029" y="1122.5" font-size="14">
+<tspan x="1029" y="1122.5">Sears et al. 2001 risk</tspan>
+<tspan x="1029" y="1139.5">assessment</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF02" data-tier-index="2"><title>Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations</title>
+<rect class="node-card" x="1304" y="1069" width="252" height="115" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1313.6" y="1120.1" width="12.8" height="12.8" rx="2" fill="#1266BF"/>
+<text x="1337" y="1088.5" font-size="14">
+<tspan x="1337" y="1088.5">Quantitative analysis of</tspan>
+<tspan x="1337" y="1105.5">CryIA(b) expression in</tspan>
+<tspan x="1337" y="1122.5">Bt maize plants, tissues,</tspan>
+<tspan x="1337" y="1139.5">and silage and stability of</tspan>
+<tspan x="1337" y="1156.5">expression over</tspan>
+<tspan x="1337" y="1173.5">successive generations</tspan>
+</text></g>
+<g class="node" data-node-id="W_OBERHAUSER2001" data-tier-index="2"><title>Temporal and spatial overlap between monarch larvae and corn pollen</title>
+<rect class="node-card" x="1603" y="1069" width="252" height="115" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1613" y="1120.5" width="12" height="12" rx="2" fill="#1266BF"/>
+<text x="1636" y="1114" font-size="14">
+<tspan x="1636" y="1114">Temporal and spatial</tspan>
+<tspan x="1636" y="1131">overlap between monarch</tspan>
+<tspan x="1636" y="1148">larvae and corn pollen</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_NCR602" data-tier-index="2"><title>Bt Corn and European Corn Borer</title>
+<rect class="node-card" x="1902" y="1069" width="252" height="115" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1912.4" y="1120.9" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
+<text x="1935" y="1122.5" font-size="14">
+<tspan x="1935" y="1122.5">Bt Corn and European</tspan>
+<tspan x="1935" y="1139.5">Corn Borer</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF04" data-tier-index="2"><title>Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?</title>
+<rect class="node-card" x="347" y="1192" width="252" height="98" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="357.4" y="1235.4" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
+<text x="380" y="1211.5" font-size="14">
+<tspan x="380" y="1211.5">Spring recolonization of</tspan>
+<tspan x="380" y="1228.5">eastern North America by</tspan>
+<tspan x="380" y="1245.5">the monarch butterfly:</tspan>
+<tspan x="380" y="1262.5">successive brood or single</tspan>
+<tspan x="380" y="1279.5">sweep migration?</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF05" data-tier-index="2"><title>Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.</title>
+<rect class="node-card" x="676" y="1192" width="252" height="98" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="686.4" y="1235.4" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
+<text x="709" y="1220" font-size="14">
+<tspan x="709" y="1220">Cardenolide fingerprint</tspan>
+<tspan x="709" y="1237">of monarch butterflies</tspan>
+<tspan x="709" y="1254">reared on common milkweed,</tspan>
+<tspan x="709" y="1271">Asclepias syriaca L.</tspan>
+</text></g>
+<g class="node" data-node-id="C_W_ANDERSON2005" data-tier-index="2"><title>Anderson et al. 2005 anthers and pollen</title>
+<rect class="node-card" x="996" y="1192" width="252" height="98" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1006.4" y="1235.4" width="11.2" height="11.2" rx="2" fill="#1266BF"/>
+<text x="1029" y="1237" font-size="14">
+<tspan x="1029" y="1237">Anderson et al. 2005</tspan>
+<tspan x="1029" y="1254">anthers and pollen</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_BIOSCI2001" data-tier-index="2"><title>Transgenic insecticidal corn</title>
+<rect class="node-card" x="1304" y="1192" width="252" height="98" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1314.8" y="1235.8" width="10.4" height="10.4" rx="2" fill="#1266BF"/>
+<text x="1337" y="1237" font-size="14">
+<tspan x="1337" y="1237">Transgenic insecticidal</tspan>
+<tspan x="1337" y="1254">corn</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF08" data-tier-index="2"><title>Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence</title>
+<rect class="node-card" x="1603" y="1192" width="252" height="98" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1613.8" y="1235.8" width="10.4" height="10.4" rx="2" fill="#1266BF"/>
+<text x="1636" y="1211.5" font-size="14">
+<tspan x="1636" y="1211.5">Natal origins of migratory</tspan>
+<tspan x="1636" y="1228.5">monarch butterflies at</tspan>
+<tspan x="1636" y="1245.5">wintering colonies in</tspan>
+<tspan x="1636" y="1262.5">Mexico: new isotopic</tspan>
+<tspan x="1636" y="1279.5">evidence</tspan>
+</text></g>
+<g class="node" data-node-id="C_W_DIVELY2004" data-tier-index="2"><title>Dively et al. 2004 chronic exposure</title>
+<rect class="node-card" x="1902" y="1192" width="252" height="98" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1912.8" y="1235.8" width="10.4" height="10.4" rx="2" fill="#1266BF"/>
+<text x="1935" y="1237" font-size="14">
+<tspan x="1935" y="1237">Dively et al. 2004 chronic</tspan>
+<tspan x="1935" y="1254">exposure</tspan>
+</text></g>
+<g class="node" data-node-id="A_W_REFUGE2001" data-tier-index="2"><title>Evaluation of Noncorn Host Plants as a Refuge</title>
+<rect class="node-card" x="347" y="1298" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="358.2" y="1333.7" width="9.6" height="9.6" rx="2" fill="#1266BF"/>
+<text x="380" y="1334.5" font-size="14">
+<tspan x="380" y="1334.5">Evaluation of Noncorn</tspan>
+<tspan x="380" y="1351.5">Host Plants as a Refuge</tspan>
+</text></g>
+<g class="node" data-node-id="A_W_STEM2002" data-tier-index="2"><title>The effect of stem diameter on European corn borer</title>
+<rect class="node-card" x="676" y="1298" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="687.2" y="1333.7" width="9.6" height="9.6" rx="2" fill="#1266BF"/>
+<text x="709" y="1326" font-size="14">
+<tspan x="709" y="1326">The effect of stem</tspan>
+<tspan x="709" y="1343">diameter on European</tspan>
+<tspan x="709" y="1360">corn borer</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_DENNO1998" data-tier-index="2"><title>Positive predator–predator interactions</title>
+<rect class="node-card" x="996" y="1298" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1007.2" y="1333.7" width="9.6" height="9.6" rx="2" fill="#1266BF"/>
+<text x="1029" y="1326" font-size="14">
+<tspan x="1029" y="1326">Positive</tspan>
+<tspan x="1029" y="1343">predator–predator</tspan>
+<tspan x="1029" y="1360">interactions</tspan>
+</text></g>
+<g class="node" data-node-id="C_W_ZANGERL2001" data-tier-index="2"><title>Zangerl et al. 2001 event 176</title>
+<rect class="node-card" x="1304" y="1298" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1315.2" y="1333.7" width="9.6" height="9.6" rx="2" fill="#1266BF"/>
+<text x="1337" y="1334.5" font-size="14">
+<tspan x="1337" y="1334.5">Zangerl et al. 2001 event</tspan>
+<tspan x="1337" y="1351.5">176</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF03" data-tier-index="2"><title>Dispersion and deposition of corn pollen from experimental sources</title>
+<rect class="node-card" x="1603" y="1298" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1614.6" y="1334.1" width="8.8" height="8.8" rx="2" fill="#1266BF"/>
+<text x="1636" y="1326" font-size="14">
+<tspan x="1636" y="1326">Dispersion and deposition</tspan>
+<tspan x="1636" y="1343">of corn pollen from</tspan>
+<tspan x="1636" y="1360">experimental sources</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF06" data-tier-index="2"><title>Establishment of common milkweed (Asclepias syriaca) in corn, soybean, and wheat</title>
+<rect class="node-card" x="1902" y="1298" width="252" height="81" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1913.6" y="1334.1" width="8.8" height="8.8" rx="2" fill="#1266BF"/>
+<text x="1935" y="1317.5" font-size="14">
+<tspan x="1935" y="1317.5">Establishment of common</tspan>
+<tspan x="1935" y="1334.5">milkweed (Asclepias</tspan>
+<tspan x="1935" y="1351.5">syriaca) in corn, soybean,</tspan>
+<tspan x="1935" y="1368.5">and wheat</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF07" data-tier-index="2"><title>Monarch butterfly orientation: missing pieces of a magnificent puzzle</title>
+<rect class="node-card" x="347" y="1387" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="358.6" y="1414.6" width="8.8" height="8.8" rx="2" fill="#1266BF"/>
+<text x="380" y="1406.5" font-size="14">
+<tspan x="380" y="1406.5">Monarch butterfly</tspan>
+<tspan x="380" y="1423.5">orientation: missing pieces</tspan>
+<tspan x="380" y="1440.5">of a magnificent puzzle</tspan>
+</text></g>
+<g class="node" data-node-id="B_W_REF09" data-tier-index="2"><title>Bt-corn resistance management</title>
+<rect class="node-card" x="676" y="1387" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="687.6" y="1414.6" width="8.8" height="8.8" rx="2" fill="#1266BF"/>
+<text x="709" y="1415" font-size="14">
+<tspan x="709" y="1415">Bt-corn resistance</tspan>
+<tspan x="709" y="1432">management</tspan>
+</text></g>
+<g class="node" data-node-id="C_W_PLEASANTS2001" data-tier-index="2"><title>Pleasants et al. 2001 pollen deposition</title>
+<rect class="node-card" x="996" y="1387" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1007.6" y="1414.6" width="8.8" height="8.8" rx="2" fill="#1266BF"/>
+<text x="1029" y="1415" font-size="14">
+<tspan x="1029" y="1415">Pleasants et al. 2001</tspan>
+<tspan x="1029" y="1432">pollen deposition</tspan>
+</text></g>
+<g class="node" data-node-id="C_W_HELLMICH2001" data-tier-index="2"><title>Hellmich et al. 2001 toxicity</title>
+<rect class="node-card" x="1304" y="1387" width="252" height="64" rx="7" fill="#fff" stroke="#cbd8e8"/>
+<rect x="1315.6" y="1414.6" width="8.8" height="8.8" rx="2" fill="#1266BF"/>
+<text x="1337" y="1415" font-size="14">
+<tspan x="1337" y="1415">Hellmich et al. 2001</tspan>
+<tspan x="1337" y="1432">toxicity</tspan>
+</text></g>
+</g></svg>
