@@ -24,12 +24,22 @@ th,td{padding:.45rem .65rem;border:1px solid var(--line);text-align:start;vertic
 th{background:#f2f5f9}
 td a{white-space:nowrap}
 @media print{body,main{background:#fff;margin:0;padding:0;border:0}table{display:table}}
+
+.graph-links{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem 1.15rem;margin:1.3rem 0}
+.graph-links a{font-weight:600}
+.graph-links .graph-primary{background:var(--blue);color:#fff;border-radius:.55rem;padding:.45rem .85rem;text-decoration:none}
+.graph-links .graph-primary:hover{background:#144a7e}
 </style>
 </head>
 <body><main>
 <h1>帝王蝶论文的学术与社会关系网络</h1>
 <p>以 1999 年《Nature》短文为中心，追踪其研究背景、学术合作、机构资助及公共与监管回应。全卷收录 86 个节点、120 条关系、34 条事件记录、96 条事实和 63 项来源。</p>
-<p><a href="#research">研究正文</a> · <a href="#evidence">时间线与证据记录</a> · <a href="#network">图谱节点与关系</a> · <a href="#sources">来源索引与方法</a></p>
+<nav class="graph-links" aria-label="交互关系图谱与下载">
+<a class="graph-primary" href="visualization/network.html">打开交互关系图谱</a>
+<a href="visualization/network_full.svg" download>完整图谱 SVG</a>
+<a href="visualization/network_core.svg" download>核心关系图 SVG</a>
+</nav>
+<p><a href="#research">研究正文</a> · <a href="#evidence">时间线与证据记录</a> · <a href="#network">节点与关系表</a> · <a href="#sources">来源索引与方法</a></p>
 <p><a id="research"></a></p>
 <h2>研究概述</h2>
 <h3>实验设计与结果</h3>

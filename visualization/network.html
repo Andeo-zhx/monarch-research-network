@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monarch Butterfly Paper · Research Network</title>
+<style>
+:root{
+  --ink:#20232a;--muted:#565e6c;--paper:#f3f6fb;--line:#dce2eb;--surface:#fff;
+  --accent:#075dbd;--person:#293b53;--institution:#65768c;--paper-event:#2365b9;
+  --edge:#cbd5e1;--graph-width:900px;
+  --ui-font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  --panel:linear-gradient(155deg,#fffffff2,#f0f4facc);
+  --panel-shadow:inset 0 1px 0 #fff,0 1px 2px #2c415a0a,0 6px 18px #2c415a09;
+  --graph-height:clamp(460px,calc(100vh - 210px),860px)
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 22% 0,#e0eaf8,transparent 55%),linear-gradient(135deg,#f6f8fb,#eceff5);font:14px/1.55 var(--ui-font);accent-color:var(--accent)}
+header{padding:13px 22px 11px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#ffffff45;border-top:1px solid #fff}
+h1{font-size:25px;font-weight:650;letter-spacing:-.025em;line-height:1.25;margin:1px 0 0}
+header p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.kicker{font-size:10px;font-weight:650;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+button,input,select,.export-link{font:inherit;color:inherit;border:1px solid #d1d8e3;background:var(--surface);border-radius:8px;padding:6px 8px}
+button{cursor:pointer}
+button:hover,.export-link:hover{border-color:#a8bad1;background:#f7faff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.views{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:8px 22px;border-block:1px solid #dbe2ed;background:#ffffff80}
+.view-segments{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;background:#e4eaf2;border:1px solid #d6deea;border-radius:10px}
+.views button{min-height:28px;padding:3px 13px;background:transparent;border:1px solid transparent;border-radius:7px;font-size:12px;font-weight:550}
+.views button:hover{background:#f4f7fb}
+.views button.active{background:#fff;color:var(--accent);border-color:#d7e0eb;box-shadow:0 1px 3px #354f7320}
+.export-link{display:inline-flex;align-items:center;gap:7px;background:#f4f8ff;color:var(--accent);border-color:#c4d7f1;font-size:12px;font-weight:650;text-decoration:none}
+.export-link svg{width:15px;height:15px}
+main{display:grid;grid-template-columns:clamp(170px,14vw,194px) minmax(0,1fr) clamp(238px,19vw,290px);gap:10px;padding:10px 12px;align-items:start}
+.filters,.detail,.canvas,.timeline{border:1px solid var(--line);border-radius:14px;background:var(--panel);box-shadow:var(--panel-shadow)}
+.filters,.detail{padding:14px}
+.filters{align-self:stretch}
+.filters strong{font-size:14px;font-weight:650}
+.detail{overflow-wrap:anywhere}
+.filters label{display:block;margin:16px 0 4px;color:var(--muted);font-size:12px}
+.filters input:not([type=checkbox]),.filters select{width:100%}
+.range{display:flex;gap:5px}.range input{min-width:0}
+.check{display:flex!important;align-items:center;gap:6px}.check input{margin:0}
+.filter-note,.small{font-size:12px;color:var(--muted)}
+.date-caption{display:flex;align-items:center;gap:6px;margin:16px 0 4px;color:var(--muted);font-size:12px}
+.filter-note{position:relative}
+.filter-note button{display:grid;place-items:center;width:17px;height:17px;padding:0;border-radius:50%;color:var(--accent);cursor:help;font-weight:700}
+.filter-note p{display:none;position:absolute;z-index:3;left:-65px;top:calc(100% + 4px);width:160px;margin:0;padding:8px;background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 2px 7px #192f4c26}
+.filter-note:hover p,.filter-note:focus-within p{display:block}
+.canvas{position:relative;min-width:0;padding:8px}
+.canvas-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:1px 4px 7px;color:var(--muted);font-size:12px}
+#count{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.canvas-notes{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.dashed-key::before{content:"";display:inline-block;width:20px;border-top:2px dashed var(--muted);margin-right:6px;vertical-align:middle}
+.graph-tooltip{position:fixed;z-index:10;pointer-events:none;max-width:min(420px,90vw);padding:7px 10px;border-radius:5px;background:#20354b;color:#fff;font-size:12px;white-space:pre-line;overflow-wrap:anywhere;box-shadow:0 2px 9px #192f4c35}
+.graph-scroll{overflow:auto;height:var(--graph-height);border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.column-heads{position:sticky;top:0;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);width:clamp(720px,100%,var(--graph-width));background:linear-gradient(#f9fbfe,#edf3fa);border-bottom:1px solid var(--line)}
+.column-head{padding:9px 11.33%;display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:13px}
+.column-head+.column-head{border-left:1px solid var(--line)}
+.column-head svg{width:14px;height:14px;flex:none}
+.column-head small{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}
+#graph{width:clamp(720px,100%,var(--graph-width));height:auto;display:block;background:linear-gradient(to right,transparent calc(100% / 3 - 1px),var(--line) calc(100% / 3 - 1px),var(--line) calc(100% / 3),#f7faff calc(100% / 3),#f7faff calc(200% / 3 - 1px),var(--line) calc(200% / 3 - 1px),var(--line) calc(200% / 3),transparent calc(200% / 3))}
+#graph .edge,#graph .node{cursor:pointer}
+#graph .edge-hit{fill:none;stroke:transparent;stroke-width:7;pointer-events:stroke}
+#graph .edge-line{fill:none;stroke:var(--edge);opacity:.35;stroke-width:1.35;pointer-events:none}
+#graph .edge--grade-c .edge-line,#graph .edge[data-grade="C"] .edge-line,#graph .edge-line[data-grade="C"]{stroke-dasharray:5 4}
+#graph .edge.is-dimmed .edge-line{opacity:.1}
+#graph .edge:is(.is-related,.is-active) .edge-line{stroke:var(--edge-accent,var(--accent));opacity:1;stroke-width:2.6}
+#graph .edge:focus,#graph .node:focus{outline:none}
+#graph .node-row,#graph .node-hit{fill:transparent}
+#graph .node:is(.is-related,.is-active,:hover,:focus-visible) :is(.node-row,.node-hit){fill:#eaf2fd;stroke:#9bbce1;stroke-width:1}
+#graph .node:is(.is-related,.is-active,:hover,:focus-visible) .node-label{color:#1a4d81}
+#graph .node.is-dimmed{opacity:.1}
+#graph .node-label{font:12px/16px 'Microsoft YaHei','PingFang SC',sans-serif;color:var(--ink);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;max-height:32px}
+#graph foreignObject{pointer-events:none}
+#graph .node-label-wrap{height:100%;display:flex;align-items:center}
+.empty{position:absolute;inset:25% 0 auto;text-align:center;pointer-events:none;color:var(--muted)}
+.detail h2,.timeline h2{font-size:19px;font-weight:650;line-height:1.35;margin:3px 0 10px}
+.detail h3{font-size:12px;letter-spacing:.08em;margin:22px 0 6px;color:var(--muted)}
+.detail a{color:var(--accent);overflow-wrap:anywhere}.detail ul{padding-left:19px}
+.detail{min-height:calc(var(--graph-height) + 42px);max-height:calc(var(--graph-height) + 42px);overflow:auto;font-size:13px}
+.detail .relation-heading{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 7px;font:600 16px/1.4 var(--ui-font)}
+.relation-label,.citation-meta{color:var(--muted);font-size:11px}
+.record-fields{margin:10px 0;border-top:1px solid var(--line)}
+.record-fields div{display:flex;gap:7px;padding:4px 0;border-bottom:1px solid var(--line)}
+.record-fields dt{flex:0 0 70px;color:var(--muted)}
+.record-fields dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.record-tags{display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin:8px 0}
+.detail .citations{list-style:none;padding:0;margin:6px 0}
+.citations li{padding:5px 0;border-top:1px solid var(--line);line-height:1.4}
+.citation-meta{margin-top:2px}
+.record-trace,.record-related,.record-profile{margin-top:9px;padding-top:7px;border-top:1px solid var(--line)}
+.detail details summary{cursor:pointer;color:var(--accent)}
+.profile-copy{font-size:12px;margin-top:7px}
+.detail :is(.edge-link,.node-link){font-size:11px;padding:3px 6px;margin:2px 3px 2px 0;text-align:left}
+.tag{display:inline-block;color:#284e79;background:#e6eef9;padding:2px 7px;border-radius:6px}
+.timeline{padding:14px 16px 16px;margin:0 12px 12px}
+.timeline p{margin:0}
+.events{display:flex;gap:8px;overflow-x:auto;padding:10px 0 3px}
+.events button{flex:0 0 170px;text-align:left;white-space:normal}
+.events time{color:var(--accent);display:block;font-size:12px}
+.events span{display:block;max-height:4.6em;overflow:hidden}
+.hint{color:var(--muted)}
+@media(max-width:1160px){main{grid-template-columns:170px minmax(0,1fr)}.detail{grid-column:1/-1;min-height:0;max-height:none;overflow:visible}}
+@media(max-width:640px){header{padding:13px 12px;display:block}.views{padding:8px 12px}main{display:grid;grid-template-columns:minmax(0,1fr)}}
+.research-links{display:flex;flex-wrap:wrap;gap:6px}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="kicker">Research archive / 1995—2005</div><h1>Monarch Butterfly Paper · Research Network</h1><p>Explore the sources, collaborations, and public response behind the paper.</p></div>
+  <div class="small">Evidence grades A / B / C<br>Arrows show relationship direction</div>
+</header>
+<nav class="views" aria-label="Network views">
+  <div class="view-segments"><button data-view="all" class="active">Full Network</button><button data-view="academic">Academic Collaboration</button><button data-view="funding">Funding &amp; Organizations</button><button data-view="public">Debate &amp; Public Response</button></div>
+  <div class="research-links"><a class="export-link" href="../index.html">Research Report</a>
+  <a class="export-link" href="network_core.svg" download="network_core.svg">Download Core SVG</a>
+  <a class="export-link" id="export-svg" href="network_full.svg" download="network_full.svg"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8m-3-3 3 3 3-3M3 11v3h10v-3"/></svg>Download Full SVG</a></div>
+</nav>
+<main>
+  <aside class="filters">
+    <strong>Explore &amp; Filter</strong>
+    <label for="search">Search nodes</label><input id="search" type="search" placeholder="Name, paper, or ID">
+    <label for="relation">Relationship type</label><select id="relation"><option value="">All relationships</option></select>
+    <label for="grade">Evidence grade</label><select id="grade"><option value="">All grades</option><option>A</option><option>B</option><option>C</option></select>
+    <div class="date-caption"><span>Year range</span><div class="filter-note"><button type="button" aria-label="About year filtering" aria-describedby="date-note">?</button><p id="date-note">An end year on its own counts as one recorded year. Leave both fields blank to show all years.</p></div></div>
+    <div class="range"><input id="from" type="number" placeholder="From" aria-label="From"><input id="to" type="number" placeholder="To" aria-label="To"></div>
+    <label class="check"><input id="unknown" type="checkbox" checked> Include undated records</label>
+    <button id="reset">Reset filters</button>
+  </aside>
+  <section class="canvas" aria-label="Research network">
+    <div class="canvas-head"><span id="count"></span><div class="canvas-notes"><span class="dashed-key">Dashed lines: grade C</span><span>Select a node or edge to inspect its evidence</span></div></div>
+    <div id="graph-tooltip" class="graph-tooltip" hidden></div>
+    <div class="graph-scroll" id="graph-scroll" tabindex="0" aria-label="Scrollable network view">
+      <div class="column-heads">
+        <div class="column-head"><svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="var(--person)"/></svg><strong>Researchers</strong><small id="column-count-0"></small></div>
+        <div class="column-head"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1 13 7 7 13 1 7Z" fill="var(--institution)"/></svg><strong>Organizations &amp; Projects</strong><small id="column-count-1"></small></div>
+        <div class="column-head"><svg viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="var(--paper-event)"/></svg><strong>Papers &amp; Events</strong><small id="column-count-2"></small></div>
+      </div>
+      <svg id="graph" width="900" height="130" viewBox="0 0 900 130" role="group" aria-label="Interactive research network"></svg>
+    </div>
+    <div id="empty" class="empty" hidden>No nodes or relationships match your filters</div>
+  </section>
+  <aside id="detail" class="detail" aria-live="polite"><span class="kicker">Evidence record</span><h2>Select a record</h2><p class="hint">Select a node, relationship, or event to see its dates, details, and sources.</p></aside>
+</main>
+<section class="timeline"><h2>Timeline</h2><p class="small">Select an event to see related nodes and sources. Events appear in chronological order.</p><div id="events" class="events"></div></section>
+<script>const DATA = {"nodes":[{"node_id":"P_LOSEY","label":"John E. Losey","node_type":"person","start_date":"","end_date":"","description":"Cornell昆虫学者","source_ids":"S001;S002","evidence_grade":"A"},{"node_id":"P_RAYOR","label":"Linda S. Rayor","node_type":"person","start_date":"","end_date":"","description":"Cornell昆虫学系行为生态学者","source_ids":"S001;S005","evidence_grade":"A"},{"node_id":"P_CARTER","label":"Maureen E. Carter","node_type":"person","start_date":"","end_date":"","description":"1999 年《Nature》论文共同作者","source_ids":"S001;S002","evidence_grade":"A"},{"node_id":"O_CORNELL","label":"Cornell University","node_type":"organization","start_date":"","end_date":"","description":"1999 年《Nature》论文作者署名机构","source_ids":"S001","evidence_grade":"A"},{"node_id":"W_LOSEY1999","label":"Transgenic pollen harms monarch larvae","node_type":"work","start_date":"1999-05-20","end_date":"","description":"Nature 399:214","source_ids":"S001","evidence_grade":"A"},{"node_id":"P_BROWER","label":"Lincoln Brower","node_type":"person","start_date":"","end_date":"","description":"帝王蝶研究者","source_ids":"S004;S038","evidence_grade":"A"},{"node_id":"P_DENNO","label":"Robert F. Denno","node_type":"person","start_date":"","end_date":"","description":"1998 年与 Losey 共同署名捕食生态研究","source_ids":"S009","evidence_grade":"A"},{"node_id":"O_MARYLAND","label":"University of Maryland","node_type":"organization","start_date":"","end_date":"","description":"Losey博士学校","source_ids":"S008;S009","evidence_grade":"C"},{"node_id":"O_KANSAS","label":"University of Kansas","node_type":"organization","start_date":"","end_date":"","description":"Rayor博士学校","source_ids":"S005;S006","evidence_grade":"B"},{"node_id":"W_STANLEYHORN2001","label":"Assessing the impact of Cry1Ab-expressing corn pollen","node_type":"work","start_date":"2001-09-14","end_date":"","description":"PNAS 98:11931–11936，多机构联合田间研究","source_ids":"S011","evidence_grade":"A"},{"node_id":"A_W_REFUGE2001","label":"Evaluation of Noncorn Host Plants as a Refuge","node_type":"work","start_date":"2001-08-01","end_date":"","description":"非玉米寄主和抗性管理","source_ids":"S018","evidence_grade":"A"},{"node_id":"A_W_STEM2002","label":"The effect of stem diameter on European corn borer","node_type":"work","start_date":"2002","end_date":"","description":"茎直径和玉米螟","source_ids":"S019;S010","evidence_grade":"C"},{"node_id":"P_HELLMICH","label":"Richard L. Hellmich","node_type":"person","start_date":"","end_date":"","description":"2001 年 PNAS 田间研究共同作者","source_ids":"S011","evidence_grade":"A"},{"node_id":"P_OBRYCKI","label":"John J. Obrycki","node_type":"person","start_date":"","end_date":"","description":"2001 年 PNAS 田间研究共同作者","source_ids":"S011","evidence_grade":"A"},{"node_id":"B_P_STANLEYHORN","label":"Diane E. Stanley-Horn","node_type":"person","start_date":"","end_date":"","description":"2001 年 PNAS 田间研究第一作者","source_ids":"S011","evidence_grade":"A"},{"node_id":"P_SEARS","label":"Mark K. Sears","node_type":"person","start_date":"","end_date":"","description":"2001 年 PNAS 田间研究共同作者和风险评估第一作者","source_ids":"S011","evidence_grade":"A"},{"node_id":"B_P_JESSE","label":"Laura C. H. Jesse","node_type":"person","start_date":"","end_date":"","description":"2001 年 BioScience 论文共同作者","source_ids":"S011","evidence_grade":"A"},{"node_id":"B_P_HUTCHISON","label":"William D. Hutchison","node_type":"person","start_date":"","end_date":"","description":"Bt 玉米抗性管理研究共同作者","source_ids":"S020","evidence_grade":"A"},{"node_id":"B_P_ANDOW","label":"David A. Andow","node_type":"person","start_date":"","end_date":"","description":"Bt 玉米抗性管理研究共同作者","source_ids":"S020","evidence_grade":"A"},{"node_id":"B_W_NCR602","label":"Bt Corn and European Corn Borer","node_type":"work","start_date":"1997","end_date":"","description":"NCR 602","source_ids":"S020","evidence_grade":"A"},{"node_id":"B_W_DENNO1998","label":"Positive predator–predator interactions","node_type":"work","start_date":"1998","end_date":"","description":"Ecology 79:2143–2152","source_ids":"S009","evidence_grade":"A"},{"node_id":"B_W_BIOSCI2001","label":"Transgenic insecticidal corn","node_type":"work","start_date":"2001","end_date":"","description":"BioScience 51:353–361","source_ids":"S010","evidence_grade":"C"},{"node_id":"B_W_REF02","label":"Quantitative analysis of CryIA(b) expression in Bt maize plants, tissues, and silage and stability of expression over successive generations","node_type":"work","start_date":"1997","end_date":"","description":"Fearing, P.L.; Brown, D.; Vlachos, D.; Meghji, M.; Privalle, L. Molecular Breeding 3:169–176 (1997)","source_ids":"S001;S037","evidence_grade":"A"},{"node_id":"B_W_REF03","label":"Dispersion and deposition of corn pollen from experimental sources","node_type":"work","start_date":"1972","end_date":"","description":"Raynor, G.S.; Ogden, E.C.; Hayes, J.V. Agronomy Journal 64:420–427 (1972)","source_ids":"S001;S022","evidence_grade":"A"},{"node_id":"B_W_REF04","label":"Spring recolonization of eastern North America by the monarch butterfly: successive brood or single sweep migration?","node_type":"work","start_date":"1993","end_date":"","description":"Malcolm, S.B.; Cockrell, B.J.; Brower, L.P. in Malcolm & Zalucki (eds.), Biology and Conservation of the Monarch Butterfly, Natural History Museum of Los Angeles County, pp.253–267 (1993)","source_ids":"S001;S023;S039","evidence_grade":"A"},{"node_id":"B_W_REF05","label":"Cardenolide fingerprint of monarch butterflies reared on common milkweed, Asclepias syriaca L.","node_type":"work","start_date":"1989","end_date":"","description":"Malcolm, S.B.; Cockrell, B.J.; Brower, L.P. Journal of Chemical Ecology 15:819–853 (1989)","source_ids":"S001;S038","evidence_grade":"A"},{"node_id":"B_W_REF06","label":"Establishment of common milkweed (Asclepias syriaca) in corn, soybean, and wheat","node_type":"work","start_date":"1997","end_date":"","description":"Yenish, J.P.; Fry, T.A.; Durgan, B.R.; Wyse, D.L. Weed Science 45:44–53 (1997)","source_ids":"S001;S025;S033","evidence_grade":"A"},{"node_id":"B_W_REF07","label":"Monarch butterfly orientation: missing pieces of a magnificent puzzle","node_type":"work","start_date":"1996","end_date":"","description":"Brower, L.P. Journal of Experimental Biology 199:93–103 (1996)","source_ids":"S001;S026","evidence_grade":"A"},{"node_id":"B_W_REF08","label":"Natal origins of migratory monarch butterflies at wintering colonies in Mexico: new isotopic evidence","node_type":"work","start_date":"1998","end_date":"","description":"Wassenaar, L.I.; Hobson, K.A. PNAS 95:15436–15439 (1998)","source_ids":"S001;S027","evidence_grade":"A"},{"node_id":"B_W_REF09","label":"Bt-corn resistance management","node_type":"work","start_date":"1998","end_date":"","description":"Andow, D.A.; Hutchison, W.D. in Mellon & Rissler (eds.), Now or Never: Serious New Plans to Save a Natural Pest Control, Union of Concerned Scientists, 1998, pp.19–65","source_ids":"S001;S028","evidence_grade":"A"},{"node_id":"B_P_FEARING","label":"Patricia L. Fearing","node_type":"person","start_date":"","end_date":"","description":"1997 年 CryIA(b) 表达研究共同作者","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_P_BROWN","label":"Devon Brown","node_type":"person","start_date":"","end_date":"","description":"1997 年 CryIA(b) 表达研究共同作者","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_P_VLACHOS","label":"Demetra Vlachos","node_type":"person","start_date":"","end_date":"","description":"1997 年 CryIA(b) 表达研究共同作者","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_P_MEGHJI","label":"Moez Meghji","node_type":"person","start_date":"","end_date":"","description":"1997 年 CryIA(b) 表达研究共同作者","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_P_PRIVALLE","label":"Laura Privalle","node_type":"person","start_date":"","end_date":"","description":"1997 年 CryIA(b) 表达研究共同作者","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_P_MALCOLM","label":"Stephen B. Malcolm","node_type":"person","start_date":"","end_date":"","description":"1989 年帝王蝶强心苷指纹研究及 1993 年迁飞研究章节共同作者","source_ids":"S038","evidence_grade":"A"},{"node_id":"B_P_COCKRELL","label":"Barbara J. Cockrell","node_type":"person","start_date":"","end_date":"","description":"1989 年帝王蝶强心苷指纹研究及 1993 年迁飞研究章节共同作者","source_ids":"S038","evidence_grade":"A"},{"node_id":"B_P_WASSENAAR","label":"Leonard I. Wassenaar","node_type":"person","start_date":"","end_date":"","description":"1998 年帝王蝶迁飞同位素研究共同作者","source_ids":"S027","evidence_grade":"A"},{"node_id":"B_P_HOBSON","label":"Keith A. Hobson","node_type":"person","start_date":"","end_date":"","description":"1998 年帝王蝶迁飞同位素研究共同作者","source_ids":"S027","evidence_grade":"A"},{"node_id":"B_O_CIBA_BIOTECH","label":"Ciba Agricultural Biotechnology","node_type":"organization","start_date":"","end_date":"","description":"1997文章所载单位","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_O_CIBA_SEEDS","label":"Ciba Seeds","node_type":"organization","start_date":"","end_date":"","description":"1997文章所载单位","source_ids":"S037","evidence_grade":"A"},{"node_id":"B_O_FLORIDA","label":"University of Florida — Department of Zoology","node_type":"organization","start_date":"","end_date":"","description":"1989文章所载单位","source_ids":"S038","evidence_grade":"A"},{"node_id":"B_O_ENV_CANADA","label":"Environment Canada","node_type":"organization","start_date":"","end_date":"","description":"1998 年帝王蝶迁飞同位素研究所列单位","source_ids":"S027;S030;S011;S043","evidence_grade":"A"},{"node_id":"O_USDA_ARS","label":"USDA Agricultural Research Service","node_type":"organization","start_date":"1999","end_date":"","description":"美国农业部农业研究局","source_ids":"S030;S003","evidence_grade":"A"},{"node_id":"O_ABSTC","label":"Agricultural Biotechnology Stewardship Technical Committee","node_type":"organization","start_date":"2000","end_date":"","description":"农业生物技术行业委员会","source_ids":"S030","evidence_grade":"A"},{"node_id":"O_MONSANTO","label":"Monsanto Company","node_type":"organization","start_date":"","end_date":"","description":"2001 年 ABSTC 成员。据 2002 年 Pew 访谈回顾，1999 年与 Losey 联系并讨论研究数据。","source_ids":"S003;S030","evidence_grade":"A"},{"node_id":"O_NOVARTIS","label":"Novartis","node_type":"organization","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，Novartis 是 Losey 于 1999 年联系的企业之一。Pew 报告还将 N4640 与 Novartis 关联。","source_ids":"S003","evidence_grade":"C"},{"node_id":"O_SYNGENTA","label":"Syngenta Seeds, Inc.","node_type":"organization","start_date":"2001","end_date":"","description":"2001 年 ABSTC 成员","source_ids":"S030","evidence_grade":"A"},{"node_id":"O_UCS","label":"Union of Concerned Scientists","node_type":"organization","start_date":"2000","end_date":"","description":"科学家公共利益组织，研究指导委员会成员 Mellon 所属机构","source_ids":"S030;S003","evidence_grade":"A"},{"node_id":"O_EPA","label":"US Environmental Protection Agency","node_type":"organization","start_date":"","end_date":"","description":"美国环境保护署，负责相关数据征集与监管","source_ids":"S030;S044;S051","evidence_grade":"A"},{"node_id":"C_O_PEW","label":"Pew Initiative on Food and Biotechnology","node_type":"organization","start_date":"2002","end_date":"","description":"发布帝王蝶争议三年回顾报告的研究与公共传播机构","source_ids":"S003","evidence_grade":"A"},{"node_id":"C_O_CFIA","label":"Canadian Food Inspection Agency","node_type":"organization","start_date":"2001","end_date":"","description":"相关论文致谢列明","source_ids":"S030;S011;S043","evidence_grade":"A"},{"node_id":"C_O_OMAFRA","label":"Ontario Ministry of Agriculture, Food and Rural Affairs","node_type":"organization","start_date":"2001","end_date":"","description":"Sears论文资助者","source_ids":"S030","evidence_grade":"A"},{"node_id":"C_O_MAES","label":"Maryland Agricultural Experiment Station","node_type":"organization","start_date":"2001","end_date":"","description":"论文致谢列明","source_ids":"S030;S011","evidence_grade":"A"},{"node_id":"C_O_LEOPOLD","label":"Leopold Center for Sustainable Agriculture","node_type":"organization","start_date":"2001","end_date":"","description":"论文致谢列明","source_ids":"S030;S011","evidence_grade":"A"},{"node_id":"C_O_ONTARIO","label":"Ontario Corn Growers Association","node_type":"organization","start_date":"2001","end_date":"","description":"田间论文资助者","source_ids":"S011","evidence_grade":"A"},{"node_id":"C_O_HATCH","label":"Hatch Act and Iowa State funding","node_type":"program","start_date":"2005","end_date":"","description":"联合项目3543资金来源","source_ids":"S044","evidence_grade":"A"},{"node_id":"W_SEARS2001","label":"Sears et al. 2001 risk assessment","node_type":"publication","start_date":"2001-09-14","end_date":"","description":"PNAS风险评估","source_ids":"S030","evidence_grade":"A"},{"node_id":"C_W_PLEASANTS2001","label":"Pleasants et al. 2001 pollen deposition","node_type":"publication","start_date":"2001-09-14","end_date":"","description":"PNAS沉降研究","source_ids":"S043","evidence_grade":"A"},{"node_id":"C_W_ANDERSON2005","label":"Anderson et al. 2005 anthers and pollen","node_type":"publication","start_date":"2005","end_date":"","description":"花药花粉研究","source_ids":"S044","evidence_grade":"A"},{"node_id":"C_W_HELLMICH2001","label":"Hellmich et al. 2001 toxicity","node_type":"publication","start_date":"2001-09-14","end_date":"","description":"毒性研究","source_ids":"S034","evidence_grade":"A"},{"node_id":"C_O_POOL","label":"ARS–ABSTC grant pool","node_type":"project","start_date":"2000","end_date":"","description":"共同资金池","source_ids":"S030","evidence_grade":"A"},{"node_id":"C_O_PANEL","label":"2000 monarch research steering committee","node_type":"organization","start_date":"2000","end_date":"","description":"跨机构项目选择委员会","source_ids":"S030","evidence_grade":"A"},{"node_id":"P_SACHS","label":"Eric Sachs","node_type":"person","start_date":"2000","end_date":"","description":"Monsanto 代表，研究指导委员会成员","source_ids":"S030","evidence_grade":"A"},{"node_id":"P_MELLON","label":"Margaret Mellon","node_type":"person","start_date":"2000","end_date":"","description":"UCS 代表，研究指导委员会成员","source_ids":"S030;S003","evidence_grade":"A"},{"node_id":"C_W_DIVELY2004","label":"Dively et al. 2004 chronic exposure","node_type":"publication","start_date":"2004-08-01","end_date":"","description":"长期暴露研究","source_ids":"S045","evidence_grade":"A"},{"node_id":"C_W_ZANGERL2001","label":"Zangerl et al. 2001 event 176","node_type":"publication","start_date":"2001-09-14","end_date":"","description":"伊利诺伊团队研究","source_ids":"S048","evidence_grade":"A"},{"node_id":"C_O_ILLINOISFOUND","label":"University of Illinois Foundation","node_type":"organization","start_date":"2001","end_date":"","description":"论文致谢资助","source_ids":"S048","evidence_grade":"A"},{"node_id":"C_O_ILLINOISCAS","label":"University of Illinois at Urbana-Champaign Center for Advanced Study","node_type":"organization","start_date":"2001","end_date":"","description":"论文致谢资助","source_ids":"S048","evidence_grade":"A"},{"node_id":"C_O_NTOS","label":"ABSTC Nontarget Organism Subcommittee","node_type":"organization","start_date":"2004","end_date":"","description":"2004论文列明资助的非靶标生物小组","source_ids":"S045","evidence_grade":"A"},{"node_id":"P_SPANGLER","label":"Steven Spangler","node_type":"person","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，时任 Monsanto 昆虫学家","source_ids":"S003","evidence_grade":"C"},{"node_id":"C_O_EARLY_INDUSTRY","label":"1999年产业研究安排","node_type":"project","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，行业曾提出资助后续研究。回顾使用 ABSTC 称谓。","source_ids":"S003","evidence_grade":"C"},{"node_id":"O_EDF","label":"Environmental Defense Fund","node_type":"organization","start_date":"1999","end_date":"","description":"环保组织","source_ids":"S049","evidence_grade":"A"},{"node_id":"D_P_GOLDBURG","label":"Rebecca Goldburg","node_type":"person","start_date":"1999","end_date":"","description":"EDF科学家","source_ids":"S049","evidence_grade":"A"},{"node_id":"D_O_BIO","label":"Biotechnology Industry Organization","node_type":"organization","start_date":"1999","end_date":"","description":"产业协会","source_ids":"S003","evidence_grade":"C"},{"node_id":"D_P_WEISS","label":"Rick Weiss","node_type":"person","start_date":"1999","end_date":"","description":"华盛顿邮报记者","source_ids":"S015","evidence_grade":"A"},{"node_id":"D_O_WP","label":"The Washington Post","node_type":"organization","start_date":"1999","end_date":"","description":"新闻机构","source_ids":"S015","evidence_grade":"A"},{"node_id":"D_P_YOON","label":"Carol Kaesuk Yoon","node_type":"person","start_date":"1999","end_date":"","description":"纽约时报记者","source_ids":"S003;S055","evidence_grade":"C"},{"node_id":"J_ORIGIN_HOSTS","label":"1998—1999杂草替代寄主研究","node_type":"project","start_date":"1998","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，Losey 此前研究杂草作为替代寄主的作用","source_ids":"S003","evidence_grade":"C"},{"node_id":"M_P_TAYLOR","label":"Orley Taylor","node_type":"person","start_date":"","end_date":"","description":"2001 年田间论文致谢列为堪萨斯大学 Monarch Watch 人员","source_ids":"S011","evidence_grade":"A"},{"node_id":"O_USDA","label":"United States Department of Agriculture","node_type":"organization","start_date":"","end_date":"","description":"Oberhauser 等人 2001 年论文致谢所列资助机构","source_ids":"S061","evidence_grade":"A"},{"node_id":"W_OBERHAUSER2001","label":"Temporal and spatial overlap between monarch larvae and corn pollen","node_type":"work","start_date":"2001-09-14","end_date":"","description":"PNAS 98:11913–11918，该系列六篇论文之一","source_ids":"S061","evidence_grade":"A"},{"node_id":"P_OBERHAUSER","label":"Karen S. Oberhauser","node_type":"person","start_date":"","end_date":"","description":"2001 年帝王蝶幼虫与玉米花粉时空重叠研究的第一作者","source_ids":"S061","evidence_grade":"A"},{"node_id":"O_WORKING_GROUP1999","label":"Agricultural Biotechnology Stewardship Working Group","node_type":"organization","start_date":"1999","end_date":"","description":"据同期新闻报道，该工作组组织了 1999 年帝王蝶研讨会","source_ids":"S062","evidence_grade":"A"},{"node_id":"J_SYMPOSIUM1999","label":"1999年11月2日帝王蝶研讨会","node_type":"project","start_date":"1999-11-02","end_date":"","description":"据 Niiler 同期报道，研讨会在芝加哥附近举行","source_ids":"S062","evidence_grade":"A"},{"node_id":"J_WORKSHOP2000","label":"2000年2月帝王蝶研究研讨会","node_type":"project","start_date":"2000-02","end_date":"","description":"ARS 组织研讨会，确定后续研究重点及合作安排","source_ids":"S030","evidence_grade":"A"}],"edges":[{"edge_id":"R001","source_node":"P_LOSEY","target_node":"W_LOSEY1999","relation_type":"authored","start_date":"1999-05-20","end_date":"1999-05-20","description":"原论文署名","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"edge_id":"R002","source_node":"P_RAYOR","target_node":"W_LOSEY1999","relation_type":"authored","start_date":"1999-05-20","end_date":"1999-05-20","description":"原论文署名","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"edge_id":"R003","source_node":"P_CARTER","target_node":"W_LOSEY1999","relation_type":"authored","start_date":"1999-05-20","end_date":"1999-05-20","description":"原论文署名","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"edge_id":"R004","source_node":"P_LOSEY","target_node":"O_CORNELL","relation_type":"affiliated","start_date":"1999","end_date":"1999","description":"1999 年论文列为作者共同署名地址","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"edge_id":"R005","source_node":"P_RAYOR","target_node":"O_CORNELL","relation_type":"affiliated","start_date":"1999","end_date":"1999","description":"1999 年论文列为作者共同署名地址","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"edge_id":"R006","source_node":"P_CARTER","target_node":"O_CORNELL","relation_type":"affiliated","start_date":"1999","end_date":"1999","description":"1999 年论文列为作者共同署名地址","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"edge_id":"R007","source_node":"P_RAYOR","target_node":"P_BROWER","relation_type":"contacted","start_date":"1998-09","end_date":"","description":"据 Brower 2001 年回忆，Rayor 致电告知研究发现","source_ids":"S004","evidence_grade":"C","claim_ids":"A_F010"},{"edge_id":"R008","source_node":"P_LOSEY","target_node":"P_BROWER","relation_type":"discussed","start_date":"1998","end_date":"","description":"据 Brower 2001 年回忆，Losey 与他讨论研究意义","source_ids":"S004","evidence_grade":"C","claim_ids":"A_F010"},{"edge_id":"R009","source_node":"P_RAYOR","target_node":"O_KANSAS","relation_type":"received_degree","start_date":"1987","end_date":"","description":"系统学与生态学博士","source_ids":"S005;S006","evidence_grade":"B","claim_ids":"A_F011"},{"edge_id":"R010","source_node":"P_LOSEY","target_node":"O_MARYLAND","relation_type":"received_degree","start_date":"","end_date":"","description":"获博士学位","source_ids":"S008","evidence_grade":"C","claim_ids":"A_F017"},{"edge_id":"R011","source_node":"P_LOSEY","target_node":"P_DENNO","relation_type":"coauthored","start_date":"1998","end_date":"","description":"共同署名捕食者与豌豆蚜研究","source_ids":"S009","evidence_grade":"A","claim_ids":"A_F018"},{"edge_id":"R012","source_node":"P_LOSEY","target_node":"W_STANLEYHORN2001","relation_type":"authored","start_date":"2001-09-14","end_date":"2001-09-14","description":"共同署名 PNAS 联合田间研究","source_ids":"S011","evidence_grade":"A","claim_ids":"A_F020;B_F006;C_F012"},{"edge_id":"R013","source_node":"P_LOSEY","target_node":"A_W_REFUGE2001","relation_type":"authored","start_date":"2001-08-01","end_date":"2001-08-01","description":"角色：第一作者｜署名机构：Cornell 大学昆虫学系｜合著者：D. Calvin、Maureen E. Carter、C. Mason","source_ids":"S018","evidence_grade":"A","claim_ids":"A_F027"},{"edge_id":"R014","source_node":"P_CARTER","target_node":"A_W_REFUGE2001","relation_type":"authored","start_date":"2001-08-01","end_date":"2001-08-01","description":"角色：合著者｜署名机构：Cornell 大学昆虫学系｜合著者：John E. Losey、D. Calvin、C. Mason","source_ids":"S018","evidence_grade":"A","claim_ids":"A_F027"},{"edge_id":"R015","source_node":"P_LOSEY","target_node":"A_W_STEM2002","relation_type":"authored","start_date":"2002","end_date":"2002","description":"EBSCO 书目列 John E. Losey 为合著者；Cornell 实验室书目收录同篇论文","source_ids":"S019;S010","evidence_grade":"C","claim_ids":"A_F028"},{"edge_id":"R016","source_node":"P_CARTER","target_node":"A_W_STEM2002","relation_type":"authored","start_date":"2002","end_date":"2002","description":"EBSCO 书目所列合著者姓名：Maureen E. Carter","source_ids":"S019;S010","evidence_grade":"C","claim_ids":"A_F028"},{"edge_id":"R017","source_node":"P_LOSEY","target_node":"B_W_DENNO1998","relation_type":"authored","start_date":"1998","end_date":"1998","description":"共同署名","source_ids":"S009","evidence_grade":"A","claim_ids":"B_F005"},{"edge_id":"R018","source_node":"P_DENNO","target_node":"B_W_DENNO1998","relation_type":"authored","start_date":"1998","end_date":"1998","description":"共同署名","source_ids":"S009","evidence_grade":"A","claim_ids":"B_F005"},{"edge_id":"R019","source_node":"W_LOSEY1999","target_node":"B_W_NCR602","relation_type":"cited","start_date":"1999","end_date":"","description":"原文参考文献1","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R020","source_node":"P_HELLMICH","target_node":"B_W_NCR602","relation_type":"edited","start_date":"1997","end_date":"","description":"编者之一","source_ids":"S020","evidence_grade":"A","claim_ids":"B_F004"},{"edge_id":"R021","source_node":"B_P_HUTCHISON","target_node":"B_W_NCR602","relation_type":"edited","start_date":"1997","end_date":"","description":"编者之一","source_ids":"S020","evidence_grade":"A","claim_ids":"B_F004"},{"edge_id":"R022","source_node":"B_P_ANDOW","target_node":"B_W_NCR602","relation_type":"contributed","start_date":"1997","end_date":"","description":"列名贡献者","source_ids":"S020","evidence_grade":"A","claim_ids":"B_F004"},{"edge_id":"R023","source_node":"P_HELLMICH","target_node":"W_STANLEYHORN2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"PNAS田间论文署名","source_ids":"S011","evidence_grade":"A","claim_ids":"B_F006"},{"edge_id":"R024","source_node":"P_OBRYCKI","target_node":"W_STANLEYHORN2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"PNAS田间论文署名","source_ids":"S011","evidence_grade":"A","claim_ids":"B_F006"},{"edge_id":"R025","source_node":"B_P_STANLEYHORN","target_node":"W_STANLEYHORN2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"PNAS田间论文署名","source_ids":"S011","evidence_grade":"A","claim_ids":"B_F006"},{"edge_id":"R026","source_node":"P_SEARS","target_node":"W_STANLEYHORN2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"PNAS田间论文署名","source_ids":"S011","evidence_grade":"A","claim_ids":"B_F006"},{"edge_id":"R027","source_node":"B_P_JESSE","target_node":"W_STANLEYHORN2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"PNAS田间论文署名","source_ids":"S011","evidence_grade":"A","claim_ids":"B_F006"},{"edge_id":"R028","source_node":"P_LOSEY","target_node":"B_W_BIOSCI2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"BioScience论文署名","source_ids":"S010","evidence_grade":"C","claim_ids":"B_F007"},{"edge_id":"R029","source_node":"P_OBRYCKI","target_node":"B_W_BIOSCI2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"BioScience论文署名","source_ids":"S010","evidence_grade":"C","claim_ids":"B_F007"},{"edge_id":"R030","source_node":"B_P_JESSE","target_node":"B_W_BIOSCI2001","relation_type":"authored","start_date":"2001","end_date":"2001","description":"BioScience论文署名","source_ids":"S010","evidence_grade":"C","claim_ids":"B_F007"},{"edge_id":"R031","source_node":"W_LOSEY1999","target_node":"B_W_REF02","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 2 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R032","source_node":"W_LOSEY1999","target_node":"B_W_REF03","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 3 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R033","source_node":"W_LOSEY1999","target_node":"B_W_REF04","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 4 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R034","source_node":"W_LOSEY1999","target_node":"B_W_REF05","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 5 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R035","source_node":"W_LOSEY1999","target_node":"B_W_REF06","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 6 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R036","source_node":"W_LOSEY1999","target_node":"B_W_REF07","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 7 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R037","source_node":"W_LOSEY1999","target_node":"B_W_REF08","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 8 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R038","source_node":"W_LOSEY1999","target_node":"B_W_REF09","relation_type":"cited","start_date":"1999","end_date":"","description":"原论文参考文献第 9 条","source_ids":"S001","evidence_grade":"A","claim_ids":"B_F001"},{"edge_id":"R039","source_node":"B_P_FEARING","target_node":"B_W_REF02","relation_type":"authored","start_date":"1997","end_date":"1997","description":"1997论文共同署名","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R040","source_node":"B_P_BROWN","target_node":"B_W_REF02","relation_type":"authored","start_date":"1997","end_date":"1997","description":"1997论文共同署名","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R041","source_node":"B_P_VLACHOS","target_node":"B_W_REF02","relation_type":"authored","start_date":"1997","end_date":"1997","description":"1997论文共同署名","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R042","source_node":"B_P_MEGHJI","target_node":"B_W_REF02","relation_type":"authored","start_date":"1997","end_date":"1997","description":"1997论文共同署名","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R043","source_node":"B_P_PRIVALLE","target_node":"B_W_REF02","relation_type":"authored","start_date":"1997","end_date":"1997","description":"1997论文共同署名","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R044","source_node":"B_P_FEARING","target_node":"B_O_CIBA_BIOTECH","relation_type":"affiliated_with","start_date":"1997","end_date":"","description":"1997 年论文署名单位","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R045","source_node":"B_P_BROWN","target_node":"B_O_CIBA_BIOTECH","relation_type":"affiliated_with","start_date":"1997","end_date":"","description":"1997 年论文署名单位","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R046","source_node":"B_P_VLACHOS","target_node":"B_O_CIBA_BIOTECH","relation_type":"affiliated_with","start_date":"1997","end_date":"","description":"1997 年论文署名单位","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R047","source_node":"B_P_PRIVALLE","target_node":"B_O_CIBA_BIOTECH","relation_type":"affiliated_with","start_date":"1997","end_date":"","description":"1997 年论文署名单位","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R048","source_node":"B_P_MEGHJI","target_node":"B_O_CIBA_SEEDS","relation_type":"affiliated_with","start_date":"1997","end_date":"","description":"1997 年论文署名单位","source_ids":"S037","evidence_grade":"A","claim_ids":"B_F011"},{"edge_id":"R049","source_node":"B_P_MALCOLM","target_node":"B_W_REF04","relation_type":"authored","start_date":"1993","end_date":"1993","description":"1993章节共同署名","source_ids":"S039","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R050","source_node":"B_P_MALCOLM","target_node":"B_W_REF05","relation_type":"authored","start_date":"1989","end_date":"1989","description":"1989论文共同署名","source_ids":"S038","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R051","source_node":"B_P_MALCOLM","target_node":"B_O_FLORIDA","relation_type":"affiliated_with","start_date":"1989","end_date":"","description":"1989论文署名单位","source_ids":"S038","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R052","source_node":"B_P_COCKRELL","target_node":"B_W_REF04","relation_type":"authored","start_date":"1993","end_date":"1993","description":"1993章节共同署名","source_ids":"S039","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R053","source_node":"B_P_COCKRELL","target_node":"B_W_REF05","relation_type":"authored","start_date":"1989","end_date":"1989","description":"1989论文共同署名","source_ids":"S038","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R054","source_node":"B_P_COCKRELL","target_node":"B_O_FLORIDA","relation_type":"affiliated_with","start_date":"1989","end_date":"","description":"1989论文署名单位","source_ids":"S038","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R055","source_node":"P_BROWER","target_node":"B_W_REF04","relation_type":"authored","start_date":"1993","end_date":"1993","description":"1993章节共同署名","source_ids":"S039","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R056","source_node":"P_BROWER","target_node":"B_W_REF05","relation_type":"authored","start_date":"1989","end_date":"1989","description":"1989论文共同署名","source_ids":"S038","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R057","source_node":"P_BROWER","target_node":"B_O_FLORIDA","relation_type":"affiliated_with","start_date":"1989","end_date":"","description":"1989论文署名单位","source_ids":"S038","evidence_grade":"A","claim_ids":"B_F012"},{"edge_id":"R058","source_node":"B_P_WASSENAAR","target_node":"B_W_REF08","relation_type":"authored","start_date":"1998","end_date":"1998","description":"1998论文共同署名","source_ids":"S027","evidence_grade":"A","claim_ids":"B_F013"},{"edge_id":"R059","source_node":"B_P_WASSENAAR","target_node":"B_O_ENV_CANADA","relation_type":"affiliated_with","start_date":"1998","end_date":"","description":"1998论文署名单位","source_ids":"S027","evidence_grade":"A","claim_ids":"B_F013"},{"edge_id":"R060","source_node":"B_P_HOBSON","target_node":"B_W_REF08","relation_type":"authored","start_date":"1998","end_date":"1998","description":"1998论文共同署名","source_ids":"S027","evidence_grade":"A","claim_ids":"B_F013"},{"edge_id":"R061","source_node":"B_P_HOBSON","target_node":"B_O_ENV_CANADA","relation_type":"affiliated_with","start_date":"1998","end_date":"","description":"1998论文署名单位","source_ids":"S027","evidence_grade":"A","claim_ids":"B_F013"},{"edge_id":"R062","source_node":"O_USDA_ARS","target_node":"C_O_POOL","relation_type":"funded","start_date":"2000","end_date":"","description":"资助共同基金池","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R063","source_node":"O_ABSTC","target_node":"C_O_POOL","relation_type":"funded","start_date":"2000","end_date":"","description":"资助共同基金池","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R064","source_node":"C_O_POOL","target_node":"W_SEARS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢共同基金支持","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R065","source_node":"C_O_POOL","target_node":"W_STANLEYHORN2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢共同基金支持","source_ids":"S011","evidence_grade":"A","claim_ids":"C_F012"},{"edge_id":"R066","source_node":"C_O_POOL","target_node":"C_W_PLEASANTS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢共同基金支持","source_ids":"S043","evidence_grade":"A","claim_ids":"C_F013"},{"edge_id":"R067","source_node":"C_O_POOL","target_node":"C_W_HELLMICH2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢共同基金支持","source_ids":"S034","evidence_grade":"A","claim_ids":"C_F019"},{"edge_id":"R068","source_node":"O_MONSANTO","target_node":"O_ABSTC","relation_type":"member_of","start_date":"2001","end_date":"2001","description":"论文所列成员","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F008"},{"edge_id":"R069","source_node":"O_SYNGENTA","target_node":"O_ABSTC","relation_type":"member_of","start_date":"2001","end_date":"2001","description":"论文所列成员","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F008"},{"edge_id":"R070","source_node":"P_LOSEY","target_node":"O_MONSANTO","relation_type":"contacted","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，论文获接收后主动联系并征求建议","source_ids":"S003","evidence_grade":"C","claim_ids":"C_F003"},{"edge_id":"R071","source_node":"P_LOSEY","target_node":"O_NOVARTIS","relation_type":"contacted","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，论文获接收后主动联系并征求建议","source_ids":"S003","evidence_grade":"C","claim_ids":"C_F003"},{"edge_id":"R072","source_node":"P_SACHS","target_node":"C_O_PANEL","relation_type":"member_of","start_date":"2000","end_date":"2000","description":"项目指导委员会","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F006"},{"edge_id":"R073","source_node":"P_MELLON","target_node":"C_O_PANEL","relation_type":"member_of","start_date":"2000","end_date":"2000","description":"项目指导委员会","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F006"},{"edge_id":"R074","source_node":"P_SACHS","target_node":"O_MONSANTO","relation_type":"affiliated_with","start_date":"2000","end_date":"2000","description":"PNAS标注机构","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F006"},{"edge_id":"R075","source_node":"P_MELLON","target_node":"O_UCS","relation_type":"affiliated_with","start_date":"2000","end_date":"2000","description":"PNAS标注机构","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F006"},{"edge_id":"R076","source_node":"C_O_PANEL","target_node":"C_O_POOL","relation_type":"selected_projects_for","start_date":"2000","end_date":"2000","description":"委员会遴选研究项目","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F006"},{"edge_id":"R077","source_node":"O_USDA_ARS","target_node":"C_W_ANDERSON2005","relation_type":"funded","start_date":"","end_date":"2005","description":"论文致谢","source_ids":"S044","evidence_grade":"A","claim_ids":"C_F014"},{"edge_id":"R078","source_node":"O_EPA","target_node":"C_W_ANDERSON2005","relation_type":"funded","start_date":"","end_date":"2005","description":"论文致谢","source_ids":"S044","evidence_grade":"A","claim_ids":"C_F014"},{"edge_id":"R079","source_node":"O_ABSTC","target_node":"C_W_ANDERSON2005","relation_type":"funded","start_date":"","end_date":"2005","description":"论文致谢","source_ids":"S044","evidence_grade":"A","claim_ids":"C_F014"},{"edge_id":"R080","source_node":"C_O_HATCH","target_node":"C_W_ANDERSON2005","relation_type":"funded","start_date":"","end_date":"2005","description":"联合贡献项目3543获Hatch和州资金","source_ids":"S044","evidence_grade":"A","claim_ids":"C_F014"},{"edge_id":"R081","source_node":"C_O_CFIA","target_node":"W_SEARS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R082","source_node":"B_O_ENV_CANADA","target_node":"W_SEARS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R083","source_node":"C_O_OMAFRA","target_node":"W_SEARS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R084","source_node":"C_O_MAES","target_node":"W_SEARS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R085","source_node":"C_O_LEOPOLD","target_node":"W_SEARS2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F007"},{"edge_id":"R086","source_node":"C_O_CFIA","target_node":"W_STANLEYHORN2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S011","evidence_grade":"A","claim_ids":"C_F012"},{"edge_id":"R087","source_node":"B_O_ENV_CANADA","target_node":"W_STANLEYHORN2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S011","evidence_grade":"A","claim_ids":"C_F012"},{"edge_id":"R088","source_node":"C_O_ONTARIO","target_node":"W_STANLEYHORN2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S011","evidence_grade":"A","claim_ids":"C_F012"},{"edge_id":"R089","source_node":"C_O_MAES","target_node":"W_STANLEYHORN2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S011","evidence_grade":"A","claim_ids":"C_F012"},{"edge_id":"R090","source_node":"C_O_LEOPOLD","target_node":"W_STANLEYHORN2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S011","evidence_grade":"A","claim_ids":"C_F012"},{"edge_id":"R091","source_node":"O_USDA_ARS","target_node":"C_W_DIVELY2004","relation_type":"funded","start_date":"","end_date":"2004","description":"论文致谢","source_ids":"S045","evidence_grade":"A","claim_ids":"C_F020"},{"edge_id":"R092","source_node":"O_EPA","target_node":"C_W_DIVELY2004","relation_type":"funded","start_date":"","end_date":"2004","description":"论文致谢","source_ids":"S045","evidence_grade":"A","claim_ids":"C_F020"},{"edge_id":"R093","source_node":"C_O_NTOS","target_node":"C_W_DIVELY2004","relation_type":"funded","start_date":"","end_date":"2004","description":"论文致谢","source_ids":"S045","evidence_grade":"A","claim_ids":"C_F020"},{"edge_id":"R094","source_node":"C_O_ILLINOISFOUND","target_node":"C_W_ZANGERL2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢","source_ids":"S048","evidence_grade":"A","claim_ids":"C_F021"},{"edge_id":"R095","source_node":"C_O_ILLINOISCAS","target_node":"C_W_ZANGERL2001","relation_type":"funded","start_date":"","end_date":"2001","description":"论文致谢","source_ids":"S048","evidence_grade":"A","claim_ids":"C_F021"},{"edge_id":"R096","source_node":"P_LOSEY","target_node":"C_O_EARLY_INDUSTRY","relation_type":"declined_proposed_research","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，Losey 因研究方向不同拒绝参与最初获行业资助的后续研究","source_ids":"S003","evidence_grade":"C","claim_ids":"C_F022"},{"edge_id":"R097","source_node":"P_SPANGLER","target_node":"P_LOSEY","relation_type":"discussed_research","start_date":"1999","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，Monsanto 派 Spangler 与 Losey 讨论研究数据","source_ids":"S003","evidence_grade":"C","claim_ids":"C_F023"},{"edge_id":"R098","source_node":"D_P_GOLDBURG","target_node":"O_EDF","relation_type":"affiliated","start_date":"1999-05-19","end_date":"","description":"声明署其为EDF高级科学家","source_ids":"S049","evidence_grade":"A","claim_ids":"D_F005"},{"edge_id":"R099","source_node":"O_EDF","target_node":"O_EPA","relation_type":"advocacy_to","start_date":"1999-05-19","end_date":"","description":"要求限制Bt玉米面积","source_ids":"S049","evidence_grade":"A","claim_ids":"D_F005"},{"edge_id":"R100","source_node":"P_MELLON","target_node":"O_UCS","relation_type":"affiliated","start_date":"1999","end_date":"","description":"据 2002 年 Pew 访谈回顾，Mellon 代表 UCS","source_ids":"S003","evidence_grade":"C","claim_ids":"D_F006"},{"edge_id":"R101","source_node":"O_UCS","target_node":"W_LOSEY1999","relation_type":"media_advocacy_about","start_date":"1999","end_date":"","description":"据 2002 年 Pew 访谈中 Mellon 回忆，获悉论文后致电记者并发表声明","source_ids":"S003","evidence_grade":"C","claim_ids":"D_F006"},{"edge_id":"R102","source_node":"D_P_WEISS","target_node":"W_LOSEY1999","relation_type":"reported_on","start_date":"1999-05","end_date":"1999-05","description":"报道花粉暴露实验及科学界的不同观点","source_ids":"S015","evidence_grade":"A","claim_ids":"D_F004"},{"edge_id":"R103","source_node":"D_P_WEISS","target_node":"D_O_WP","relation_type":"published_in","start_date":"1999-05","end_date":"1999-05","description":"为《华盛顿邮报》撰写这篇报道","source_ids":"S015","evidence_grade":"A","claim_ids":"D_F004"},{"edge_id":"R104","source_node":"O_EPA","target_node":"O_CORNELL","relation_type":"consulted","start_date":"1999-10-19","end_date":"","description":"证词称与研究者合作审查研究","source_ids":"S051","evidence_grade":"A","claim_ids":"D_F010"},{"edge_id":"R105","source_node":"O_EPA","target_node":"O_USDA_ARS","relation_type":"consulted","start_date":"1999-10-19","end_date":"","description":"证词称咨询USDA","source_ids":"S051","evidence_grade":"A","claim_ids":"D_F010"},{"edge_id":"R106","source_node":"O_USDA_ARS","target_node":"J_WORKSHOP2000","relation_type":"organized_research_for","start_date":"2000-02","end_date":"2000-02","description":"组织 2000 年 2 月研讨会，确定后续研究重点与合作安排","source_ids":"S030","evidence_grade":"A","claim_ids":"D_F012"},{"edge_id":"R107","source_node":"P_MELLON","target_node":"W_SEARS2001","relation_type":"research_steering","start_date":"2000","end_date":"","description":"后续研究项目遴选委员会成员","source_ids":"S030","evidence_grade":"A","claim_ids":"D_F012"},{"edge_id":"R108","source_node":"P_SACHS","target_node":"W_SEARS2001","relation_type":"research_steering","start_date":"2000","end_date":"","description":"后续研究项目遴选委员会成员","source_ids":"S030","evidence_grade":"A","claim_ids":"D_F012"},{"edge_id":"R109","source_node":"O_EPA","target_node":"W_SEARS2001","relation_type":"used_as_evidence","start_date":"2001-10-15","end_date":"","description":"风险判断使用近期PNAS研究","source_ids":"S052","evidence_grade":"A","claim_ids":"D_F013"},{"edge_id":"R110","source_node":"D_O_BIO","target_node":"J_SYMPOSIUM1999","relation_type":"media_briefing_context","start_date":"1999-11-02","end_date":"","description":"据 2002 年 Pew 访谈回顾，BIO 为 1999 年 11 月研讨会协调媒体事务","source_ids":"S003","evidence_grade":"C","claim_ids":"D_F009"},{"edge_id":"R111","source_node":"O_USDA_ARS","target_node":"J_ORIGIN_HOSTS","relation_type":"funded","start_date":"1998","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，早期研究聚焦于杂草替代寄主","source_ids":"S003","evidence_grade":"C","claim_ids":"M_F002"},{"edge_id":"R112","source_node":"P_LOSEY","target_node":"J_ORIGIN_HOSTS","relation_type":"researched","start_date":"1998","end_date":"1999","description":"据 2002 年 Pew 访谈回顾，该项目是早期研究背景","source_ids":"S003","evidence_grade":"C","claim_ids":"M_F002"},{"edge_id":"R113","source_node":"P_SACHS","target_node":"W_STANLEYHORN2001","relation_type":"critical_review","start_date":"2001","end_date":"2001","description":"论文致谢列明参与批评性审阅","source_ids":"S011","evidence_grade":"A","claim_ids":"M_F004"},{"edge_id":"R114","source_node":"M_P_TAYLOR","target_node":"W_STANLEYHORN2001","relation_type":"provided_material","start_date":"2001","end_date":"2001","description":"提供帝王蝶幼虫","source_ids":"S011","evidence_grade":"A","claim_ids":"M_F005"},{"edge_id":"R115","source_node":"O_USDA","target_node":"W_OBERHAUSER2001","relation_type":"funded","start_date":"2001","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S061","evidence_grade":"A","claim_ids":"M_F006"},{"edge_id":"R116","source_node":"C_O_CFIA","target_node":"W_OBERHAUSER2001","relation_type":"funded","start_date":"2001","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S061","evidence_grade":"A","claim_ids":"M_F006"},{"edge_id":"R117","source_node":"B_O_ENV_CANADA","target_node":"W_OBERHAUSER2001","relation_type":"funded","start_date":"2001","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S061","evidence_grade":"A","claim_ids":"M_F006"},{"edge_id":"R118","source_node":"C_O_OMAFRA","target_node":"W_OBERHAUSER2001","relation_type":"funded","start_date":"2001","end_date":"2001","description":"论文致谢列为资助方","source_ids":"S061","evidence_grade":"A","claim_ids":"M_F006"},{"edge_id":"R119","source_node":"P_OBERHAUSER","target_node":"W_OBERHAUSER2001","relation_type":"authored","start_date":"2001-09-14","end_date":"2001-09-14","description":"原论文署名","source_ids":"S061","evidence_grade":"A","claim_ids":"M_F006"},{"edge_id":"R120","source_node":"O_WORKING_GROUP1999","target_node":"J_SYMPOSIUM1999","relation_type":"organized_symposium","start_date":"1999-11-02","end_date":"1999-11-02","description":"同期新闻明确记载工作组组织此次研讨会","source_ids":"S062","evidence_grade":"A","claim_ids":"M_F007"}],"sources":[{"source_id":"S001","title":"Transgenic pollen harms monarch larvae","author":"Losey, Rayor & Carter","publisher":"Nature","publication_date":"1999-05-20","url":"https://www.salmone.org/wp-content/uploads/2007/09/losey.pdf"},{"source_id":"S002","title":"Toxic pollen from widely planted, genetically modified corn can kill monarch butterflies","author":"Susan S. Lang","publisher":"Cornell Chronicle","publication_date":"","url":"https://news.cornell.edu/stories/1999/04/toxic-pollen-bt-corn-can-kill-monarch-butterflies"},{"source_id":"S003","title":"Three Years Later: Genetically Engineered Corn and the Monarch Butterfly Controversy","author":"Pew Initiative on Food and Biotechnology","publisher":"Pew","publication_date":"2002","url":"https://www.pewtrusts.org/~/media/legacy/uploadedfiles/wwwpewtrustsorg/reports/food_and_biotechnology/vfbiotechmonarchpdf.pdf"},{"source_id":"S004","title":"Canary in the Cornfield","author":"Lincoln Brower","publisher":"Orion","publication_date":"2001","url":"https://downloads.regulations.gov/APHIS-2013-0043-4524/attachment_16.pdf"},{"source_id":"S005","title":"Linda S. Rayor","author":"Linda S. Rayor","publisher":"Cornell CALS","publication_date":"","url":"https://cals.cornell.edu/people/linda-s-rayor"},{"source_id":"S006","title":"2008 Eastern Branch ESA Award Winners","author":"Entomological Society of America","publisher":"ESA","publication_date":"2008","url":"https://www.entsoc.org/sites/default/files/files/Branches/Eastern/2008-EB-Program-Book.pdf"},{"source_id":"S007","title":"John E. Losey","author":"John E. Losey","publisher":"Cornell CALS","publication_date":"","url":"https://cals.cornell.edu/people/john-e-losey"},{"source_id":"S008","title":"College of Agriculture and Life Sciences catalog","author":"Cornell University","publisher":"Cornell University","publication_date":"","url":"https://catalog.cornell.edu/agriculture-life-sciences/agriculture-life-sciences.pdf"},{"source_id":"S009","title":"Positive predator–predator interactions","author":"John E. Losey and Robert F. Denno","publisher":"Ecology","publication_date":"1998-09-01","url":"https://doi.org/10.1890/0012-9658(1998)079[2143:PPPIEP]2.0.CO;2"},{"source_id":"S010","title":"Publications – The Losey Lab","author":"Losey Lab","publisher":"Cornell University","publication_date":"","url":"https://blogs.cornell.edu/losey/publications/"},{"source_id":"S011","title":"Assessing Cry1Ab corn pollen in field studies","author":"Stanley-Horn et al.","publisher":"PNAS","publication_date":"2001-09-14","url":"https://www.pnas.org/doi/pdf/10.1073/pnas.211277798"},{"source_id":"S012","title":"Letters: John Losey responds","author":"John Losey","publisher":"Cornell Magazine","publication_date":"2000","url":"https://ecommons.cornell.edu/bitstream/1813/28147/1/102_05.pdf"},{"source_id":"S013","title":"Cornell entomologists to be featured on CBS Sunday Morning","author":"Cornell Chronicle","publisher":"Cornell University","publication_date":"2007-09","url":"https://news.cornell.edu/stories/2007/09/cornell-entomologists-will-be-cbs-sunday-morning-sept-9"},{"source_id":"S014","title":"People – The Losey Lab","author":"Losey Lab","publisher":"Cornell University","publication_date":"","url":"https://blogs.cornell.edu/losey/people/"},{"source_id":"S015","title":"Biotech vs. Bambi of Insects?","author":"Washington Post","publisher":"Washington Post","publication_date":"1999-05","url":"https://www.washingtonpost.com/archive/politics/1999/05/20/biotech-vsbambi-of-insects-gene-altered-corn-may-kill-monarchs/9a7e201a-4251-4e45-aa63-1c8ec47dff3f/"},{"source_id":"S016","title":"A polymorphism maintained by opposite patterns of parasitism and predation","author":"Losey et al.","publisher":"Nature","publication_date":"1997-07-17","url":"https://www.nature.com/articles/40849"},{"source_id":"S017","title":"Publications: ecological and evolutionary interactions","author":"Ives Lab","publisher":"University of Wisconsin–Madison","publication_date":"","url":"https://ives.labs.wisc.edu/publications/"},{"source_id":"S018","title":"Evaluation of Noncorn Host Plants as a Refuge in a Resistance Management Program","author":"Losey, Calvin, Carter, Mason","publisher":"Environmental Entomology","publication_date":"2001-08-01","url":"https://academic.oup.com/ee/article/30/4/728/441678"},{"source_id":"S019","title":"The effect of stem diameter on European corn borer behavior and survival","author":"EBSCOhost","publisher":"EBSCO","publication_date":"","url":"https://openurl.ebsco.com/results?bquery=AU+Losey%2C+John+E.&link_origin=&searchDescription=Losey%2C+John+E.&sid=ebsco%3Aocu%3Arecord"},{"source_id":"S020","title":"Bt corn and European corn borer","author":"Ostlie; Hutchison; Hellmich 编","publisher":"UNL repository","publication_date":"1997","url":"https://files01.core.ac.uk/download/pdf/188130941.pdf"},{"source_id":"S021","title":"Quantitative analysis of CryIA(b) expression","author":"Fearing et al.","publisher":"Molecular Breeding","publication_date":"1997","url":"https://verify.eurekamag.com/research/002/936/002936180.php"},{"source_id":"S022","title":"Dispersion and Deposition of Corn Pollen","author":"Raynor; Ogden; Hayes","publisher":"Agronomy Journal","publication_date":"1972","url":"https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj1972.00021962006400040004x"},{"source_id":"S023","title":"Spring recolonization 书目","author":"Malcolm; Cockrell; Brower","publisher":"CEC","publication_date":"1997","url":"https://www.cec.org/files/pulications/1997-north-american-conference-on-the-monarch-butterfly.pdf"},{"source_id":"S024","title":"Cardenolide fingerprint","author":"Malcolm; Cockrell; Brower","publisher":"Journal of Chemical Ecology","publication_date":"1989","url":"https://bishtref.com/articles/10.1007/bf01015180"},{"source_id":"S025","title":"Establishment of common milkweed","author":"Yenish et al.","publisher":"University of Minnesota","publication_date":"1997","url":"https://experts.umn.edu/en/publications/establishment-of-common-milkweed-asclepias-syriaca-in-corn-soybea/"},{"source_id":"S026","title":"Monarch butterfly orientation","author":"Brower","publisher":"NLM PubMed","publication_date":"1996","url":"https://pubmed.ncbi.nlm.nih.gov/9317405/"},{"source_id":"S027","title":"Natal origins of migratory monarch butterflies","author":"Wassenaar; Hobson","publisher":"PNAS","publication_date":"1998","url":"https://insectisoscapes.wordpress.com/wp-content/uploads/2017/02/wassenaar20and20hobson201998.pdf"},{"source_id":"S028","title":"Minnesota entomology newsletter 1998","author":"University of Minnesota","publisher":"University of Minnesota","publication_date":"1998","url":"https://conservancy.umn.edu/bitstreams/9f0934b0-1f34-49ff-8e48-6cfd2ac8a6f5/download"},{"source_id":"S029","title":"Factors facilitating synergistic predation","author":"Losey; Denno","publisher":"Ecological Applications","publication_date":"1999","url":"https://delphacid.s3.amazonaws.com/2915.pdf"},{"source_id":"S030","title":"Impact of Bt corn pollen on monarch butterfly populations: A risk assessment","author":"Sears et al.","publisher":"PNAS","publication_date":"2001","url":"https://www.pnas.org/doi/10.1073/pnas.211329998"},{"source_id":"S031","title":"Richard Hellmich CV","author":"Richard Hellmich","publisher":"Iowa State University","publication_date":"","url":"https://www.ppem.iastate.edu/people/richard-hellmich/cv.pdf"},{"source_id":"S032","title":"Predator and aphid paper record","author":"Losey; Denno","publisher":"PubMed","publication_date":"","url":"https://pubmed.ncbi.nlm.nih.gov/28308458/"},{"source_id":"S033","title":"Yenish publication DOI","author":"Donald Wyse publication index","publisher":"AcademicTree","publication_date":"","url":"https://academictree-staging.thetransmitter.org/etree/publications.php?pid=606381"},{"source_id":"S034","title":"PNAS pollen sensitivity","author":"Hellmich et al.","publisher":"PNAS","publication_date":"2001","url":"https://www.stopogm.net/old/sites/stopogm.net/files/MonarchHellmichetal.pdf"},{"source_id":"S035","title":"Iowa State Entomology Newsletter","author":"Iowa State University","publisher":"Iowa State University","publication_date":"2002","url":"https://www.ppem.iastate.edu/files/inline-files/iowa_state_entomology_newsletter_2002.pdf"},{"source_id":"S036","title":"Habitat persistence and planthoppers","author":"Denno et al.","publisher":"Ecological Monographs","publication_date":"1996","url":"https://esajournals.onlinelibrary.wiley.com/doi/10.2307/2963487"},{"source_id":"S037","title":"Quantitative analysis of CryIA(b) expression","author":"Fearing et al.","publisher":"Springer Molecular Breeding","publication_date":"1997","url":"https://link.springer.com/article/10.1023/A:1009611613475"},{"source_id":"S038","title":"Cardenolide fingerprint","author":"Malcolm; Cockrell; Brower","publisher":"Springer Journal of Chemical Ecology","publication_date":"1989","url":"https://link.springer.com/article/10.1007/BF01015180"},{"source_id":"S039","title":"Spring recolonization of eastern North America","author":"Malcolm; Cockrell; Brower","publisher":"Natural History Museum of Los Angeles County","publication_date":"1993","url":"https://downloads.regulations.gov/APHIS-2013-0043-4500/attachment_3.pdf"},{"source_id":"S040","title":"Novartis Annual Report 2022","author":"Novartis","publisher":"Novartis","publication_date":"2022","url":"https://www.novartis.com/sites/novartis_com/files/novartis-annual-report-2022.pdf"},{"source_id":"S041","title":"Bt Corn and the Monarch Butterfly","author":"Kaplan","publisher":"USDA ARS","publication_date":"2002-02","url":"https://agresearchmag.ars.usda.gov/2002/feb/corn/"},{"source_id":"S042","title":"Scientific Assumptions and Premises Underpinning the Regulation and Oversight of Environmental Risks of Transgenic Plants","author":"National Research Council","publisher":"National Academies Press","publication_date":"2002","url":"https://www.nationalacademies.org/read/10258/chapter/4"},{"source_id":"S043","title":"Corn pollen deposition on milkweeds in and near cornfields","author":"Pleasants et al.","publisher":"PNAS","publication_date":"2001-09-14","url":"https://www.pnas.org/doi/10.1073/pnas.211287498"},{"source_id":"S044","title":"Effects on Fitness and Behavior of Monarch Butterfly Larvae Exposed to a Combination of Cry1Ab-Expressing Corn Anthers and Pollen","author":"Anderson et al.","publisher":"Environmental Entomology","publication_date":"2005","url":"https://academic.oup.com/ee/article/34/4/944/787697"},{"source_id":"S045","title":"Effects on monarch butterfly larvae after continuous exposure to Cry1Ab-expressing corn during anthesis","author":"Dively et al.","publisher":"Environmental Entomology","publication_date":"2004-08-01","url":"https://www.pflanzenforschung.de/biosicherheit/pdf/dokumente/bt-monarch-maryland.pdf"},{"source_id":"S046","title":"Researchers Respond","author":"USDA ARS","publisher":"USDA ARS","publication_date":"","url":"https://www.ars.usda.gov/oc/br/monarch/researchers-respond/"},{"source_id":"S047","title":"The butterfly flap","author":"Nina V. Fedoroff","publisher":"Prospect","publication_date":"2003","url":"https://www.prospectmagazine.co.uk/essays/59327/the-butterfly-flap"},{"source_id":"S048","title":"Effects of exposure to event 176 Bacillus thuringiensis corn pollen on monarch and black swallowtail caterpillars under field conditions","author":"Zangerl et al.","publisher":"PNAS","publication_date":"2001-09-14","url":"https://www.stopogm.net/old/sites/stopogm.net/files/BlackSwallowtail.pdf"},{"source_id":"S049","title":"Genetic Engineering Kills Monarch Butterflies","author":"Environmental Defense Fund","publisher":"Environmental Defense Fund","publication_date":"1999-05-19","url":"https://www.edf.org/media/genetic-engineering-kills-monarch-butterflies"},{"source_id":"S050","title":"Scientists Discount Threat to Butterfly from Altered Corn","author":"Robert Steyer","publisher":"St. Louis Post-Dispatch / IATP","publication_date":"1999-11-02","url":"https://www.iatp.org/news/scientists-discount-threat-to-butterfly-from-altered-corn"},{"source_id":"S051","title":"Testimony of Janet L. Andersen","author":"Janet L. Andersen","publisher":"EPA","publication_date":"1999-10-19","url":"https://archive.epa.gov/ocir/hearings/testimony/106_1999_2000/web/html/101999ja.html"},{"source_id":"S052","title":"Bt Plant-Incorporated Protectants Biopesticides Registration Action Document: Bt Corn","author":"EPA","publisher":"EPA","publication_date":"2001-10-15","url":"https://www3.epa.gov/pesticides/chem_search/reg_actions/pip/bt_brad2/7-coorn.pdf"},{"source_id":"S053","title":"Biotechnology corn approved for continued use","author":"EPA","publisher":"EPA","publication_date":"2001-10-16","url":"https://www.epa.gov/archive/epapages/newsroom_archive/newsreleases/8db7a83e66e0f7d085256ae7005d6ec2.html"},{"source_id":"S054","title":"Measuring the meaning of words in contexts","author":"Leydesdorff; Hellsten","publisher":"Scientometrics","publication_date":"","url":"https://www.academia.edu/94891752/Measuring_the_meaning_of_words_in_contexts_An_automated_analysis_of_controversies_about_Monarch_butterflies_Frankenfoods_and_stem_cells"},{"source_id":"S055","title":"Public Concern About Genetics","author":"Philip R. Reilly","publisher":"Annual Review of Genomics and Human Genetics","publication_date":"2000-09","url":"https://www.annualreviews.org/content/journals/10.1146/annurev.genom.1.1.485"},{"source_id":"S056","title":"EPA Office of Pesticide Programs Annual Report 2000","author":"EPA","publisher":"EPA","publication_date":"2000","url":"https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=2000038Y.TXT"},{"source_id":"S057","title":"Bt BRAD ecological assessment","author":"EPA","publisher":"EPA","publication_date":"2001-10-15","url":"https://www3.epa.gov/pesticides/chem_search/reg_actions/pip/bt_brad2/3-ecological.pdf"},{"source_id":"S058","title":"Bt Corn Insect Resistance Management","author":"EPA","publisher":"EPA","publication_date":"2000-01-14","url":"https://www.epa.gov/archive/epapages/newsroom_archive/newsreleases/273ee1c22fb617598525686600602f80.html"},{"source_id":"S059","title":"Plant-incorporated protectants revised assessment released","author":"EPA","publisher":"EPA","publication_date":"2001-07-17","url":"https://www.epa.gov/archive/epapages/newsroom_archive/newsreleases/654b2f0a3d1c0c8b85256a8c004f4806.html"},{"source_id":"S060","title":"Transgenic pollen harms monarch larvae — PMID 10353241","author":"NLM","publisher":"PubMed","publication_date":"1999-05-20","url":"https://pubmed.ncbi.nlm.nih.gov/10353241/"},{"source_id":"S061","title":"Temporal and spatial overlap between monarch larvae and corn pollen","author":"Karen S. Oberhauser et al.","publisher":"PNAS","publication_date":"2001-09-14","url":"https://www.pnas.org/doi/10.1073/pnas.211234298"},{"source_id":"S062","title":"GM corn poses little threat to monarch","author":"Eric Niiler","publisher":"Nature Biotechnology","publication_date":"1999-12","url":"https://www.nature.com/articles/nbt1299_1154a"},{"source_id":"S063","title":"Three Years Later: Genetically Engineered Corn and the Monarch Butterfly Controversy — publication page","author":"Pew Initiative on Food and Biotechnology","publisher":"Pew","publication_date":"2002-06-10","url":"https://www.pew.org/en/research-and-analysis/reports/2002/06/10/three-years-later-genetically-engineered-corn-and-the-monarch-butterfly-controversy"}],"events":[{"event_id":"A_E001","date":"1978","date_precision":"year","title":"Rayor获学士","description":"据个人履历和获奖资料，获科罗拉多大学博尔德分校分子生物学学士学位。","node_ids":"P_RAYOR","source_ids":"S005;S006","evidence_grade":"B","claim_ids":"A_F011"},{"event_id":"A_E002","date":"1987","date_precision":"year","title":"Rayor获博士","description":"据个人履历和获奖资料，获堪萨斯大学系统学与生态学博士学位。","node_ids":"P_RAYOR;O_KANSAS","source_ids":"S005;S006","evidence_grade":"B","claim_ids":"A_F011"},{"event_id":"A_E003","date":"1994","date_precision":"year","title":"Rayor 加入 Cornell 昆虫学系","description":"据个人履历，加入 Cornell 昆虫学系。","node_ids":"P_RAYOR;O_CORNELL","source_ids":"S005;S006","evidence_grade":"B","claim_ids":"A_F012"},{"event_id":"A_E004","date":"1997-07-17","date_precision":"day","title":"Losey豌豆蚜论文发表","description":"《Nature》出版页面列出威斯康星大学麦迪逊分校动物学系地址。","node_ids":"P_LOSEY","source_ids":"S016;S017","evidence_grade":"C","claim_ids":"A_F025"},{"event_id":"A_E005","date":"1998","date_precision":"year","title":"Losey与Denno研究捕食者","description":"Losey 和 Denno 共同署名捕食生态研究。","node_ids":"P_LOSEY;P_DENNO","source_ids":"S009","evidence_grade":"A","claim_ids":"A_F018"},{"event_id":"A_E006","date":"1998-09","date_precision":"month","title":"Rayor联系Brower","description":"Brower于2001年回忆","node_ids":"P_RAYOR;P_LOSEY;P_CARTER;P_BROWER","source_ids":"S004","evidence_grade":"C","claim_ids":"A_F010"},{"event_id":"A_E007","date":"1999-05-20","date_precision":"day","title":"Nature论文发表","description":"三位作者联合署名","node_ids":"P_LOSEY;P_RAYOR;P_CARTER;W_LOSEY1999","source_ids":"S001","evidence_grade":"A","claim_ids":"A_F001"},{"event_id":"A_E008","date":"2001-08-01","date_precision":"day","title":"Carter与Losey等发表非玉米寄主研究","description":"Losey、Calvin、Carter 与 Mason 合著非玉米寄主避难所研究，Carter 与 Losey 均署名 Cornell 大学昆虫学系。","node_ids":"P_CARTER;P_LOSEY;A_W_REFUGE2001","source_ids":"S018","evidence_grade":"A","claim_ids":"A_F027"},{"event_id":"A_E009","date":"2000","date_precision":"year","title":"Losey回应论文选择","description":"Cornell Magazine 3–4月刊","node_ids":"P_LOSEY;P_RAYOR;P_CARTER","source_ids":"S012","evidence_grade":"A","claim_ids":"A_F021"},{"event_id":"A_E010","date":"2002","date_precision":"year","title":"玉米螟行为与植物茎直径研究见于书目","description":"EBSCO 书目列出 Maureen E. Carter、Losey 与 Silverman。Cornell 实验室书目收录同篇论文。","node_ids":"P_CARTER;P_LOSEY;A_W_STEM2002","source_ids":"S019;S010","evidence_grade":"C","claim_ids":"A_F028"},{"event_id":"A_E011","date":"2001-09-14","date_precision":"day","title":"后续田间研究在线发表","description":"多机构作者包括Losey","node_ids":"P_LOSEY;W_STANLEYHORN2001","source_ids":"S011","evidence_grade":"A","claim_ids":"A_F020"},{"event_id":"A_E012","date":"2007-09","date_precision":"month","title":"Losey和Rayor参与媒体节目","description":"据 Cornell 新闻，Losey 和 Rayor 参与 CBS Sunday Morning 节目。","node_ids":"P_LOSEY;P_RAYOR","source_ids":"S013","evidence_grade":"A","claim_ids":"A_F022"},{"event_id":"B_E001","date":"1997","date_precision":"year","title":"NCR 602 出版","description":"Bt玉米推广资料，多机构共同编写","node_ids":"B_W_NCR602;P_HELLMICH;B_P_HUTCHISON;B_P_ANDOW","source_ids":"S020","evidence_grade":"A","claim_ids":"B_F004"},{"event_id":"B_E002","date":"1998","date_precision":"year","title":"Losey–Denno 捕食生态研究","description":"Ecology论文发表","node_ids":"P_LOSEY;P_DENNO;B_W_DENNO1998","source_ids":"S009","evidence_grade":"A","claim_ids":"B_F005"},{"event_id":"B_E003","date":"2001","date_precision":"year","title":"多地点田间试验发表","description":"Losey、Hellmich、Obrycki、Sears等共同署名","node_ids":"W_STANLEYHORN2001;P_LOSEY;P_HELLMICH;P_OBRYCKI;P_SEARS;B_P_STANLEYHORN","source_ids":"S011","evidence_grade":"A","claim_ids":"B_F006"},{"event_id":"C_E001","date":"1999-05-20","date_precision":"day","title":"原论文发表","description":"三位作者共同署名，署名单位为 Cornell 昆虫学系。","node_ids":"W_LOSEY1999;O_CORNELL","source_ids":"S001","evidence_grade":"A","claim_ids":"C_F001"},{"event_id":"C_E002","date":"1999","date_precision":"year","title":"Losey 在论文获接收后联系企业","description":"据 2002 年 Pew 访谈中 Losey 回忆，他在论文获接收后告知两家企业并征求建议。","node_ids":"P_LOSEY;O_MONSANTO;O_NOVARTIS","source_ids":"S003","evidence_grade":"C","claim_ids":"C_F003"},{"event_id":"C_E003","date":"2000-02","date_precision":"month","title":"ARS召集研究工作坊","description":"研究重点和协调","node_ids":"O_USDA_ARS","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F005"},{"event_id":"C_E004","date":"2000-04","date_precision":"month","title":"征集研究方案","description":"委员会挑选项目","node_ids":"C_O_PANEL;C_O_POOL","source_ids":"S030","evidence_grade":"A","claim_ids":"C_F005;C_F006"},{"event_id":"C_E005","date":"2001-09-14","date_precision":"day","title":"PNAS在线发表风险评估及后续研究","description":"披露共同资金和其他来源","node_ids":"W_SEARS2001;W_STANLEYHORN2001","source_ids":"S030;S011","evidence_grade":"A","claim_ids":"C_F007;C_F012"},{"event_id":"C_E006","date":"2004-08-01","date_precision":"day","title":"连续暴露研究","description":"政府书目记载该研究于 2004 年发表。","node_ids":"O_USDA_ARS","source_ids":"S045","evidence_grade":"A","claim_ids":"C_F016"},{"event_id":"C_E007","date":"2005","date_precision":"year","title":"花药与花粉研究","description":"论文披露资助方，并报告同时暴露于花药与花粉时观察到的发育和存活差异。单独暴露处理的结果随实验条件而异。","node_ids":"C_W_ANDERSON2005","source_ids":"S044","evidence_grade":"A","claim_ids":"C_F014;C_F015"},{"event_id":"D_E001","date":"1999-05-19","date_precision":"day","title":"EDF声明","description":"敦促EPA限制种植面积","node_ids":"O_EDF;D_P_GOLDBURG;O_EPA","source_ids":"S049","evidence_grade":"A","claim_ids":"D_F005"},{"event_id":"D_E002","date":"1999-05-19","date_precision":"day","title":"华盛顿邮报网页报道","description":"Weiss 在《华盛顿邮报》报道花粉暴露实验及科学界的不同观点。报道页面标注 5 月 19 日，网址标注 5 月 20 日。","node_ids":"D_P_WEISS;D_O_WP;W_LOSEY1999","source_ids":"S015","evidence_grade":"A","claim_ids":"D_F004"},{"event_id":"D_E003","date":"1999-05-20","date_precision":"day","title":"Nature论文正式刊出","description":"论文报告实验室条件下 Bt 玉米花粉处理组幼虫的存活率及生长变化。","node_ids":"W_LOSEY1999","source_ids":"S001","evidence_grade":"A","claim_ids":"D_F001"},{"event_id":"D_E004","date":"1999-10-19","date_precision":"day","title":"EPA国会证词","description":"据 EPA 国会证词，机构正与 Cornell、Iowa State 研究人员及 USDA 沟通。","node_ids":"O_EPA;O_CORNELL","source_ids":"S051","evidence_grade":"A","claim_ids":"D_F010"},{"event_id":"D_E005","date":"1999-11-02","date_precision":"day","title":"Rosemont研讨会","description":"据 Niiler 同期报道，Agricultural Biotechnology Stewardship Working Group 于 11 月 2 日在 Rosemont 组织帝王蝶研讨会。","node_ids":"O_WORKING_GROUP1999;J_SYMPOSIUM1999","source_ids":"S062","evidence_grade":"A","claim_ids":"M_F007"},{"event_id":"D_E006","date":"1999-12","date_precision":"month","title":"EPA数据征集","description":"机构年报与后续评估记载","node_ids":"O_EPA","source_ids":"S030;S052;S056","evidence_grade":"A","claim_ids":"D_F011"},{"event_id":"D_E007","date":"2000-02","date_precision":"month","title":"USDA研究研讨会","description":"形成合作与研究优先事项","node_ids":"O_USDA_ARS","source_ids":"S030","evidence_grade":"A","claim_ids":"D_F012"},{"event_id":"D_E008","date":"2001-10-15","date_precision":"day","title":"EPA Bt风险决定文件","description":"EPA 文件载有帝王蝶种群风险判断及长期研究要求。","node_ids":"O_EPA;W_SEARS2001","source_ids":"S052","evidence_grade":"A","claim_ids":"D_F013"},{"event_id":"D_E009","date":"2002-06-10","date_precision":"day","title":"Pew三年回顾","description":"Pew 发布帝王蝶争议三年回顾报告。","node_ids":"C_O_PEW","source_ids":"S063","evidence_grade":"A","claim_ids":"M_F008"},{"event_id":"D_E010","date":"2004","date_precision":"year","title":"长期暴露研究","description":"摘要报告幼虫暴露及模型估计","node_ids":"","source_ids":"S045","evidence_grade":"A","claim_ids":"D_F015"},{"event_id":"D_E011","date":"2000-01-14","date_precision":"day","title":"EPA抗性管理措施","description":"包括保护非目标昆虫的自愿宣传","node_ids":"O_EPA","source_ids":"S058","evidence_grade":"A","claim_ids":"D_F019"},{"event_id":"M_E001","date":"1999-11-02","date_precision":"day","title":"Pew 回顾研讨会新闻稿与 Yoon 提问","description":"据 2002 年 Pew 访谈回顾，BIO 发布研讨会新闻稿，Yoon 在会上追问，Brower 与 Sears 作出不同评价。","node_ids":"O_WORKING_GROUP1999;D_O_BIO;D_P_YOON;P_BROWER;P_SEARS","source_ids":"S003","evidence_grade":"C","claim_ids":"D_F009"}]};
+const READER_PROFILES = {"losey":"<div class=\"eyebrow\" lang=\"en\">PROFILE<\/div><h1>John E. Losey：从农业昆虫生态到非靶标风险<\/h1>\n<div class=\"person\"><p class=\"who\">John E. Losey <small>· Cornell大学昆虫学系教授（1999年时任助理教授）<\/small><\/p><div class=\"tags\"><span>博士院校 · 马里兰大学<\/span><span>1999年论文 · 第一作者、研究主要负责人<\/span><span>研究方向 · 农业昆虫生态 / 生物防治 / 非靶标风险<\/span><\/div><\/div>\n<h2>前期学术积累<\/h2>\n<p>Cornell大学目录把Losey的博士院校列为马里兰大学<sup><a href=\"https://catalog.cornell.edu/agriculture-life-sciences/agriculture-life-sciences.pdf\">[S008]<\/a><\/sup>。其实验室书目从1995年起列出Bt玉米—赤眼蜂—欧洲玉米螟生物防治与蚜虫生态方向的论文<sup><a href=\"https://blogs.cornell.edu/losey/publications/\">[S010]<\/a><\/sup>；1997年，他署名发表于威斯康星大学麦迪逊分校动物学系的豌豆蚜色彩多态性研究，论文致谢中的USDA资助拨予A. R. Ives<sup><a href=\"https://www.nature.com/articles/40849\">[S016]<\/a><\/sup>。1996—1999年，他与马里兰大学的Robert F. Denno连续合作发表捕食者互作实验；1998年论文的出版记录注明他“原属马里兰大学昆虫系，现址Cornell”<sup><a href=\"https://doi.org/10.1890/0012-9658(1998)079[2143:PPPIEP]2.0.CO;2\">[S009]<\/a><\/sup><sup><a href=\"https://delphacid.s3.amazonaws.com/2915.pdf\">[S029]<\/a><\/sup><sup><a href=\"https://esajournals.onlinelibrary.wiley.com/doi/10.2307/2963487\">[S036]<\/a><\/sup>。这一时期的积累勾画出他1999年之前的问题坐标：作物—害虫—天敌的农业生态链。<\/p>\n<h2>1999年：问题的提出与论文<\/h2>\n<p>Pew 2002年的访谈回顾了他的构思过程：研究Bt玉米田的杂草能否成为欧洲玉米螟替代寄主时，他注意到田间和田边的乳草，想知道以花粉为食的幼虫会否受毒性影响；访谈还把洒粉等实验程序叙述归于他<sup><a href=\"https://www.pewtrusts.org/~/media/legacy/uploadedfiles/wwwpewtrustsorg/reports/food_and_biotechnology/vfbiotechmonarchpdf.pdf\">[S003]<\/a><\/sup>。论文署名Losey、Rayor、Carter三人；实验显示Bt花粉组四天存活率56%，两个对照组均为100%，文末呼吁进一步评价风险并与其他防治方式比较<sup><a href=\"https://www.salmone.org/wp-content/uploads/2007/09/losey.pdf\">[S001]<\/a><\/sup>。Cornell同期新闻称他为研究主要负责人、助理教授，并转述他对进一步研究及减少杀虫剂使用潜在收益的看法<sup><a href=\"https://news.cornell.edu/stories/1999/04/toxic-pollen-bt-corn-can-kill-monarch-butterflies\">[S002]<\/a><\/sup>。<\/p>\n<h2>公共回应与后续转向<\/h2>\n<p>Pew回忆稿叙述了两件后续事：论文获接收后，他告知Monsanto与Novartis并征询措辞及后续研究建议；他拒绝了产业组织提出的一项早期研究安排，理由是研究方向不合<sup><a href=\"https://www.pewtrusts.org/~/media/legacy/uploadedfiles/wwwpewtrustsorg/reports/food_and_biotechnology/vfbiotechmonarchpdf.pdf\">[S003]<\/a><\/sup>。2000年，他在Cornell Magazine的回应中说明三位作者共同选择向Nature投稿、论文经同行评审<sup><a href=\"https://ecommons.cornell.edu/bitstream/1813/28147/1/102_05.pdf\">[S012]<\/a><\/sup>。2001年，他参与多机构田间研究，比较不同Cry1Ab转化事件的花粉影响<sup><a href=\"https://www.pnas.org/doi/pdf/10.1073/pnas.211277798\">[S011]<\/a><\/sup>。2007年Cornell新闻称其为副教授<sup><a href=\"https://news.cornell.edu/stories/2007/09/cornell-entomologists-will-be-cbs-sunday-morning-sept-9\">[S013]<\/a><\/sup>；现行Cornell资料列其为教授，研究方向为害虫管理与昆虫保护，并创办面向公众的Lost Ladybug Project<sup><a href=\"https://blogs.cornell.edu/losey/people/\">[S014]<\/a><\/sup><sup><a href=\"https://cals.cornell.edu/people/john-e-losey\">[S007]<\/a><\/sup>。<\/p>\n<div class=\"pend\"><a href=\"../index.html#questions\">档案留白<\/a> · 本科经历、博士毕业年份与导师、加入Cornell的确切年份，以及1997年论文纸本署名。<\/div>","rayor":"<div class=\"eyebrow\" lang=\"en\">PROFILE<\/div><h1>Linda S. Rayor：行为生态、帝王蝶与科学传播<\/h1>\n<div class=\"person\"><p class=\"who\">Linda S. Rayor <small>· Cornell大学昆虫学系荣休高级讲师（1999年时任讲师）<\/small><\/p><div class=\"tags\"><span>博士院校 · 堪萨斯大学（1987）<\/span><span>1999年论文 · 第二作者<\/span><span>研究方向 · 蜘蛛社会行为 / 科学传播<\/span><\/div><\/div>\n<h2>前期学术积累<\/h2>\n<p>Rayor于1978年获科罗拉多大学博尔德分校分子生物学学士，1987年获堪萨斯大学系统学与生态学博士；先后在辛辛那提大学与亚利桑那大学做博士后，1994年进入Cornell昆虫学系<sup><a href=\"https://cals.cornell.edu/people/linda-s-rayor\">[S005]<\/a><\/sup><sup><a href=\"https://www.entsoc.org/sites/default/files/files/Branches/Eastern/2008-EB-Program-Book.pdf\">[S006]<\/a><\/sup>。她的Cornell自述勾勒出一条研究兴趣的演化线：博士期间研究草原犬鼠的社会行为，鼠疫冲击了研究种群，比较动物社会性的问题把她引向蜘蛛；博士后阶段研究结网蜘蛛的殖居，后来转向澳大利亚高脚蛛的社会性<sup><a href=\"https://cals.cornell.edu/people/linda-s-rayor\">[S005]<\/a><\/sup>。<\/p>\n<h2>1999年论文与公共回应<\/h2>\n<p>1999年，她与Losey、Carter共同署名Nature论文，三人统一标注Cornell昆虫学系；Cornell新闻当时称她为讲师<sup><a href=\"https://www.salmone.org/wp-content/uploads/2007/09/losey.pdf\">[S001]<\/a><\/sup><sup><a href=\"https://news.cornell.edu/stories/1999/04/toxic-pollen-bt-corn-can-kill-monarch-butterflies\">[S002]<\/a><\/sup>。Brower在2001年的回忆文章中记述：1998年9月，Rayor致电报告三位Cornell研究者的发现，随后他与Losey、Rayor讨论了研究含义——这是论文刊出前七个月的一次关键个人接触<sup><a href=\"https://downloads.regulations.gov/APHIS-2013-0043-4524/attachment_16.pdf\">[S004]<\/a><\/sup>。《华盛顿邮报》的报道将她列为与Losey合作的研究者，并引述她对结果的担忧<sup><a href=\"https://www.washingtonpost.com/archive/politics/1999/05/20/biotech-vsbambi-of-insects-gene-altered-corn-may-kill-monarchs/9a7e201a-4251-4e45-aa63-1c8ec47dff3f/\">[S015]<\/a><\/sup>。<\/p>\n<h2>科学传播与后续<\/h2>\n<p>2008年美国昆虫学会的教学奖履历称，她当时已领导约十年的科普项目，带学生走进学校与社区；研究重点为社会性与独居蜘蛛的比较<sup><a href=\"https://www.entsoc.org/sites/default/files/files/Branches/Eastern/2008-EB-Program-Book.pdf\">[S006]<\/a><\/sup>。2007年Cornell新闻称其为高级研究员，与Losey一起参与电视节目<sup><a href=\"https://news.cornell.edu/stories/2007/09/cornell-entomologists-will-be-cbs-sunday-morning-sept-9\">[S013]<\/a><\/sup>；现行资料列其为荣休高级讲师，并记载她2004年起参与Arthropod Zoo的教学<sup><a href=\"https://cals.cornell.edu/people/linda-s-rayor\">[S005]<\/a><\/sup>。<\/p>\n<div class=\"pend\"><a href=\"../index.html#questions\">档案留白<\/a> · 博士与博士后阶段的导师姓名。<\/div>","carter":"<div class=\"eyebrow\" lang=\"en\">PROFILE<\/div><h1>Maureen E. Carter：可确认的合作轨迹<\/h1>\n<div class=\"person\"><p class=\"who\">Maureen E. Carter <small>· Cornell大学昆虫学系研究助理（1999年）<\/small><\/p><div class=\"tags\"><span>1999年论文 · 第三作者<\/span><span>与Losey共同发表寄主与抗性管理研究<\/span><span>2001年 · 非玉米寄主与抗性管理研究<\/span><\/div><\/div>\n<h2>1999年：论文中的角色<\/h2>\n<p>Nature原文清楚列出Maureen E. Carter为第三作者，三位作者统一标注Cornell昆虫学系<sup><a href=\"https://www.salmone.org/wp-content/uploads/2007/09/losey.pdf\">[S001]<\/a><\/sup>；Cornell新闻称她为研究助理（research aide），列入参与研究人员<sup><a href=\"https://news.cornell.edu/stories/1999/04/toxic-pollen-bt-corn-can-kill-monarch-butterflies\">[S002]<\/a><\/sup>。Losey在2000年的回应中说明，Carter、Rayor与他共同选择把论文投往Nature<sup><a href=\"https://ecommons.cornell.edu/bitstream/1813/28147/1/102_05.pdf\">[S012]<\/a><\/sup>；Brower的回忆亦把她列为1998年发现团队的三名成员之一<sup><a href=\"https://downloads.regulations.gov/APHIS-2013-0043-4524/attachment_16.pdf\">[S004]<\/a><\/sup>。<\/p>\n<h2>1999年后的合作轨迹<\/h2>\n<p>2001年，她与Losey、Dennis Calvin、Charles Mason共同发表非玉米寄主作为抗性管理避难所的研究：出版页以全名列出她并标注Cornell昆虫学系，其结论不支持减少所研究地区的玉米避难所种植面积<sup><a href=\"https://academic.oup.com/ee/article/30/4/728/441678\">[S018]<\/a><\/sup>。<\/p>\n<div class=\"pend\"><a href=\"../index.html#questions\">档案留白<\/a> · 学历与导师、在Cornell的任职起止与实验分工、离校后的职业轨迹，以及相关论文书目的身份核对。<\/div>"};
+const GRAPH_COLUMN_WIDTH = 300;
+const GRAPH_ROW_HEIGHT = 43;
+
+function graphNodeGroup(node) {
+  if (node.node_type === 'person') return 0;
+  return ['work', 'publication', 'event'].includes(node.node_type) ? 2 : 1;
+}
+
+function computeGraphLayout(result, allEdges, {
+  columnWidth = GRAPH_COLUMN_WIDTH,
+  rowHeight = () => GRAPH_ROW_HEIGHT,
+} = {}) {
+  const degree = new Map();
+  const pairs = new Map();
+  for (const edge of allEdges) {
+    const endpoints = [edge.source_node, edge.target_node];
+    for (const id of new Set(endpoints)) degree.set(id, (degree.get(id) || 0) + 1);
+    const key = JSON.stringify(endpoints.sort());
+    if (!pairs.has(key)) pairs.set(key, []);
+    pairs.get(key).push(edge.edge_id);
+  }
+  const offsets = new Map();
+  for (const ids of pairs.values()) {
+    const step = Math.min(5, 26 / Math.max(1, ids.length - 1));
+    ids.forEach((id, index) => offsets.set(id, (index - (ids.length - 1) / 2) * step));
+  }
+  const maxDegree = Math.max(1, ...degree.values());
+  const columns = [[], [], []];
+  for (const node of result.nodes) columns[graphNodeGroup(node)].push(node);
+  const groups = new Map(result.nodes.map(node => [node.node_id, graphNodeGroup(node)]));
+  const externalEdges = result.edges.filter(edge => Math.abs(groups.get(edge.source_node) - groups.get(edge.target_node)) === 2);
+  const lanes = new Map(externalEdges.map((edge, index) => [edge.edge_id, index]));
+  const corridorCount = Math.min(5, externalEdges.length);
+  const top = corridorCount ? 36 + (corridorCount - 1) * 9 : 30;
+  const nodes = new Map();
+  let contentHeight = 0;
+  columns.forEach((column, group) => {
+    column.sort((a, b) => (degree.get(b.node_id) || 0) - (degree.get(a.node_id) || 0));
+    const left = group * columnWidth;
+    let offset = 0;
+    column.forEach(node => {
+      const height = rowHeight(node);
+      nodes.set(node.node_id, {
+        x: left + 50, y: top + offset + (height - GRAPH_ROW_HEIGHT) / 2,
+        r: 4 + 8 * (degree.get(node.node_id) || 0) / maxDegree,
+        group, labelX: left + 68, labelWidth: columnWidth - 128, rowLeft: left + 34, rowRight: left + columnWidth - 50,
+      });
+      offset += height;
+    });
+    contentHeight = Math.max(contentHeight, offset);
+  });
+
+  const nodePorts = new Map();
+  function addPort(node, side, other, port) {
+    if (!nodePorts.has(node)) nodePorts.set(node, {left: [], right: []});
+    nodePorts.get(node)[side].push({other, port});
+  }
+  const ports = new Map();
+  for (const edge of result.edges) {
+    const a = nodes.get(edge.source_node);
+    const b = nodes.get(edge.target_node);
+    if (!a || !b) continue;
+    const source = {y: a.y};
+    const target = {y: b.y};
+    addPort(a, b.group < a.group ? 'left' : 'right', b, source);
+    addPort(b, a.group < b.group ? 'left' : 'right', a, target);
+    ports.set(edge.edge_id, {source, target});
+  }
+  for (const sides of nodePorts.values()) {
+    for (const side of Object.values(sides)) {
+      side.sort((a, b) => a.other.y - b.other.y || a.other.group - b.other.group);
+      const step = Math.min(5, 22 / Math.max(1, side.length - 1));
+      side.forEach(({port}, index) => {
+        port.y += (index - (side.length - 1) / 2) * step;
+      });
+    }
+  }
+
+  const paths = new Map();
+  for (const edge of result.edges) {
+    const a = nodes.get(edge.source_node);
+    const b = nodes.get(edge.target_node);
+    if (!a || !b) continue;
+    const offset = offsets.get(edge.edge_id) || 0;
+    const {source, target} = ports.get(edge.edge_id);
+    const ay = source.y;
+    const by = target.y;
+    const difference = b.group - a.group;
+    let path;
+    if (difference === 0) {
+      const lane = a.rowRight + 24 + offset;
+      path = `M ${a.rowRight} ${ay} C ${lane} ${ay}, ${lane} ${ay}, ${lane} ${(ay + by) / 2} S ${lane} ${by}, ${b.rowRight} ${by}`;
+    } else {
+      const rightward = difference > 0;
+      const direction = Math.sign(difference);
+      const ax = rightward ? a.rowRight : a.rowLeft;
+      const bx = rightward ? b.rowLeft : b.rowRight;
+      if (Math.abs(difference) === 1) {
+        const handle = (bx - ax) / 2;
+        path = `M ${ax} ${ay} C ${ax + handle} ${ay}, ${bx - handle} ${by}, ${bx} ${by}`;
+      } else {
+        const lane = lanes.get(edge.edge_id);
+        const corridor = lane % corridorCount;
+        const slot = Math.floor(lane / corridorCount);
+        const slotCount = Math.ceil((externalEdges.length - corridor) / corridorCount);
+        const variation = slotCount > 1 ? 2 * slot / (slotCount - 1) - 1 : 0;
+        const laneY = 10 + corridor * 9 + variation;
+        const shoulder = 42 + 2 * (corridor - (corridorCount - 1) / 2) + variation;
+        const aGutter = ax + direction * (shoulder + offset);
+        const bGutter = bx - direction * (shoulder - offset);
+        path = `M ${ax} ${ay} C ${aGutter} ${ay}, ${aGutter} ${ay}, ${aGutter} ${ay - 10} L ${aGutter} ${laneY + 7} Q ${aGutter} ${laneY}, ${aGutter + direction * 7} ${laneY} L ${bGutter - direction * 7} ${laneY} Q ${bGutter} ${laneY}, ${bGutter} ${laneY + 7} L ${bGutter} ${by - 10} C ${bGutter} ${by}, ${bGutter} ${by}, ${bx} ${by}`;
+      }
+    }
+    paths.set(edge.edge_id, path);
+  }
+
+  return {
+    width: columnWidth * columns.length,
+    height: Math.max(130, top + contentHeight),
+    nodes, paths,
+  };
+}
+
+if (typeof module !== 'undefined') module.exports = {computeGraphLayout, graphNodeGroup};
+
+function renderFullGraphSvg(data, relationLabels, layoutGraph, {core = false, nodeLabels = {}} = {}) {
+  const names = new Map(data.nodes.map(node => [node.node_id,nodeLabels[node.node_id] ?? node.label]));
+  const groupNames = ['Researchers', 'Organizations & Projects', 'Papers & Events'];
+  const groupColors = ['#233449','#55657D','#1266BF'];
+  const fontSize = 14;
+  const lineHeight = 17;
+  const columnWidth = core ? 372 : 510;
+  const textWidth = columnWidth - 128;
+  const inset = 28;
+  const headerHeight = 126;
+
+  function xml(value) {
+    return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+  }
+
+  function textAdvance(text) {
+    return [...text].reduce((width, ch) => width + fontSize * (
+      /[^\x00-\x7F]/.test(ch) ? 1 :
+      /[WM@%]/.test(ch) ? .98 :
+      /[A-Z]/.test(ch) ? .75 :
+      /[ ,.:il'!]/.test(ch) ? .33 : .62
+    ), 0);
+  }
+
+  function wrapLabel(label) {
+    const lines = [];
+    let line = '';
+    for (const token of label.match(/\s+|\p{Script=Han}|[^\s\p{Script=Han}]+/gu) || []) {
+      if (!line && /^\s+$/.test(token)) continue;
+      if (textAdvance(line + token.trimEnd()) > textWidth - 12 && line) {
+        lines.push(line.trimEnd());
+        line = '';
+      }
+      for (const ch of token) {
+        if (line && textAdvance(line + ch) > textWidth - 12) {
+          lines.push(line.trimEnd());
+          line = '';
+        }
+        if (line || !/^\s$/.test(ch)) line += ch;
+      }
+    }
+    if (line) lines.push(line.trimEnd());
+    return lines;
+  }
+
+  function shape(group, x, y, radius) {
+    const color = groupColors[group];
+    if (group === 0) return `<circle cx="${x}" cy="${y}" r="${radius}" fill="${color}"/>`;
+    if (group === 1) return `<path d="M ${x} ${y-radius} l ${radius} ${radius} -${radius} ${radius} -${radius} -${radius} Z" fill="${color}"/>`;
+    return `<rect x="${x-radius}" y="${y-radius}" width="${radius*2}" height="${radius*2}" rx="2" fill="${color}"/>`;
+  }
+
+  const labelLines = new Map([...names].map(([id, label]) => [id,wrapLabel(label)]));
+  const rowHeights = new Map([...labelLines].map(([id,lines]) => [id,Math.max(46,lines.length*lineHeight+12)]));
+  const layout = layoutGraph(data,data.edges,{columnWidth,rowHeight:node => rowHeights.get(node.node_id)});
+  const width = layout.width + inset*2;
+  const height = headerHeight + layout.height + inset;
+  const counts = [0,0,0];
+  for (const node of layout.nodes.values()) counts[node.group]++;
+  const title = core ? 'Monarch Butterfly Paper · Core Network' : 'Monarch Butterfly Paper · Full Research Network';
+  const colors = {
+    academic: ['Research & Authorship', '#42658B'],
+    funding: ['Funding & Organizations', '#956033'],
+    public: ['Media & Regulation', '#5D7585']
+  };
+  const edgeGroups = {
+    funding:new Set(['funded','member_of','organized_research_for','research_steering','selected_projects_for']),
+    public:new Set(['contacted','media_advocacy_about','used_as_evidence'])
+  };
+  const legend = core ? Object.values(colors).map(([label,color],i) => {
+    const x = width - 495 + i * 160;
+    return `<path d="M ${x} 68 h 14" fill="none" stroke="${color}" stroke-width="2"/><text x="${x+20}" y="72" font-size="12" fill="#536881">${xml(label)}</text>`;
+  }).join('\n') : '';
+  const arrows = core ? Object.entries(colors).map(([kind,[,color]]) =>
+    `<marker id="arrow-${kind}" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L7 3.5L0 7Z" fill="${color}"/></marker>`
+  ).join('\n') : '';
+  const doc = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    `<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">`,
+    `<title id="title">${title}</title>`,
+    `<desc id="description">${data.nodes.length} nodes and ${data.edges.length} directed relationships. Dashed lines indicate grade C evidence.</desc>`,
+    '<defs>',
+    '<linearGradient id="paper" x2="0" y2="1"><stop stop-color="#eaf2fd"/><stop offset=".22" stop-color="#f6f8fc"/><stop offset="1" stop-color="#f4f6fa"/></linearGradient>',
+    '<linearGradient id="heads" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef3fa"/></linearGradient>',
+    '<marker id="arrow" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L7 3.5L0 7Z" fill="#8295ad"/></marker>',
+    arrows,
+    '</defs>',
+    `<rect width="${width}" height="${height}" fill="url(#paper)"/>`,
+    '<g fill="#17283d" font-family="Arial, Microsoft YaHei, PingFang SC, sans-serif">',
+    `<text x="${inset+12}" y="55" font-size="30" font-weight="700">${title}</text>`,
+    `<text x="${inset+12}" y="81" font-size="14" fill="#536881">1995–2005 · ${data.nodes.length} nodes / ${data.edges.length} relationships</text>`,
+    legend,
+    `<path d="M ${width-365} ${core ? 84 : 76} h 22" fill="none" stroke="#8295ad" stroke-width="1.7" stroke-dasharray="5 4"/>`,
+    `<text x="${width-333}" y="${core ? 88 : 81}" font-size="12" fill="#536881">Dashed: grade C · Arrows: relationship direction</text>`,
+    `<g transform="translate(${inset} ${headerHeight})">`,
+    `<rect x="0" y="-34" width="${layout.width}" height="${layout.height+34}" rx="15" fill="#ffffff" stroke="#d7e3f0"/>`,
+    `<rect x="${columnWidth}" y="0" width="${columnWidth}" height="${layout.height-1}" fill="#f4f8fd"/>`,
+    `<rect x=".5" y="-34" width="${layout.width-1}" height="34" rx="14" fill="url(#heads)"/>`,
+    `<path d="M 0 0 H ${layout.width} M ${columnWidth} -34 V ${layout.height} M ${columnWidth*2} -34 V ${layout.height}" fill="none" stroke="#d7e3f0"/>`,
+  ];
+
+  groupNames.forEach((name, group) => {
+    const x = group*columnWidth;
+    doc.push(shape(group,x+43,-17,5));
+    doc.push(`<text x="${x+58}" y="-12" font-size="15" font-weight="700">${xml(name)}</text>`);
+    doc.push(`<text x="${x+columnWidth-30}" y="-12" text-anchor="end" font-size="13" fill="#536881">${counts[group]}</text>`);
+  });
+
+  doc.push('<g fill="none" stroke="#a5b5c8" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">');
+  for (const edge of data.edges) {
+    const label = names.get(edge.source_node) + ' · ' + (relationLabels[edge.relation_type] || edge.relation_type) + ' → ' + names.get(edge.target_node);
+    const dash = edge.evidence_grade === 'C' ? ' stroke-dasharray="5 4"' : '';
+    const route = layout.paths.get(edge.edge_id);
+    if (!route) throw new Error('Missing curve for ' + edge.edge_id);
+    const kind = edgeGroups.funding.has(edge.relation_type) ? 'funding' : edgeGroups.public.has(edge.relation_type) ? 'public' : 'academic';
+    const style = core ? `stroke="${colors[kind][1]}" opacity=".72" marker-end="url(#arrow-${kind})"` : 'opacity=".62" marker-end="url(#arrow)"';
+    doc.push(`<path data-edge-id="${xml(edge.edge_id)}" data-source="${xml(edge.source_node)}" data-target="${xml(edge.target_node)}" d="${xml(route)}"${dash} ${style}><title>${xml(label)}</title></path>`);
+  }
+  doc.push('</g>');
+
+  for (const [id, node] of layout.nodes) {
+    const lines = labelLines.get(id);
+    const baseline = node.y + 4.5 - (lines.length-1)*lineHeight/2;
+    doc.push(`<g data-node-id="${xml(id)}" data-label-width="${node.labelWidth}"><title>${xml(names.get(id))}</title>`);
+    if (core && id === 'W_LOSEY1999') {
+      doc.push(`<rect x="${node.rowLeft+1}" y="${node.y-19}" width="${node.rowRight-node.rowLeft-2}" height="38" rx="8" fill="#EAF3FE" stroke="#C7DBF2"/>`);
+    }
+    doc.push(shape(node.group,node.x,node.y,node.r));
+    doc.push(`<text x="${node.labelX}" y="${baseline}" font-size="${fontSize}">`);
+    lines.forEach((line,i) => {
+      doc.push(`<tspan x="${node.labelX}" y="${baseline+i*lineHeight}">${xml(line)}</tspan>`);
+    });
+    doc.push('</text></g>');
+  }
+  doc.push('</g></g></svg>');
+  return doc.join('\n') + '\n';
+}
+
+if (typeof require === 'function' && require.main === module) {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const { computeGraphLayout } = require('./network_layout.js');
+  const { LABELS } = require('./network_logic.js');
+  const { nodeLabels } = require('./network_english.js');
+  const args = process.argv.slice(2);
+  const core = args[0] === '--core';
+  if (core) args.shift();
+  const dataPath = args[0] || path.join(__dirname,'../data/network.json');
+  const outputPath = args[1] || path.join(__dirname,core ? 'network_core.svg' : 'network_full.svg');
+  const original = JSON.parse(fs.readFileSync(dataPath,'utf8').replace(/^\uFEFF/,''));
+  let data = original;
+  if (core) {
+    const ids = new Set([
+      'P_LOSEY','P_RAYOR','P_CARTER','P_HELLMICH','P_SEARS','P_SACHS','P_MELLON',
+      'O_CORNELL','O_USDA_ARS','O_ABSTC','C_O_POOL','C_O_PANEL','O_MONSANTO','O_UCS','O_EPA',
+      'W_LOSEY1999','W_STANLEYHORN2001','W_SEARS2001','A_W_REFUGE2001','J_WORKSHOP2000',
+    ]);
+    const nodes = original.nodes.filter(node => ids.has(node.node_id));
+    const edges = original.edges.filter(edge => ids.has(edge.source_node) && ids.has(edge.target_node));
+    if (nodes.length !== ids.size) throw new Error('Core selection needs the original Monarch dataset.');
+    data = {nodes,edges};
+  }
+  fs.writeFileSync(outputPath,renderFullGraphSvg(data,LABELS,computeGraphLayout,{core,nodeLabels}),'utf8');
+  console.log(`${core ? 'Core' : 'Full'} SVG: ${data.nodes.length} nodes, ${data.edges.length} edges`);
+}
+
+// English display text for the network and timeline.
+const EN_NODE_LABELS = {
+  "C_O_EARLY_INDUSTRY": "1999 industry research arrangement",
+  "J_ORIGIN_HOSTS": "1998–1999 weed alternative-host research",
+  "J_SYMPOSIUM1999": "Monarch symposium, November 2, 1999",
+  "J_WORKSHOP2000": "Monarch research workshop, February 2000"
+};
+
+const EN_NODE_DESCRIPTIONS = {
+  "P_LOSEY": "Entomologist at Cornell University",
+  "P_RAYOR": "Behavioral ecologist in Cornell's Department of Entomology",
+  "P_CARTER": "Coauthor of the 1999 Nature paper",
+  "O_CORNELL": "Author affiliation on the 1999 Nature paper",
+  "W_LOSEY1999": "Nature 399:214",
+  "P_BROWER": "Monarch butterfly researcher. He recalled the 1998 phone conversation in 2001.",
+  "P_DENNO": "Coauthor with Losey in 1998",
+  "O_MARYLAND": "University where Losey earned his doctorate",
+  "O_KANSAS": "University where Rayor earned her doctorate",
+  "W_STANLEYHORN2001": "Multi-institution field study, PNAS 98:11931–11936",
+  "A_W_REFUGE2001": "Noncorn host plants and insect resistance management",
+  "A_W_STEM2002": "Stem diameter and European corn borer behavior",
+  "P_HELLMICH": "Research and publication relationships are shown on the connected edges.",
+  "P_OBRYCKI": "Research and publication relationships are shown on the connected edges.",
+  "B_P_STANLEYHORN": "Research and publication relationships are shown on the connected edges.",
+  "P_SEARS": "Research and publication relationships are shown on the connected edges.",
+  "B_P_JESSE": "Research and publication relationships are shown on the connected edges.",
+  "B_P_HUTCHISON": "Research and publication relationships are shown on the connected edges.",
+  "B_P_ANDOW": "Research and publication relationships are shown on the connected edges.",
+  "B_W_NCR602": "North Central Regional Extension Publication No. 602",
+  "B_W_DENNO1998": "Ecology 79:2143–2152",
+  "B_W_BIOSCI2001": "BioScience 51:353–361",
+  "B_W_REF09": "Andow, D.A. and Hutchison, W.D. In Mellon and Rissler (eds.), Now or Never: Serious New Plans to Save a Natural Pest Control, Union of Concerned Scientists, 1998, pp. 19–65 as cited in the original paper.",
+  "B_P_FEARING": "Named on the connected publication.",
+  "B_P_BROWN": "Named on the connected publication.",
+  "B_P_VLACHOS": "Named on the connected publication.",
+  "B_P_MEGHJI": "Named on the connected publication.",
+  "B_P_PRIVALLE": "Named on the connected publication.",
+  "B_P_MALCOLM": "Named on the connected publication.",
+  "B_P_COCKRELL": "Named on the connected publication.",
+  "B_P_WASSENAAR": "Named on the connected publication.",
+  "B_P_HOBSON": "Named on the connected publication.",
+  "B_O_CIBA_BIOTECH": "Affiliation listed in the 1997 paper",
+  "B_O_CIBA_SEEDS": "Affiliation listed in the 1997 paper",
+  "B_O_FLORIDA": "Affiliation listed in the 1989 paper",
+  "B_O_ENV_CANADA": "Affiliation listed in the 1998 paper and acknowledged in later monarch studies",
+  "O_USDA_ARS": "Agricultural research agency of the U.S. Department of Agriculture",
+  "O_ABSTC": "Agricultural biotechnology industry committee",
+  "O_MONSANTO": "Company involved in 1999 discussions and listed as an ABSTC member in 2001",
+  "O_NOVARTIS": "One of the companies contacted in 1999. Pew's 2002 interview-based retrospective attributed N4640 to Novartis.",
+  "O_SYNGENTA": "Listed as an ABSTC member in 2001",
+  "O_UCS": "Public-interest science organization represented by committee member Margaret Mellon",
+  "O_EPA": "U.S. Environmental Protection Agency, which solicited data and regulated Bt crops",
+  "C_O_PEW": "Research and public communication initiative that published the retrospective",
+  "C_O_CFIA": "Acknowledged in the connected research papers",
+  "C_O_MAES": "Acknowledged in the connected research papers",
+  "C_O_LEOPOLD": "Acknowledged in the connected research papers",
+  "C_O_OMAFRA": "Funding source for the Sears et al. study",
+  "C_O_ONTARIO": "Funding source for the field study",
+  "C_O_HATCH": "Source of support for joint contribution project 3543",
+  "W_SEARS2001": "Risk assessment published in PNAS",
+  "C_W_PLEASANTS2001": "Pollen deposition study published in PNAS",
+  "C_W_ANDERSON2005": "Study of anthers and pollen",
+  "C_W_HELLMICH2001": "Toxicity study",
+  "C_O_POOL": "Joint grant pool",
+  "C_O_PANEL": "Cross-institution committee that selected research projects",
+  "P_SACHS": "Monsanto representative and joint research steering committee member",
+  "P_MELLON": "Union of Concerned Scientists representative and research steering committee member",
+  "C_W_DIVELY2004": "Study of chronic exposure",
+  "C_W_ZANGERL2001": "Study by the Illinois team",
+  "C_O_ILLINOISFOUND": "Funding acknowledged in the paper",
+  "C_O_ILLINOISCAS": "Funding acknowledged in the paper",
+  "C_O_NTOS": "Subcommittee acknowledged as a funder in the 2004 paper",
+  "P_SPANGLER": "Identified by Pew as an entomologist at Monsanto",
+  "C_O_EARLY_INDUSTRY": "Early industry funding arrangement described in Pew's 2002 interview-based retrospective",
+  "O_EDF": "Environmental advocacy organization",
+  "D_P_GOLDBURG": "Environmental Defense Fund scientist",
+  "D_O_BIO": "Biotechnology industry trade association",
+  "D_P_WEISS": "Reporter for The Washington Post",
+  "D_O_WP": "News organization",
+  "D_P_YOON": "Reporter for The New York Times",
+  "J_ORIGIN_HOSTS": "Alternative-host project described in Pew's 2002 interview-based retrospective",
+  "M_P_TAYLOR": "Acknowledged with the University of Kansas Monarch Watch program in the 2001 field paper",
+  "O_USDA": "Funding agency named in the acknowledgments of Oberhauser et al. 2001",
+  "W_OBERHAUSER2001": "PNAS 98:11913–11918, one of six papers in the series",
+  "P_OBERHAUSER": "First author of the 2001 paper",
+  "O_WORKING_GROUP1999": "Organizer named in contemporary coverage of the 1999 symposium",
+  "J_SYMPOSIUM1999": "Symposium held near Chicago, as reported at the time by Nature Biotechnology",
+  "J_WORKSHOP2000": "ARS workshop that set research priorities and coordinated collaboration"
+};
+
+const EN_EVENT_TITLES = {
+  "A_E001": "Rayor earns a bachelor's degree",
+  "A_E002": "Rayor earns a doctorate",
+  "A_E003": "Rayor joins Cornell's Department of Entomology",
+  "A_E004": "Losey's pea aphid paper appears in Nature",
+  "A_E005": "Losey and Denno study predator interactions",
+  "A_E006": "Rayor contacts Brower",
+  "A_E007": "Nature publishes the paper",
+  "A_E008": "Carter, Losey and colleagues publish noncorn host study",
+  "A_E009": "Losey discusses the choice of journal",
+  "A_E010": "Bibliographic record for a study of European corn borer behavior and stem diameter",
+  "A_E011": "Follow-up field study published online",
+  "A_E012": "Losey and Rayor take part in a media program",
+  "B_E001": "NCR 602 published",
+  "B_E002": "Losey and Denno publish predator ecology study",
+  "B_E003": "Multisite field study published",
+  "C_E001": "Original paper published",
+  "C_E002": "Losey contacts companies after acceptance",
+  "C_E003": "ARS convenes a research workshop",
+  "C_E004": "Call for research proposals",
+  "C_E005": "PNAS publishes the risk assessment and follow-up studies online",
+  "C_E006": "Chronic exposure study published",
+  "C_E007": "Anther and pollen study published",
+  "D_E001": "Environmental Defense Fund issues a statement",
+  "D_E002": "The Washington Post reports on the paper",
+  "D_E003": "Nature formally publishes the paper",
+  "D_E004": "EPA testifies before Congress",
+  "D_E005": "Rosemont symposium convenes",
+  "D_E006": "EPA requests data",
+  "D_E007": "USDA holds a research workshop",
+  "D_E008": "EPA issues a Bt risk decision",
+  "D_E009": "Pew publishes a three-year retrospective",
+  "D_E010": "Chronic exposure study published",
+  "D_E011": "EPA announces resistance management measures",
+  "M_E001": "Retrospective on the symposium press release and Yoon's question"
+};
+
+const EN_EVENT_DESCRIPTIONS = {
+  "A_E001": "Molecular biology",
+  "A_E002": "Systematics and ecology at the University of Kansas",
+  "A_E003": "Recorded in her curriculum vitae",
+  "A_E004": "The Nature publication page lists the Department of Zoology, University of Wisconsin–Madison, as the author address.",
+  "A_E005": "Study coauthored by Losey and Denno",
+  "A_E006": "Recounted by Brower in 2001",
+  "A_E007": "The paper lists three coauthors.",
+  "A_E008": "Coauthored by Losey, Calvin, Carter and Mason. Losey and Carter list Cornell's Department of Entomology.",
+  "A_E009": "March–April issue of Cornell Magazine",
+  "A_E010": "The EBSCO record lists John E. Losey, Maureen E. Carter and Susan Silverman.",
+  "A_E011": "Losey was among the authors from multiple institutions.",
+  "A_E012": "Announced in Cornell news coverage",
+  "B_E001": "Bt corn extension guide prepared by contributors from multiple institutions",
+  "B_E002": "Published in Ecology",
+  "B_E003": "Coauthors include Losey, Hellmich, Obrycki and Sears.",
+  "C_E001": "All three authors list Cornell University's Department of Entomology.",
+  "C_E002": "Losey recalled notifying both companies and asking for advice.",
+  "C_E003": "The workshop focused on research priorities and coordination.",
+  "C_E004": "The steering committee selected projects.",
+  "C_E005": "The papers disclose joint grant support and other funding sources.",
+  "C_E006": "The government bibliographic record dates the study to 2004.",
+  "C_E007": "The paper reports its funding and findings under the experimental conditions.",
+  "D_E001": "The statement urged EPA to limit the acreage planted with Bt corn.",
+  "D_E002": "Date shown on The Washington Post article page",
+  "D_E003": "Laboratory feeding trial. Four-day survival was 56% in the Bt pollen group and 100% in both control groups.",
+  "D_E004": "EPA described its consultations and the scope of the experiment.",
+  "D_E005": "Contemporary coverage in Nature Biotechnology identifies the meeting date and organizer.",
+  "D_E006": "Documented in the agency's annual report and subsequent assessment",
+  "D_E007": "Participants established research priorities and plans for collaboration.",
+  "D_E008": "EPA assessed population-level risk and retained a requirement for long-term research.",
+  "D_E009": "Publication date shown on Pew's official page",
+  "D_E010": "The abstract reports larval exposure and model estimates.",
+  "D_E011": "The measures included voluntary outreach on protecting nontarget insects.",
+  "M_E001": "Pew's 2002 interview-based retrospective recounts the BIO press release, Yoon's question at the symposium and the differing assessments of Brower and Sears."
+};
+
+const EN_EDGE_RECORDS = {
+  "R001": "Listed as an author on the original paper",
+  "R002": "Listed as an author on the original paper",
+  "R003": "Listed as an author on the original paper",
+  "R004": "Shared author affiliation in the 1999 paper",
+  "R005": "Shared author affiliation in the 1999 paper",
+  "R006": "Shared author affiliation in the 1999 paper",
+  "R007": "Telephone call about the study findings, recalled in 2001",
+  "R008": "Discussion of the study's implications, recalled in 2001",
+  "R009": "Doctorate in systematics and ecology",
+  "R010": "Doctorate",
+  "R011": "Paper on predators and pea aphids",
+  "R012": "Coauthor of the PNAS field study",
+  "R013": "Listed as an author on the original paper",
+  "R014": "Listed as an author on the original paper",
+  "R015": "EBSCO and Cornell laboratory bibliographies",
+  "R016": "EBSCO and Cornell laboratory bibliographies",
+  "R017": "Listed as a coauthor",
+  "R018": "Listed as a coauthor",
+  "R019": "Reference 1 in the original paper",
+  "R020": "Coeditor",
+  "R021": "Coeditor",
+  "R022": "Listed contributor",
+  "R023": "Coauthor of the PNAS field study",
+  "R024": "Coauthor of the PNAS field study",
+  "R025": "Coauthor of the PNAS field study",
+  "R026": "Coauthor of the PNAS field study",
+  "R027": "Coauthor of the PNAS field study",
+  "R028": "Listed author of the BioScience paper",
+  "R029": "Listed author of the BioScience paper",
+  "R030": "Listed author of the BioScience paper",
+  "R031": "Reference 2 in the original paper",
+  "R032": "Reference 3 in the original paper",
+  "R033": "Reference 4 in the original paper",
+  "R034": "Reference 5 in the original paper",
+  "R035": "Reference 6 in the original paper",
+  "R036": "Reference 7 in the original paper",
+  "R037": "Reference 8 in the original paper",
+  "R038": "Reference 9 in the original paper",
+  "R039": "Coauthor of the 1997 paper",
+  "R040": "Coauthor of the 1997 paper",
+  "R041": "Coauthor of the 1997 paper",
+  "R042": "Coauthor of the 1997 paper",
+  "R043": "Coauthor of the 1997 paper",
+  "R044": "Affiliation listed in the 1997 paper",
+  "R045": "Affiliation listed in the 1997 paper",
+  "R046": "Affiliation listed in the 1997 paper",
+  "R047": "Affiliation listed in the 1997 paper",
+  "R048": "Affiliation listed in the 1997 paper",
+  "R049": "Coauthor of the 1993 chapter",
+  "R050": "Coauthor of the 1989 paper",
+  "R051": "Affiliation listed in the 1989 paper",
+  "R052": "Coauthor of the 1993 chapter",
+  "R053": "Coauthor of the 1989 paper",
+  "R054": "Affiliation listed in the 1989 paper",
+  "R055": "Coauthor of the 1993 chapter",
+  "R056": "Coauthor of the 1989 paper",
+  "R057": "Affiliation listed in the 1989 paper",
+  "R058": "Coauthor of the 1998 paper",
+  "R059": "Affiliation listed in the 1998 paper",
+  "R060": "Coauthor of the 1998 paper",
+  "R061": "Affiliation listed in the 1998 paper",
+  "R062": "Contributed funding to the joint grant pool",
+  "R063": "Contributed funding to the joint grant pool",
+  "R064": "Joint grant support acknowledged in the paper",
+  "R065": "Joint grant support acknowledged in the paper",
+  "R066": "Joint grant support acknowledged in the paper",
+  "R067": "Joint grant support acknowledged in the paper",
+  "R068": "Membership listed in the paper",
+  "R069": "Membership listed in the paper",
+  "R070": "Pew interviews recount Losey contacting the company for advice after the paper was accepted.",
+  "R071": "Pew interviews recount Losey contacting the company for advice after the paper was accepted.",
+  "R072": "Member of the research steering committee",
+  "R073": "Member of the research steering committee",
+  "R074": "Affiliation listed in PNAS",
+  "R075": "Affiliation listed in PNAS",
+  "R076": "Committee selection of research projects",
+  "R077": "Funding acknowledged in the paper",
+  "R078": "Funding acknowledged in the paper",
+  "R079": "Funding acknowledged in the paper",
+  "R080": "Joint contribution project 3543 received Hatch Act and state funding.",
+  "R081": "Funding acknowledged in the paper",
+  "R082": "Funding acknowledged in the paper",
+  "R083": "Funding acknowledged in the paper",
+  "R084": "Funding acknowledged in the paper",
+  "R085": "Funding acknowledged in the paper",
+  "R086": "Funding acknowledged in the paper",
+  "R087": "Funding acknowledged in the paper",
+  "R088": "Funding acknowledged in the paper",
+  "R089": "Funding acknowledged in the paper",
+  "R090": "Funding acknowledged in the paper",
+  "R091": "Funding acknowledged in the paper",
+  "R092": "Funding acknowledged in the paper",
+  "R093": "Funding acknowledged in the paper",
+  "R094": "Funding acknowledged in the paper",
+  "R095": "Funding acknowledged in the paper",
+  "R096": "Difference in research priorities, as recalled in Pew's 2002 interviews",
+  "R097": "Discussion of experimental data, as recalled in Pew's 2002 interviews",
+  "R098": "Named in the statement as an EDF senior scientist",
+  "R099": "Called for limits on Bt corn acreage",
+  "R100": "UCS representative, as identified in Pew's 2002 interviews",
+  "R101": "Contact with reporters and release of a statement, as recalled in Pew's 2002 interviews",
+  "R102": "Coverage of the paper and scientific responses",
+  "R103": "Byline on The Washington Post article",
+  "R104": "EPA testified that it worked with the researchers to review the study.",
+  "R105": "EPA testified that it consulted USDA.",
+  "R106": "February 2000 workshop on follow-up research priorities and collaboration",
+  "R107": "Member of the committee that selected follow-up research projects",
+  "R108": "Member of the committee that selected follow-up research projects",
+  "R109": "Recent PNAS research informed EPA's risk assessment.",
+  "R110": "Media coordination for the November 1999 symposium, as recalled in Pew's 2002 interviews",
+  "R111": "Alternative-host project described in Pew's 2002 interviews",
+  "R112": "Earlier alternative-host research described in Pew's 2002 interviews",
+  "R113": "Critical review acknowledged in the paper",
+  "R114": "Monarch larvae",
+  "R115": "Financial support acknowledged in the original paper",
+  "R116": "Financial support acknowledged in the original paper",
+  "R117": "Financial support acknowledged in the original paper",
+  "R118": "Financial support acknowledged in the original paper",
+  "R119": "Listed as an author on the original paper",
+  "R120": "Contemporary coverage in Nature Biotechnology"
+};
+
+if (typeof module !== 'undefined') module.exports = {
+  nodeLabels: EN_NODE_LABELS,
+  nodeDescriptions: EN_NODE_DESCRIPTIONS,
+  eventTitles: EN_EVENT_TITLES,
+  eventDescriptions: EN_EVENT_DESCRIPTIONS,
+  edgeRecords: EN_EDGE_RECORDS
+};
+
+/* Shared pure functions are exported for the offline QA harness. */
+const ACADEMIC = new Set(['authored','coauthored','cited','contributed','received_degree','affiliated','affiliated_with','member_of','edited','researched','published_in']);
+const FUNDING = new Set(['funded','provided_material','selected_projects_for','organized_research_for','research_steering','affiliated','affiliated_with','member_of','declined_proposed_research']);
+const PUBLIC = new Set(['contacted','consulted','discussed','discussed_research','advocacy_to','media_advocacy_about','reported_on','used_as_evidence','media_briefing_context','critical_review','published_in','organized_symposium']);
+const LABELS = {
+  "authored": "Author of",
+  "coauthored": "Co-authored with",
+  "cited": "Cites",
+  "funded": "Funded",
+  "affiliated": "Affiliated with",
+  "affiliated_with": "Affiliated with",
+  "member_of": "Member of",
+  "received_degree": "Earned degree from",
+  "edited": "Edited",
+  "consulted": "Consulted",
+  "contacted": "Contacted",
+  "contributed": "Contributed to",
+  "research_steering": "Research steering",
+  "selected_projects_for": "Selected projects for",
+  "declined_proposed_research": "Declined research proposal",
+  "discussed": "Discussed",
+  "discussed_research": "Discussed research",
+  "advocacy_to": "Advocated to",
+  "media_advocacy_about": "Public advocacy about",
+  "reported_on": "Reported on",
+  "published_in": "Published in",
+  "organized_research_for": "Organized research for",
+  "used_as_evidence": "Used as evidence",
+  "media_briefing_context": "Media briefing",
+  "researched": "Researched",
+  "critical_review": "Critically reviewed",
+  "provided_material": "Provided materials",
+  "organized_symposium": "Organized symposium"
+};
+const ENGLISH = typeof module === 'undefined'
+  ? {nodeLabels:EN_NODE_LABELS, nodeDescriptions:EN_NODE_DESCRIPTIONS, eventTitles:EN_EVENT_TITLES, eventDescriptions:EN_EVENT_DESCRIPTIONS, edgeRecords:EN_EDGE_RECORDS}
+  : require('./network_english.js');
+function nodeName(node) { return ENGLISH.nodeLabels[node.node_id] ?? node.label; }
+function ids(s){return String(s||'').split(';').map(x=>x.trim()).filter(Boolean)}
+function year(s){let m=String(s||'').match(/^(\d{4})/);return m?+m[1]:null}
+function dateMatches(record, from, to, unknown){
+  const a=year(record.start_date), b=year(record.end_date), lo=year(from), hi=year(to);
+  if(a===null && b===null)return unknown;
+  if(lo===null && hi===null)return true;
+  // A sole end date is a documented observation, not an unbounded interval.
+  const start=a===null?b:a, end=b===null?a:b;
+  return (lo===null||end>=lo)&&(hi===null||start<=hi);
+}
+function inView(e,view){return view==='all'||(view==='academic'?ACADEMIC:view==='funding'?FUNDING:PUBLIC).has(e.relation_type)}
+function filterGraph(data, state){
+ const search=state.search.trim().toLowerCase();
+ const matched=new Set(data.nodes.filter(n=>[n.label,nodeName(n),n.node_id,n.description,ENGLISH.nodeDescriptions[n.node_id]].join(' ').toLowerCase().includes(search)).map(n=>n.node_id));
+ const es=data.edges.filter(e=>inView(e,state.view)&&(!state.relation||e.relation_type===state.relation)&&(!state.grade||e.evidence_grade===state.grade)&&dateMatches(e,state.from,state.to,state.unknown)&&(!search||matched.has(e.source_node)||matched.has(e.target_node)));
+ const visible=new Set(es.flatMap(e=>[e.source_node,e.target_node]));
+ if(search) for(const id of matched) visible.add(id);
+ else if(state.view==='all'&&!state.relation&&!state.grade&&!state.from&&!state.to) for(const n of data.nodes) visible.add(n.node_id);
+ return {nodes:data.nodes.filter(n=>visible.has(n.node_id)),edges:es};
+}
+if(typeof module!=='undefined')module.exports={ids,year,dateMatches,inView,filterGraph,LABELS};
+if(typeof document !== 'undefined') {
+  const $ = id => document.getElementById(id);
+  const NS = 'http://www.w3.org/2000/svg';
+  const XHTML = 'http://www.w3.org/1999/xhtml';
+  const nodeIndex = new Map(DATA.nodes.map(node => [node.node_id, node]));
+  const edgeIndex = new Map(DATA.edges.map(edge => [edge.edge_id, edge]));
+  const sourceIndex = new Map(DATA.sources.map(source => [source.source_id, source]));
+  const baseState = {view:'all', search:'', relation:'', grade:'', from:'', to:'', unknown:true};
+  const profileKeys = {P_LOSEY:'losey', P_RAYOR:'rayor', P_CARTER:'carter'};
+  const typeLabels = {person:'Researcher', organization:'Organization', program:'Program', project:'Project', publication:'Publication', work:'Paper or event'};
+  const shapeColors = ['#1E293B','#596578','#234F9C'];
+  const fundingAccents = new Set(['funded','provided_material','selected_projects_for','organized_research_for','research_steering','declined_proposed_research']);
+  const colors = {neutral:'#CBD5E1', academic:'#31517A', funding:'#A85808', public:'#245EB7'};
+  const authorRoles = {R001:'First author',R002:'Second author',R003:'Third author',R013:'First author',R014:'Co-author'};
+  const coauthors = {
+    R001:'Linda S. Rayor, Maureen E. Carter',
+    R002:'John E. Losey, Maureen E. Carter',
+    R003:'John E. Losey, Linda S. Rayor',
+    R013:'D. Calvin, M. E. Carter, C. Mason',
+    R014:'J. E. Losey, D. Calvin, C. Mason'
+  };
+
+  let state = {...baseState};
+  let selected = null;
+  let hovered = null;
+  let focused = null;
+  let visibleNodes = new Map();
+  let visibleEdges = new Map();
+  const graph = $('graph');
+  const panel = $('detail');
+  const defaultDetail = panel.innerHTML;
+  const tooltip = $('graph-tooltip');
+  const exportLink = $('export-svg');
+  let svgUrl;
+  exportLink?.addEventListener('click', () => {
+    svgUrl ??= URL.createObjectURL(new Blob([renderFullGraphSvg(DATA, LABELS, computeGraphLayout, {nodeLabels:ENGLISH.nodeLabels})], {type:'image/svg+xml'}));
+    exportLink.href = svgUrl;
+  });
+
+  function safe(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function summaryDate(record) {
+    const {start_date: start, end_date: end} = record;
+    if (start && end && start !== end) return start + ' – ' + end;
+    if (start && end) return start.slice(0, 7);
+    return start || end || '';
+  }
+
+  function eventTitle(event) {
+    return ENGLISH.eventTitles[event.event_id] ?? event.title;
+  }
+
+  function relationLabel(edge) {
+    if (edge.edge_id === 'R015' || edge.edge_id === 'R016') return 'Bibliographic authorship';
+    return LABELS[edge.relation_type] || edge.relation_type;
+  }
+
+  function edgeSummary(edge) {
+    return [nodeName(nodeIndex.get(edge.source_node)), relationLabel(edge), nodeName(nodeIndex.get(edge.target_node))].join(' · ');
+  }
+
+  function rowsHTML(rows) {
+    const values = rows.filter(([, value]) => value);
+    if (!values.length) return '';
+    return '<dl class="record-fields">' + values.map(([label, value]) => '<div><dt>' +
+      safe(label) + '</dt><dd>' + safe(value) + '</dd></div>').join('') + '</dl>';
+  }
+
+  function edgeRows(edge) {
+    if (authorRoles[edge.edge_id]) return [
+      ['Role', authorRoles[edge.edge_id]],
+      ['Affiliation', 'Cornell University (Dept. of Entomology)'],
+      ['Co-authors', coauthors[edge.edge_id]]
+    ];
+    const description = ENGLISH.edgeRecords[edge.edge_id] ?? edge.description;
+    if (edge.relation_type === 'cited') return [['Reference', description]];
+    switch (edge.relation_type) {
+      case 'received_degree': return [['Degree', description]];
+      case 'funded': return [['Funding record', description]];
+      case 'provided_material': return [['Materials', description]];
+      case 'member_of': case 'research_steering': return [['Membership', description]];
+      case 'edited': case 'contributed': return [['Role', description]];
+      default: return [['Record', description]];
+    }
+  }
+
+  function sourceCards(record, kind) {
+    const sources = ids(record.source_ids).map(id => sourceIndex.get(id)).filter(Boolean);
+    if (!sources.length) return '';
+    const cards = sources.map(source => {
+      const url = String(source.url || '');
+      const text = safe(source.source_id === 'S023' ? 'Spring recolonization bibliography' : source.title);
+      const title = /^https?:\/\//i.test(url)
+        ? '<a href="' + safe(url) + '" target="_blank" rel="noopener noreferrer">' + text + ' <span aria-hidden="true">↗</span></a>'
+        : '<span>' + text + '</span>';
+      const author = source.source_id === 'S020' ? 'Ostlie; Hutchison; Hellmich (eds.)' : source.author;
+      const meta = [author, source.publisher, source.publication_date?.slice(0, 4)].filter(Boolean);
+      const anchor = '<a class="citation-index" href="../index.html#' + safe(source.source_id) +
+        '" aria-label="Source index ' + safe(source.source_id) + '">[' + safe(source.source_id) + ']</a>';
+      return '<li>' + title + '<div class="citation-meta">' + safe(meta.join(' · ')) + ' ' + anchor + '</div></li>';
+    }).join('');
+    const rawDate = kind === 'event' ? record.date : [record.start_date, record.end_date && record.end_date !== record.start_date ? record.end_date : ''].filter(Boolean).join(' – ');
+    const idsLine = ids(record.claim_ids).join(' · ');
+    const trace = rawDate || idsLine ? '<details class="record-trace"><summary>Record traceability</summary>' +
+      rowsHTML([['Recorded date', rawDate], ['Fact IDs', idsLine]]) + '</details>' : '';
+    return '<ul class="citations" aria-label="Citations">' + cards + '</ul>' + trace;
+  }
+
+  function detail(kind, record) {
+    const meta = kind === 'event' ? record.date : summaryDate(record);
+    const badges = [kind === 'node' ? typeLabels[record.node_type] : '', record.evidence_grade && 'Grade ' + record.evidence_grade, meta]
+      .filter(Boolean).map(value => '<span class="tag">' + safe(value) + '</span>').join('');
+    let title;
+    let body;
+    let related = '';
+    let profile = '';
+    if (kind === 'edge') {
+      title = '<h2 class="relation-heading"><span>' + safe(nodeName(nodeIndex.get(record.source_node))) +
+        '</span><span class="relation-label">' + safe(relationLabel(record)) + ' <span aria-hidden="true">→</span></span><span>' +
+        safe(nodeName(nodeIndex.get(record.target_node))) + '</span></h2>';
+      body = rowsHTML(edgeRows(record));
+    } else if (kind === 'node') {
+      title = '<h2>' + safe(nodeName(record)) + '</h2>';
+      body = rowsHTML([['Details', ENGLISH.nodeDescriptions[record.node_id] ?? record.description]]);
+      const relations = DATA.edges.filter(edge => edge.source_node === record.node_id || edge.target_node === record.node_id);
+      if (relations.length) related = '<details class="record-related"><summary>All relationships <span>' + relations.length +
+        '</span></summary><ul>' + relations.map(edge => '<li><button class="edge-link" data-id="' + safe(edge.edge_id) + '">' +
+          safe(edgeSummary(edge)) + '</button></li>').join('') + '</ul></details>';
+      const reader = READER_PROFILES[profileKeys[record.node_id]];
+      if (reader) profile = '<details class="record-profile"><summary>Profile (Chinese original)</summary><div class="profile-copy" lang="zh-CN">' + reader + '</div></details>';
+    } else {
+      title = '<h2>' + safe(eventTitle(record)) + '</h2>';
+      body = rowsHTML([['Details', ENGLISH.eventDescriptions[record.event_id] ?? record.description]]);
+      const buttons = ids(record.node_ids).map(id => nodeIndex.get(id)).filter(Boolean).map(node =>
+        '<button class="node-link" data-id="' + safe(node.node_id) + '">' + safe(nodeName(node)) + '</button>').join(' ');
+      if (buttons) related = '<div class="record-related"><h3>Related nodes</h3><div>' + buttons + '</div></div>';
+    }
+    panel.innerHTML = '<span class="kicker">' + ({node:'Node', edge:'Relationship', event:'Event'})[kind] + '</span>' + title +
+      (badges ? '<div class="record-tags">' + badges + '</div>' : '') + body + sourceCards(record, kind) + related + profile;
+    panel.scrollTop = 0;
+    for (const button of panel.querySelectorAll('.node-link')) button.onclick = () => choose('node', button.dataset.id);
+    for (const button of panel.querySelectorAll('.edge-link')) button.onclick = () => choose('edge', button.dataset.id);
+  }
+
+  function svg(tag, attrs = {}) {
+    const element = document.createElementNS(NS, tag);
+    for (const [key,value] of Object.entries(attrs)) element.setAttribute(key, value);
+    return element;
+  }
+
+  function accent(edge) {
+    if (fundingAccents.has(edge.relation_type)) return 'funding';
+    if (PUBLIC.has(edge.relation_type)) return 'public';
+    return 'academic';
+  }
+
+  function pathPoints(path) {
+    const length = path.getTotalLength();
+    const count = Math.max(1, Math.ceil(length / 2));
+    return Array.from({length:count+1}, (_, i) => path.getPointAtLength(length*i/count));
+  }
+
+  function segmentDistance(point, start, end) {
+    const dx = end.x-end.x;
+    const dy = end.y-start.y;
+    const lengthSquared = dx*dx + dy*dy;
+    const progress = lengthSquared ? ((point.x-start.x)*dx + (point.y-start.y)*dy)/lengthSquared : 0;
+    const t = Math.max(0, Math.min(1, progress));
+    return (point.x-start.x-t*dx)**2 + (point.y-start.y-t*dy)**2;
+  }
+
+  function edgeAtPointer(event, fallback) {
+    if (!Number.isFinite(event.clientX)) return fallback;
+    const matrix = graph.getScreenCTM();
+    if (!matrix) return fallback;
+    const point = new DOMPoint(event.clientX,event.clientY).matrixTransform(matrix.inverse());
+    let nearest = fallback;
+    let smallestDistance = Infinity;
+    for (const [id, item] of visibleEdges) {
+      if (!item.hit.isPointInStroke(point)) continue;
+      item.points ??= pathPoints(item.hit);
+      for (let i=1; i<item.points.length; i++) {
+        const distance = segmentDistance(point,item.points[i-1],item.points[i]);
+        if (distance < smallestDistance) {
+          nearest = id;
+          smallestDistance = distance;
+        }
+      }
+    }
+    return nearest;
+  }
+
+  function configureGraphButton(element, kind, id, caption) {
+    const entry = {kind, id};
+    element.setAttribute('data-id', id);
+    element.setAttribute('aria-label', caption);
+    element.setAttribute('tabindex', '0');
+    element.setAttribute('role', 'button');
+    element.onclick = event => {
+      event.stopPropagation();
+      focused = null;
+      choose(kind, kind === 'edge' ? edgeAtPointer(event, id) : id);
+    };
+    element.onkeydown = event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        choose(kind, id);
+      }
+    };
+    element.onpointerenter = element.onpointermove = event => {
+      const currentId = kind === 'edge' ? edgeAtPointer(event, id) : id;
+      if (hovered?.kind === kind && hovered.id === currentId && !tooltip.hidden) return;
+      hovered = {kind, id:currentId};
+      const label = kind === 'edge' ? edgeSummary(edgeIndex.get(currentId)) : caption;
+      showHint(element, label, event);
+      showContext();
+    };
+    element.onpointerleave = () => {
+      hovered = null;
+      tooltip.hidden = true;
+      showContext();
+    };
+    element.onfocus = () => {
+      if (!element.matches(':focus-visible')) return;
+      focused = entry;
+      showHint(element, caption);
+      showContext();
+    };
+    element.onblur = () => {
+      focused = null;
+      tooltip.hidden = true;
+      showContext();
+    };
+  }
+
+  function showHint(element, caption, pointer) {
+    const bounds = element.getBoundingClientRect();
+    tooltip.textContent = caption;
+    tooltip.hidden = false;
+    const maxLeft = window.innerWidth - tooltip.offsetWidth - 8;
+    const anchorLeft = pointer ? pointer.clientX + 8 : bounds.left;
+    const anchorTop = pointer ? pointer.clientY : bounds.top;
+    tooltip.style.left = Math.max(8, Math.min(anchorLeft, maxLeft)) + 'px';
+    tooltip.style.top = Math.max(8, anchorTop - tooltip.offsetHeight - 6) + 'px';
+  }
+
+  function choose(kind, id) {
+    selected = {kind, id};
+    const record = kind === 'node' ? nodeIndex.get(id) : edgeIndex.get(id);
+    detail(kind, record);
+    showContext();
+  }
+
+  function clearSelection() {
+    selected = hovered = focused = null;
+    tooltip.hidden = true;
+    panel.innerHTML = defaultDetail;
+    showContext();
+  }
+
+  function showContext() {
+    const context = hovered || focused || selected;
+    const matchesGraph = context && (context.kind === 'node' ? visibleNodes : visibleEdges).has(context.id);
+    const relatedNodeIds = new Set();
+    const relatedEdgeIds = new Set();
+    if (matchesGraph && context.kind === 'node') {
+      relatedNodeIds.add(context.id);
+      for (const [id, item] of visibleEdges) {
+        const {source_node: source, target_node: target} = item.edge;
+        if (source === context.id || target === context.id) {
+          relatedNodeIds.add(source).add(target);
+          relatedEdgeIds.add(id);
+        }
+      }
+    }
+    if (matchesGraph && context.kind === 'edge') {
+      const edge = visibleEdges.get(context.id).edge;
+      relatedEdgeIds.add(context.id);
+      relatedNodeIds.add(edge.source_node).add(edge.target_node);
+    }
+    for (const [id, element] of visibleNodes) {
+      element.classList.toggle('is-active', !!matchesGraph && context.kind === 'node' && context.id === id);
+      element.classList.toggle('is-related', !!matchesGraph && relatedNodeIds.has(id));
+      element.classList.toggle('is-dimmed', !!matchesGraph && !relatedNodeIds.has(id));
+    }
+    for (const [id, {group, line, edge}] of visibleEdges) {
+      const related = !!matchesGraph && relatedEdgeIds.has(id);
+      group.classList.toggle('is-active', !!matchesGraph && context.kind === 'edge' && context.id === id);
+      group.classList.toggle('is-related', related);
+      group.classList.toggle('is-dimmed', !!matchesGraph && !related);
+      line.setAttribute('marker-end', 'url(#arrow-' + (related ? accent(edge) : 'neutral') + ')');
+    }
+  }
+
+  function draw() {
+    const result = filterGraph(DATA, state);
+    const layout = computeGraphLayout(result, DATA.edges);
+    const counts = [0,0,0];
+    visibleNodes = new Map();
+    visibleEdges = new Map();
+    hovered = focused = null;
+    tooltip.hidden = true;
+    graph.replaceChildren();
+    graph.setAttribute('viewBox', '0 0 ' + layout.width + ' ' + layout.height);
+    graph.setAttribute('width', layout.width);
+    graph.setAttribute('height', layout.height);
+    $('count').textContent = result.nodes.length + ' nodes / ' + result.edges.length + ' relationships';
+    $('empty').hidden = !!result.nodes.length;
+
+    const defs = svg('defs');
+    for (const [id, color] of Object.entries(colors)) {
+      const marker = svg('marker', {
+        id:'arrow-' + id, markerWidth:7, markerHeight:6, refX:6, refY:3, orient:'auto', markerUnits:'userSpaceOnUse'
+      });
+      marker.append(svg('path', {d:'M0 0L6 3L0 6Z', fill:color}));
+      defs.append(marker);
+    }
+    graph.append(defs);
+    const edgeLayer = svg('g', {class:'edges'});
+    const nodeLayer = svg('g', {class:'nodes'});
+    graph.append(nodeLayer,edgeLayer);
+
+    for (const edge of result.edges) {
+      const path = layout.paths.get(edge.edge_id);
+      if (!path) continue;
+      const group = svg('g', {
+        class:'edge',
+        'data-grade':edge.evidence_grade,
+        style:'--edge-accent:' + colors[accent(edge)]
+      });
+      const line = svg('path', {d:path, class:'edge-line', 'marker-end':'url(#arrow-neutral)'});
+      const hit = svg('path', {d:path, class:'edge-hit'});
+      group.append(line, hit);
+      configureGraphButton(group, 'edge', edge.edge_id, edgeSummary(edge));
+      visibleEdges.set(edge.edge_id, {group,line,hit,edge});
+      edgeLayer.append(group);
+    }
+
+    for (const [id, position] of layout.nodes) {
+      const {x,y,r,group,labelX,labelWidth,rowLeft,rowRight} = position;
+      const node = nodeIndex.get(id);
+      counts[group]++;
+      const element = svg('g', {class:'node', 'data-group':group});
+      element.append(svg('rect', {x:rowLeft,y:y-19,width:rowRight-rowLeft,height:38,rx:4,class:'node-row'}));
+      const color = shapeColors[group];
+      if (group === 0) element.append(svg('circle', {cx:x,cy:y,r,fill:color}));
+      if (group === 1) element.append(svg('path', {d:'M' + x + ' ' + (y-r) + ' l ' + r + ' ' + r + ' -' + r + ' ' + r + ' -' + r + ' -' + r + ' Z',fill:color}));
+      if (group === 2) element.append(svg('rect', {x:x-r,y:y-r,width:r*2,height:r*2,rx:1,fill:color}));
+      const box = svg('foreignObject', {x:labelX,y:y-18,width:labelWidth,height:36});
+      const frame = document.createElementNS(XHTML,'div');
+      frame.setAttribute('class','node-label-wrap');
+      const label = document.createElementNS(XHTML,'div');
+      label.setAttribute('class','node-label');
+      label.textContent = nodeName(node);
+      frame.append(label);
+      box.append(frame);
+      element.append(box);
+      configureGraphButton(element, 'node', id, nodeName(node));
+      visibleNodes.set(id, element);
+      nodeLayer.append(element);
+    }
+
+    counts.forEach((count, i) => {
+      $('column-count-' + i).textContent = count;
+    });
+    if (selected && (selected.kind === 'node' ? !visibleNodes.has(selected.id) : !visibleEdges.has(selected.id))) clearSelection();
+    showContext();
+  }
+
+  graph.onclick = clearSelection;
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && (selected || hovered || focused)) clearSelection();
+  });
+  $('graph-scroll').addEventListener('scroll', () => { tooltip.hidden = true; });
+
+  const relation = $('relation');
+  for (const type of [...new Set(DATA.edges.map(edge => edge.relation_type))].sort()) {
+    const option = document.createElement('option');
+    option.value = type;
+    option.textContent = LABELS[type] || type;
+    relation.append(option);
+  }
+  for (const key of ['search','relation','grade','from','to']) {
+    $(key).addEventListener('input', event => {
+      state[key] = event.target.value;
+      draw();
+    });
+  }
+  $('unknown').addEventListener('change', event => {
+    state.unknown = event.target.checked;
+    draw();
+  });
+  const views = document.querySelectorAll('[data-view]');
+  for (const button of views) {
+    button.onclick = () => {
+      state.view = button.dataset.view;
+      for (const view of views) {
+        view.classList.toggle('active', view === button);
+        view.setAttribute('aria-pressed', view === button);
+      }
+      draw();
+    };
+  }
+  $('reset').onclick = () => {
+    state = {...baseState};
+    for (const key of ['search','relation','grade','from','to']) $(key).value = '';
+    $('unknown').checked = true;
+    for (const view of views) {
+      const active = view.dataset.view === 'all';
+      view.classList.toggle('active', active);
+      view.setAttribute('aria-pressed', active);
+    }
+    clearSelection();
+    draw();
+  };
+  DATA.events.slice().sort((a,b) => (a.date || '9999').localeCompare(b.date || '9999')).forEach(event => {
+    const button = document.createElement('button');
+    button.innerHTML = '<time>' + safe(event.date || '—') + '</time><span>' + safe(eventTitle(event)) + '</span>';
+    button.onclick = () => {
+      selected = hovered = focused = null;
+      tooltip.hidden = true;
+      showContext();
+      detail('event',event);
+    };
+    $('events').append(button);
+  });
+  draw();
+}
+</script>
+</body>
+</html>
